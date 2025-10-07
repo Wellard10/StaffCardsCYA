@@ -59,4 +59,62 @@ Start-Process -FilePath '.\Staff Card Clean v2.Report\Staff Card Clean v2.pbit'
 - Validate locally by opening `*.pbit` in Power BI Desktop and exercising changed visuals/roles.
 
 ---
-If anything here is unclear or you'd like the instructions to include automation examples (repackaging scripts or Tabular Editor CLI snippets), tell me which tooling you prefer and I'll update this file.
+## Automation snippets (safe examples you can run locally)
+
+Below are two low-risk automation approaches you can use locally to repackage or update the exported report/model. Both require a local backup and a final manual validation by opening the resulting `*.pbit`/`*.pbix` in Power BI Desktop.
+
+1) PowerShell pack / unpack (zip-based)
+- Power BI Desktop `*.pbit` / `*.pbix` files are ZIP containers. You can safely extract, replace assets, and recompress. This is simple and useful for small edits (theme, report JSON, visuals).
+- Example (adjust paths and internal archive paths after inspecting the extracted folder):
+
+```powershell
+# backup
+Copy-Item '.\\Staff Card Clean v2.pbit' '.\\Staff Card Clean v2.pbit.bak'
+
+# prepare temp folder
+$tmp = Join-Path $env:TEMP 'pbit-unpack'
+Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Path $tmp | Out-Null
+
+# extract (inspect the folder structure under $tmp to confirm where to place files)
+Expand-Archive -Path '.\\Staff Card Clean v2.pbit' -DestinationPath $tmp
+
+# Example: replace the report JSON with the edited version from the repo
+Copy-Item -Path '.\\Staff Card Clean v2.Report\\definition\\report.json' -Destination (Join-Path $tmp 'Report\\definition\\report.json') -Force
+
+# Recreate an updated pbit (Compress-Archive preserves file structure; ensure you compress the contents, not the parent folder)
+Remove-Item '.\\Staff Card Clean v2.updated.pbit' -ErrorAction SilentlyContinue
+Compress-Archive -Path (Join-Path $tmp '*') -DestinationPath '.\\Staff Card Clean v2.updated.pbit'
+
+# Open the result in Power BI Desktop to validate
+Start-Process -FilePath '.\\Staff Card Clean v2.updated.pbit'
+```
+
+Notes:
+- Always inspect the extracted `$tmp` folder to ensure internal paths (for example `Report\\definition`, `DataModel`, or similar) match where you copy files.
+- This approach doesn't validate the model; open the resulting file in Power BI Desktop and test visuals and roles.
+
+2) Tabular Editor (recommended for semantic model automation)
+- Use Tabular Editor (TE2/TE3) for scripted edits to the tabular model. TE provides a GUI and a CLI for automation. The exact CLI flags vary by version — install Tabular Editor and consult its docs. Below is a safe template showing the idea; replace paths/flags for your TE version.
+
+```powershell
+# Template — adjust to your Tabular Editor CLI installation and version
+$te = 'C:\\\\Program Files\\\\Tabular Editor 3\\\\TabularEditor.exe' # or path to TE2/TE3 cli
+$script = '.\\\\scripts\\\\apply-model-changes.csx' # a C# script to apply changes
+
+# Example invocation (placeholder - check Tabular Editor docs for exact flags)
+& $te -Script $script -InputModel '.\\\\Staff Card Clean v2.SemanticModel\\\\definition\\\\model.tmdl' -OutputModel '.\\\\Staff Card Clean v2.SemanticModel\\\\definition\\\\model.tmdl'
+```
+
+Practical notes:
+- Create small, idempotent scripts (C# scripts for TE) that modify only metadata or measures you intend to change.
+- Always export or backup the original `model.tmdl` / `definition.pbism` before running CLI scripts.
+- After applying model changes, open the `*.pbit`/`*.pbix` in Power BI Desktop and verify visuals and RLS.
+
+If you want, I can add a concrete Tabular Editor script example (e.g., update measure format string) — tell me whether you use TE2 or TE3 and I'll add a tested snippet.
+
+---
+
+If anything here is unclear or you'd like the instructions to include additional automation examples (specific Tabular Editor CLI flags, or a community pack/unpack script), tell me which tooling you prefer and I'll update this file.
+
+````
