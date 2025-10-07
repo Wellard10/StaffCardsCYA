@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "10794ed6af9725affabb",
+  "position": {
+    "x": 182.24058816073014,
+    "y": 73.59716060337179,
+    "z": 12000,
+    "height": 309.575358093548,
+    "width": 398.35923437698062,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA Attendance (2)"
+                    }
+                  },
+                  "Property": "Activity type"
+                }
+              },
+              "queryRef": "CYA Attendance (2).Activity type",
+              "nativeQueryRef": "Activity type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA Attendance (2)"
+                    }
+                  },
+                  "Property": "Total Hours (unique sessions)"
+                }
+              },
+              "queryRef": "CYA Attendance (2).Total Hours (unique sessions)",
+              "nativeQueryRef": "Total Hours (unique sessions)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA Attendance (2)"
+                  }
+                },
+                "Property": "Total Hours (unique sessions)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Hours of Support by Delivery Type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

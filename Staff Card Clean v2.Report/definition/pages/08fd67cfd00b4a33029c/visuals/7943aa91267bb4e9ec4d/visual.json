@@ -1,0 +1,565 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "7943aa91267bb4e9ec4d",
+  "position": {
+    "x": 738.20959727063712,
+    "y": 0,
+    "z": 7000,
+    "height": 332.6500037083735,
+    "width": 542.26507453830754,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA ME Tool (2)"
+                    }
+                  },
+                  "Property": "ME Tool order"
+                }
+              },
+              "queryRef": "CYA ME Tool (2).ME Tool order",
+              "nativeQueryRef": "ME Tool order",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q1. Relationships:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q1. Relationships:)",
+              "nativeQueryRef": "Average of Q1. Relationships:",
+              "displayName": "Relationships"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q2. Employability:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q2. Employability:)",
+              "nativeQueryRef": "Average of Q2. Employability:",
+              "displayName": "Employability"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q3. Key Skills:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q3. Key Skills:)",
+              "nativeQueryRef": "Average of Q3. Key Skills:",
+              "displayName": "Key Skills"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q4. Aspiration and Motivation:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q4. Aspiration and Motivation:)",
+              "nativeQueryRef": "Average of Q4. Aspiration and Motivation:",
+              "displayName": "Aspiration and Motivation"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q5. Social Involvement:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q5. Social Involvement:)",
+              "nativeQueryRef": "Average of Q5. Social Involvement:",
+              "displayName": "Social Involvement"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q6. A Healthy Lifestyle:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q6. A Healthy Lifestyle:)",
+              "nativeQueryRef": "Average of Q6. A Healthy Lifestyle:",
+              "displayName": "A Healthy Lifestyle"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q7. Emotional Wellbeing:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q7. Emotional Wellbeing:)",
+              "nativeQueryRef": "Average of Q7. Emotional Wellbeing:",
+              "displayName": "Emotional Wellbeing"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q8. Home and Stability:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q8. Home and Stability:)",
+              "nativeQueryRef": "Average of Q8. Home and Stability:",
+              "displayName": "Home and Stability"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q9. Communication:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q9. Communication:)",
+              "nativeQueryRef": "Average of Q9. Communication:",
+              "displayName": "Communication"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA ME Tool (2)"
+                        }
+                      },
+                      "Property": "Q10. Identity:"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(CYA ME Tool (2).Q10. Identity:)",
+              "nativeQueryRef": "Average of Q10. Identity:",
+              "displayName": "Identity"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q1. Relationships:"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "lineStyles": [
+        {
+          "properties": {
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pipeline Stage'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ME Tool'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ME Tool Results'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ed212375c552418bcb87",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q1. Relationships:"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA ME Tool (2)"
+                          }
+                        },
+                        "Property": "Q1. Relationships:"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "e05d985f5e95a4cc457f",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q2. Employability:"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA ME Tool (2)"
+                          }
+                        },
+                        "Property": "Q2. Employability:"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "0979237b615c3635bdee",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q3. Key Skills:"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA ME Tool (2)"
+                          }
+                        },
+                        "Property": "Q3. Key Skills:"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "cafd2b5dc2b8ea2c1d38",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q4. Aspiration and Motivation:"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA ME Tool (2)"
+                          }
+                        },
+                        "Property": "Q4. Aspiration and Motivation:"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "6d5dcceaac1be51392ce",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA ME Tool (2)"
+                      }
+                    },
+                    "Property": "Q5. Social Involvement:"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA ME Tool (2)"
+                          }
+                        },
+                        "Property": "Q5. Social Involvement:"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  }
+}
