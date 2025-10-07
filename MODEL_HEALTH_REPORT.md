@@ -51,7 +51,10 @@ This report is an automated, read-only analysis of the exported Power BI report 
 - Update RLS logic (`ViewerRLS`) only with strict testing since it controls visible rows per user.
 
 ## Suggested prioritized plan (practical next steps)
-1. (Day 0) Create an `archive/` folder and move `*(2).tmdl` and `*.bak` files there (non-destructive). Commit the archive move. This reduces developer confusion.
+1. (Day 0) Archive duplicates and backups (done in this branch)
+   - Action taken: all remaining `*.tmdl.bak`, `*.json.bak` and files with `(2)` in their filename have been moved to `Staff Card Clean v2.SemanticModel/archive/` and committed on branch `chore/archive-duplicates`.
+   - Commit: branch `chore/archive-duplicates` contains commit(s) that perform the archive move. Please review the PR for the exact file list.
+   - Validation: canonical `.tmdl` files in `definition/tables/` were updated earlier in this branch; the only remaining `(2)` references are kept inside the non-destructive `archive/` folder and in documentation.
 2. (Day 1) Produce a relationship-change PR that converts selected bothDirections relationships to single direction. Keep changes minimal (1–3 relationships per PR), include a validation checklist and screenshots in the PR description.
 3. (Day 2) Replace obvious calculated columns implemented in fact tables with measures where they are used only in aggregations.
 4. (Week) If model size / performance remains a problem, extract heavy Excel sheets into CSV/parquet or load them into a database and change the model partitions to use that source.
@@ -94,6 +97,15 @@ Note: Tabular Editor scripts should be idempotent and make minimal changes; alwa
 - Make one small, focused change per PR.
 - In PR description include: files changed, why, manual validation steps (open `*.pbit` -> check page X and visual Y), and RLS role checks.
 - Attach screenshots showing before/after visuals or the model diagram if relationships changed.
+
+## Notes about the archive PR
+An automated archive of leftover backups was created on branch `chore/archive-duplicates`. Reviewer checklist for that PR:
+
+- Confirm the archive folder exists: `Staff Card Clean v2.SemanticModel/archive/` and contains only backups or historical exports (files ending with `.bak` or named with `(2)`).
+- Confirm canonical table `.tmdl` files under `Staff Card Clean v2.SemanticModel/definition/tables/` are the expected, non-`(2)` versions.
+- Open `Staff Card Clean v2.SemanticModel/definition/model.tmdl` in Tabular Editor and confirm referenced table names match the canonical `.tmdl` files (no `(2)` references in the active model).
+- Validate in Power BI Desktop: open `Staff Card Clean v2.pbit` and confirm visuals load and no broken visuals appear on primary pages.
+- If any item appears wrong, leave feedback on the PR and revert the specific file(s) from the archive folder in a follow-up commit.
 
 ## Deliverables I will create if you ask next
 - `tools/pack-pbit.ps1`: safe pack/unpack script with dry-run mode. (I can add and demonstrate a dry-run.)
