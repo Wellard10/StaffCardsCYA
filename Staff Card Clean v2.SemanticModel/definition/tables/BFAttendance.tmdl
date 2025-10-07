@@ -1,0 +1,251 @@
+table BFAttendance
+	lineageTag: a0020a5d-2865-4bbf-9bff-6e5b81c82c62
+
+	column Project
+		dataType: string
+		lineageTag: bc76111b-74f0-46b0-9351-c502f6880072
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: 1f59cd2e-f427-4d2f-9dd8-cb9090b4865c
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group'
+		dataType: string
+		lineageTag: b5de6f5b-a27c-4d60-9d05-fc1f6d5ab1cf
+		summarizeBy: none
+		sourceColumn: Activity group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group ID'
+		dataType: string
+		lineageTag: 816f3e11-ccf4-42f4-8d21-e81f8f07db97
+		summarizeBy: none
+		sourceColumn: Activity group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity ID'
+		dataType: string
+		lineageTag: 942b4cce-3704-4199-ac87-9981213d45c8
+		summarizeBy: none
+		sourceColumn: Activity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 57c52b43-7428-497f-b691-74a964d0a416
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 5e10499e-bf81-4320-a9b2-5c0640af3a4d
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: b386036d-651c-45e5-bd34-f0a51aaff4ed
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: dd4a6ff7-1c67-4bdc-97d3-4456b53778da
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 42199c96-e48d-4380-99f8-38db2c899925
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: eb91f791-15b4-4ac8-872f-81cf6482d821
+		summarizeBy: none
+		sourceColumn: Start time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Duration (hrs)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0196c397-52ac-431b-85f2-a7eedaf4d0c5
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session registrar'
+		dataType: string
+		lineageTag: 10b63cd7-c113-42ca-8159-3edd6c8cdde4
+		summarizeBy: none
+		sourceColumn: Session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 78a9a1ca-e280-4a7d-9601-e78fa2eb2dc7
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: c6ae34fd-208b-4479-9fe5-d776e6880fa7
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fbc938ba-ec89-4364-b109-2b14e2d881a3
+		summarizeBy: none
+		sourceColumn: Created on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created by'
+		dataType: string
+		lineageTag: f2ed880d-e0b4-496c-999d-551208b39351
+		summarizeBy: none
+		sourceColumn: Created by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edited on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bb2e020a-0834-4ca5-8a4b-cf7029e73eaf
+		summarizeBy: none
+		sourceColumn: Edited on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edited by'
+		dataType: string
+		lineageTag: 0955dc28-32de-4ffd-9d5c-7d95671344b1
+		summarizeBy: none
+		sourceColumn: Edited by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: 9e61297e-260d-4bab-9541-0cc862c490ab
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session notes'
+		dataType: string
+		lineageTag: 6265e793-9e25-441a-b668-dd70fe31c5c7
+		summarizeBy: none
+		sourceColumn: Session notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee type'
+		dataType: string
+		lineageTag: bdec0f81-3ddd-4a1a-9f5f-8e92b7aefe82
+		summarizeBy: none
+		sourceColumn: Attendee type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: bc745f21-934b-43c8-a2c9-178ad15c6f20
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 06b51636-5546-4c5d-8304-42667c94535b
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nickname
+		dataType: string
+		lineageTag: fa62de42-0053-499a-943c-ccbb6240298d
+		summarizeBy: none
+		sourceColumn: Nickname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 2f28a010-5519-4069-9a5a-508a752c1a1c
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee status'
+		dataType: string
+		lineageTag: 95f22fdb-b3bd-4670-b7ef-09ef1f1db996
+		summarizeBy: none
+		sourceColumn: Attendee status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Archived on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e4b1dfbb-2f11-4715-9ece-e71fe7973fb9
+		summarizeBy: none
+		sourceColumn: Archived on
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BFAttendance = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    BFAttendance_Table = Source{[Item="BFAttendance",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(BFAttendance_Table,{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", type text}, {"Activity ID", type text}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", type text}, {"Date", type date}, {"Start time", type time}, {"Duration (hrs)", Int64.Type}, {"Session registrar", type text}, {"Tags", type any}, {"Status", type text}, {"Created on", type datetime}, {"Created by", type text}, {"Edited on", type datetime}, {"Edited by", type text}, {"Session ID", type text}, {"Session notes", type any}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type any}, {"Attendee ID", type text}, {"Attendee status", type text}, {"Archived on", type datetime}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

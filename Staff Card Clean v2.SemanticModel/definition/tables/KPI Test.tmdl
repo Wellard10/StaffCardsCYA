@@ -1,0 +1,39 @@
+table 'KPI Test'
+	lineageTag: 42ac3fe7-99b7-4d32-8267-c8f7c6e3afc6
+
+	column ProjectID
+		dataType: string
+		lineageTag: 40737b7c-6e11-423f-8516-c78c9e44bc3e
+		summarizeBy: none
+		sourceColumn: ProjectID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI Name'
+		dataType: string
+		lineageTag: 6b52ad8d-5209-44a1-b840-10d97d20364a
+		summarizeBy: none
+		sourceColumn: KPI Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Value'
+		dataType: int64
+		formatString: 0
+		lineageTag: bfdecdbf-ed1f-43e3-a387-1b93fd438a15
+		summarizeBy: sum
+		sourceColumn: Target Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'KPI Test' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fY6xCsIwEEB/5cjcIVakc6EWR3GT0qGmZ3JYcpLk+v0NddS4Pt6DNwyq52DJW+glScAItarUnSWTK/J7QbjhZBzOGZ+0GqvfxYUlROhwoRXDLte6bLfGZInSlIh9hNY4wnWvjp+okxcCP+E8k39IsK489af4njpoXdbLV02Oxg0=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ProjectID = _t, #"KPI Name" = _t, #"Target Value" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ProjectID", type text}, {"KPI Name", type text}, {"Target Value", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

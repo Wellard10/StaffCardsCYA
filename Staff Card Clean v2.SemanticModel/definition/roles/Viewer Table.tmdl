@@ -1,0 +1,9 @@
+role 'Viewer Table'
+	modelPermission: read
+
+	tablePermission 'Viewer Table' = [Viewer Email] == "USERPRINCIPALNAME()"
+
+	tablePermission ActivityTypeTable1
+
+	annotation PBI_Id = fec0c28d2c6a4fda99d3bb14e97a0f98
+

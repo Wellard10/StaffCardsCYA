@@ -1,0 +1,85 @@
+table 'Staff ID'
+	lineageTag: dd0990cb-542c-4033-b2d2-a174bcc72639
+
+	column StaffID
+		dataType: string
+		lineageTag: bc70e1cd-c91e-4054-9f56-e7cd3905ad9d
+		summarizeBy: none
+		sourceColumn: StaffID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staff Name'
+		dataType: string
+		lineageTag: 93698895-3a57-4a4e-adc1-d7069b83a003
+		summarizeBy: none
+		sourceColumn: Staff Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractType
+		dataType: string
+		lineageTag: 24ad494e-e376-4a02-8347-b728d128a2a1
+		summarizeBy: none
+		sourceColumn: ContractType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: b7ce42de-1506-4e3c-9c6c-6a1e1750b135
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Code'
+		dataType: string
+		lineageTag: d416e241-c240-467d-88a4-fe8f7f2478d1
+		summarizeBy: none
+		sourceColumn: Project Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: 79004a66-94d2-49cc-a5f8-3ce9cdac8234
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column _NameN
+		dataType: string
+		lineageTag: d5f87d78-cd91-4ecb-be48-d9099797a971
+		summarizeBy: none
+		sourceColumn: _NameN
+
+		annotation SummarizationSetBy = Automatic
+
+	column HoursContracted
+		dataType: string
+		lineageTag: 26a8f565-081e-4b52-b3b7-8e4c60508ee3
+		summarizeBy: none
+		sourceColumn: HoursContracted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Staff ID' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"Staff ID_Sheet" = Source{[Item="Staff ID",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Staff ID_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StaffID", Int64.Type}, {"Name", type text}, {"ContractType", type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"StaffID"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Duplicates",{{"Name", "Staff Name"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"StaffID", type text}, {"Project", type text}, {"Upshot ID", type text}, {"Project Code", type text}, {"Staff Name", type text}, {"ContractType", type text}, {"_NameN", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

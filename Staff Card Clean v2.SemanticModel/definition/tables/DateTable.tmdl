@@ -1,0 +1,139 @@
+table DateTable
+	lineageTag: 7bdadc9b-76ce-44ad-bc40-548db650a6ad
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Long Date
+		lineageTag: 87b1ffe5-5cc8-4ab9-973e-e3f4d52914fe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		formatString: 0
+		lineageTag: e6c769b0-cd73-4054-a196-00b11348ed2a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 2f82107f-ebd1-4b5c-bd0d-d9edde2c0609
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		formatString: 0
+		lineageTag: 98cec333-e755-4167-90b6-cab29dfe98d7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNumber]
+
+		annotation SummarizationSetBy = User
+
+	column DayName
+		lineageTag: 9c67144f-e9f1-4c20-9ea1-e13f7c4a335d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DayName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		formatString: 0
+		lineageTag: 11e29b56-aa0b-4e83-abd8-d1717fc005a7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DayOfWeek]
+
+		annotation SummarizationSetBy = User
+
+	column IsHoliday = ```
+			
+			SWITCH(TRUE(),
+			    [Date] = DATE(2025, 1, 1), TRUE(),      // New Year's Day
+			    [Date] = DATE(2025, 4, 18), TRUE(),     // Good Friday
+			    [Date] = DATE(2025, 4, 21), TRUE(),     // Easter Monday
+			    [Date] = DATE(2025, 5, 5), TRUE(),      // Early May
+			    [Date] = DATE(2025, 5, 26), TRUE(),     // Spring Bank Holiday
+			    [Date] = DATE(2025, 8, 25), TRUE(),     // Summer Bank Holiday
+			    [Date] = DATE(2025, 12, 25), TRUE(),    // Christmas Day
+			    [Date] = DATE(2025, 12, 26), TRUE(),    // Boxing Day
+			    FALSE()
+			)
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ef585c41-e2b8-4789-8489-e2e4c77bbcba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartTimeHours = ```
+			
+			VAR IsWeekend = [DayOfWeek] >= 6
+			RETURN
+			    IF(
+			        IsWeekend || [IsHoliday],
+			        0,
+			        SWITCH(
+			            [DayName],
+			            "Tuesday", 7,
+			            "Wednesday", 7,
+			            "Thursday", 3.5,
+			            0
+			        )
+			    )
+			
+			
+			```
+		lineageTag: 2cbb1676-609d-4bd4-9786-9d8047a6d7f2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FullTimeHours =
+			
+			VAR IsWeekend = [DayOfWeek] >= 6
+			VAR IsFriday = [DayName] = "Friday"
+			RETURN
+			    IF(
+			        IsWeekend || [IsHoliday],
+			        0,
+			        IF(IsFriday, 7, 7.5)
+			    )
+		lineageTag: e746b4cb-856f-4b15-bc08-877840f78109
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DateTable = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS(
+				    CALENDAR(DATE(2025, 1, 1), DATE(2025, 12, 31)),
+				    "Year", YEAR([Date]),
+				    "Month", FORMAT([Date], "MMMM"),
+				    "MonthNumber", MONTH([Date]),
+				    "DayName", FORMAT([Date], "dddd"),
+				    "DayOfWeek", WEEKDAY([Date], 2)  -- Monday = 1, Sunday = 7
+				)
+				
+				```
+
+	annotation PBI_Id = 1b23d8f7a63f4a41a52248199ddff2fe
+

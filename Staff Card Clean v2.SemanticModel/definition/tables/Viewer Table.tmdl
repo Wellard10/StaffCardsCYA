@@ -1,0 +1,49 @@
+table 'Viewer Table'
+	lineageTag: fc273477-f10a-4152-9855-fddd99e85bc4
+
+	column 'Viewer Email'
+		dataType: string
+		lineageTag: eb52b935-746e-49f4-abe6-eacf16868646
+		summarizeBy: none
+		sourceColumn: Viewer Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staff Name'
+		dataType: string
+		lineageTag: d74f698f-d406-4a3a-96a3-7d5001e53119
+		summarizeBy: none
+		sourceColumn: Staff Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Viewer Role'
+		dataType: string
+		lineageTag: e7519036-dbf3-48fd-aca1-0e4bc75827ac
+		summarizeBy: none
+		sourceColumn: Viewer Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column LowerEmail
+		dataType: string
+		lineageTag: abe4def7-7bf1-476e-8674-27bd435b45bc
+		summarizeBy: none
+		sourceColumn: LowerEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Viewer Table' = m
+		mode: import
+		source =
+				let
+				   Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("pZbNjoIwFIVfpXHt+Azzo86MExIji1kYF9daodIfUsCJ8/RTq0kR8LZmFiyA70C559xb1usRFcANe6YnmGiTTZpiNB69uWskBbWr7GkCCjJmRpsxii8NpywG10obstC5qmqtIgRTkJwpkmhjeMx6pvY++YCfgqsYfCYlkIS+HPUpgv7ikthjy4xg7CmVvM4jVClIsgBaVFEfnFJd12TOTNZECnJQSiuyaqrh1ZQPOlb+8/mYxczWO9aBPouFYYi+G4U+HLa2r0GtGsDv5iADc7pl3+0VMjfwa4kQu9IVZ+QVTL/cfTiBE5Dvs6NlmOU0Z0LYZ5tGVQUXIihZgmTCviDndTdc9xaeNGanabfaffqzgi0TdjAdLRSkF1ow5aoSLuDsyGxOZBljzAJ2dsmQNTb4Hbjg8tFM9SRopMy5Xtto84dwrIhD/P24DNKhwNDzbDgE5kVaw37v8J3r94l0/Y6PgrZIwSS/tD06ELyEHbvbwk0iPMhd+fCSevpgs4Kmp4W6uGIR9qy0nmAutcirHxEueVHpWhhtaw+7FOBd3YHx/Hq4AnnA5meLPPdMoI1a9GU7M+gm5/GIfx4PR06AVvAC2+GV3PwB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Viewer Email" = _t, #"Staff Name" = _t, #"Viewer Role" = _t]),
+				   #"Changed Type" = Table.TransformColumnTypes(Source,{{"Viewer Email", type text}, {"Staff Name", type text}, {"Viewer Role", type text}}),
+				   #"Added Custom" = Table.AddColumn(#"Changed Type", "LowerEmail", each Text.Lower([Viewer Email]))
+				in
+				   #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

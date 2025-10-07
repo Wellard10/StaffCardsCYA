@@ -1,0 +1,30 @@
+table 'DIM Neuro (2)'
+	lineageTag: 7c85359d-a7a5-4998-b5aa-b39797641cf7
+
+	column Neurodivergent
+		dataType: string
+		lineageTag: 87799df7-4ec3-41f1-a424-739be0fbdd11
+		summarizeBy: none
+		sourceColumn: Neurodivergent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Neuro (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Please indicate if you have any of the following neurodivergent conditions (select all that apply):"),
+				    #"Trimmed Text" = Table.TransformColumns(#"Split Column by Delimiter",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Text.Clean, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each ([#"Please indicate if you have any of the following neurodivergent conditions (select all that apply):"] <> null and [#"Please indicate if you have any of the following neurodivergent conditions (select all that apply):"] <> "None")),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", "Neurodivergent"}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Renamed Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

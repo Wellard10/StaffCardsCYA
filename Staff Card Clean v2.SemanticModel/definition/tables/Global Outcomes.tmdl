@@ -1,0 +1,36 @@
+table 'Global Outcomes'
+	lineageTag: e651b97b-b0f5-47d4-b901-af5d7ff208d6
+
+	column 'Global Outcomes'
+		dataType: string
+		lineageTag: 1416d067-3cc1-43e3-9f7c-475674341fa7
+		summarizeBy: none
+		sourceColumn: Global Outcomes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Outcome Code'
+		dataType: string
+		lineageTag: 29c79b77-fe38-48af-a780-5572613de51c
+		summarizeBy: none
+		sourceColumn: Global Outcome Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Global Outcomes' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"Global Outcomes_Sheet" = Source{[Item="Global Outcomes",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Global Outcomes_Sheet",{{"Column1", type text}, {"Column2", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Global Outcomes", type text}, {"Strategic Outcome Code", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Strategic Outcome Code", "Global Outcome Code"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

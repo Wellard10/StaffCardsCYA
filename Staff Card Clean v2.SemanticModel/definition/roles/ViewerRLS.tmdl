@@ -1,0 +1,22 @@
+role ViewerRLS
+	modelPermission: read
+
+	tablePermission 'Staff ID' =
+			[Staff Name] IN
+			
+			    CALCULATETABLE(
+			
+			        VALUES('Viewer Table'[Staff Name]),
+			
+			        FILTER(
+			
+			            'Viewer Table',
+			
+			            LOWER('Viewer Table'[Viewer Email]) = LOWER(USERPRINCIPALNAME())
+			
+			        )
+			
+			    )
+
+	annotation PBI_Id = 0dd8d2f71ed8443abb8d43d0698d859f
+

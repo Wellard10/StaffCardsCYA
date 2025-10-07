@@ -1,0 +1,69 @@
+table ActivityTypeTable1
+	lineageTag: 4d2870ec-d54d-431c-a38e-36e563f85d08
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: d89abb14-d187-4279-8547-bd0336621e3c
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staff Name'
+		dataType: string
+		lineageTag: 991ba047-c169-468b-b76d-38d0b1671803
+		summarizeBy: none
+		sourceColumn: Staff Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: c6a86511-b4a5-4ec8-9c9f-b62127b2b500
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Duration (hrs)'
+		dataType: double
+		lineageTag: 9f4822c2-2982-4c26-ad6a-97cd91e97027
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Project
+		dataType: string
+		lineageTag: 5e615b35-d748-495d-b790-9f3b71eca283
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 78f96af4-4baa-4819-92e9-1181ebf477be
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition ActivityTypeTable1 = m
+		mode: import
+		source =
+				let
+				    Source = #"Sessions (3)",
+				    #"Removed Duplicates" = Table.Distinct(Source, {"Activity type"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

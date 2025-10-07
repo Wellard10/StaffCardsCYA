@@ -1,0 +1,170 @@
+table BFTLE
+	lineageTag: e90ac69a-69a2-4246-8d96-af2c5999f9f3
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: 1315290c-9798-4575-8d53-cc43e38c8d9c
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: a8614167-7d9a-45ea-84b2-071bcb8de29d
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 5a1102ad-3acb-49bd-9085-f99b7ec97521
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 03f27f1f-5120-4057-9ace-f5068f991c19
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event ID'
+		dataType: string
+		lineageTag: 6e35955a-ce47-4c59-aa64-90d1df19cb2d
+		summarizeBy: none
+		sourceColumn: Event ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7024cef5-f5cb-4f38-b28d-648647203a6b
+		summarizeBy: none
+		sourceColumn: Event date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Expiry date'
+		dataType: string
+		lineageTag: de0b2785-292f-4f85-8676-d8ed0562eb9a
+		summarizeBy: none
+		sourceColumn: Expiry date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event type'
+		dataType: string
+		lineageTag: 0c0f0cb6-cae5-4bc2-aeeb-494108d58c76
+		summarizeBy: none
+		sourceColumn: Event type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event value'
+		dataType: string
+		lineageTag: 58e3701b-f7cb-42c3-8c3d-aa383eab934c
+		summarizeBy: none
+		sourceColumn: Event value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 51d91aca-81f2-4edd-86db-3323af5d19de
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 3f0ab3af-f902-45f6-b6a6-de3cf7e1c1f2
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: eeeddb91-bcc2-438c-8ac3-afd950a61d18
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Group'
+		dataType: string
+		lineageTag: 2a55d93b-298e-46a5-94b9-6c663d24addd
+		summarizeBy: none
+		sourceColumn: Activity Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Type'
+		dataType: string
+		lineageTag: e0789d7a-660f-4166-b2f4-88ed9f1d6d7b
+		summarizeBy: none
+		sourceColumn: Activity Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user first name'
+		dataType: string
+		lineageTag: e8e123e7-8e21-4876-909c-561c99229c5b
+		summarizeBy: none
+		sourceColumn: Recording user first name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user last name'
+		dataType: string
+		lineageTag: a3f52c09-e19b-45d5-b3d3-75d12803a277
+		summarizeBy: none
+		sourceColumn: Recording user last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date recorded'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fd10845f-47a1-42d5-b30d-749fd88e3e9d
+		summarizeBy: none
+		sourceColumn: Date recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Time recorded'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3ccd31ca-699c-414b-85b9-c3b8b3ecfbf0
+		summarizeBy: none
+		sourceColumn: Time recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition BFTLE = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    BFTLE_Table = Source{[Item="BFTLE",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(BFTLE_Table,{{"Upshot ID", type text}, {"First name", type text}, {"Last name", type text}, {"Status", type text}, {"Event ID", type text}, {"Event date", type date}, {"Expiry date", type text}, {"Event type", type text}, {"Event value", type text}, {"Notes", type text}, {"Project", type text}, {"Activity", type text}, {"Activity Group", type text}, {"Activity Type", type text}, {"Recording user first name", type text}, {"Recording user last name", type text}, {"Date recorded", type date}, {"Time recorded", type time}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

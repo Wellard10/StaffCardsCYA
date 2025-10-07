@@ -1,0 +1,35 @@
+table 'Global only'
+	lineageTag: 8d2062aa-8109-4bc1-9672-d0f77a408063
+
+	column 'Global outcome code.1'
+		dataType: string
+		lineageTag: cec21d63-cfa1-4e2f-a981-9e93bd318b7d
+		summarizeBy: none
+		sourceColumn: Global outcome code.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Text'
+		dataType: string
+		lineageTag: b884de5d-6dd5-44f8-bf59-f490a34e2e9f
+		summarizeBy: none
+		sourceColumn: Global Text
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Global only' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ZZJPb9RADMW/itUTSGXVpfwpZw4VEqe2F1T14J31JhaOHTyeLPn2zGSjEsTV4/fz8/M8P1/d3+x38E2TE2Y6Ag2j2DyQBqAeQQhdWTuwcTSPohxM+erlugnf7+CHlejffa/Crz1qR/DUu5WuhydkMa/1x7IoV8ntDh7oWFJ9YKVfBWUL/FCdDKPbRG3yRJLBTtATSvSLnTOJHKj6WQUft9ZzyYGseOAKnZtybu6gATmz6Sr6tJlycbA0C59o7fi86aBkagMn6NzO0a8dd38HAx4nS5jmxSHrSQppooYcTbjW39SiYw4vKYrT25XxZZtFtV5Fy75i58v2kJwHWrCowZAtMQocqMeJrfiFs7/5JwTudLQc7WZhi7ZEDSS3wmsSEOuZ6HeQa4WO6KHk6yX29U/cV2J9hGQieDDH4IngbP6zoRr4NXAhmEyKBvoMmVKY/5/9yx8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Global outcome code" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Global outcome code", type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type", "Global outcome code", Splitter.SplitTextByDelimiter(". ", QuoteStyle.Csv), {"Global outcome code.1", "Global outcome code.2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Global outcome code.1", type text}, {"Global outcome code.2", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Global outcome code.2", "Global Text"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,193 @@
+table 'CYA ME Tool (2)'
+	lineageTag: fe541d8e-d971-4de7-a823-7f7b612f6b10
+
+	measure 'ME Identity Total' = SUM('CYA ME Tool (2)'[Q10. Identity:])
+		formatString: 0
+		lineageTag: f93ce5d7-9971-4938-bc28-69cc087d549d
+
+	measure 'ME Emotional Wellbeing Total' = SUM('CYA ME Tool (2)'[Q7. Emotional Wellbeing:])
+		formatString: 0
+		lineageTag: 593924c4-b825-4daf-8975-91607550ba0e
+
+	column 'Sent ID'
+		dataType: string
+		lineageTag: 75744f5b-21c1-452a-94d3-8d0f14063473
+		summarizeBy: none
+		sourceColumn: Sent ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sent name'
+		dataType: string
+		lineageTag: 572680b8-3d77-41d2-97ab-35dda3470388
+		summarizeBy: none
+		sourceColumn: Sent name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Participant name'
+		dataType: string
+		lineageTag: b1a02bef-3818-4c5d-91af-baf0bfd7d0c8
+		summarizeBy: none
+		sourceColumn: Participant name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: b7230fc9-d098-4d9b-95b2-97f87a9de8d2
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Submitted
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 252357c3-44fe-48c0-9eda-4f0b22c9dabe
+		summarizeBy: none
+		sourceColumn: Submitted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Q1. Relationships:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 970529d4-e8a9-458a-8b91-15f29d9eed01
+		summarizeBy: sum
+		sourceColumn: Q1. Relationships:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q2. Employability:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ab928c5-14f0-453d-8ee0-dc7d56648500
+		summarizeBy: sum
+		sourceColumn: Q2. Employability:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q3. Key Skills:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e41047e-541c-47d5-9417-58182a95edce
+		summarizeBy: sum
+		sourceColumn: Q3. Key Skills:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q4. Aspiration and Motivation:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2172b53b-c13e-4756-b119-6db921400a18
+		summarizeBy: sum
+		sourceColumn: Q4. Aspiration and Motivation:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q5. Social Involvement:'
+		dataType: int64
+		formatString: 0
+		lineageTag: f4d34c92-67cc-48fc-9110-ac68b738e30a
+		summarizeBy: sum
+		sourceColumn: Q5. Social Involvement:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q6. A Healthy Lifestyle:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d920635-72b8-4a20-91d9-b0c1e8421b68
+		summarizeBy: sum
+		sourceColumn: Q6. A Healthy Lifestyle:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q7. Emotional Wellbeing:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7535dfbd-cb65-4132-b858-d80408e36df9
+		summarizeBy: sum
+		sourceColumn: Q7. Emotional Wellbeing:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q8. Home and Stability:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2183ac6f-50b8-418d-baf4-76cf58a50c1a
+		summarizeBy: sum
+		sourceColumn: Q8. Home and Stability:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q9. Communication:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bf933b2-ec74-4d57-b82a-b34f57e28b5f
+		summarizeBy: sum
+		sourceColumn: Q9. Communication:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q10. Identity:'
+		dataType: int64
+		formatString: 0
+		lineageTag: d5cdba7b-82ca-4e0c-8b7b-cf700f4a0217
+		summarizeBy: sum
+		sourceColumn: Q10. Identity:
+
+		annotation SummarizationSetBy = Automatic
+
+	column GlobalIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 99c959fb-b836-425d-b045-0edbf75e2116
+		summarizeBy: sum
+		sourceColumn: GlobalIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ME Tool order'
+		dataType: int64
+		formatString: 0
+		lineageTag: b09a0617-9dd4-4ec2-acf4-2b02cf2ce952
+		summarizeBy: sum
+		sourceColumn: ME Tool order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total
+		dataType: int64
+		formatString: 0
+		lineageTag: 12ea5d5d-0ecc-4db9-aebe-ec5b2bda0a4b
+		summarizeBy: sum
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CYA ME Tool (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOMETool, BFMETool}),
+				    #"Sorted Rows" = Table.Sort(Source,{{"Upshot ID", Order.Ascending}, {"Submitted", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "GlobalIndex", 1, 1, Int64.Type),
+				    #"Added Custom" = Table.AddColumn(#"Added Index", "ME Tool order", each let
+				    currID = [Upshot ID]
+				in
+				    [GlobalIndex]
+				    - List.Min( Table.SelectRows(#"Added Index", each [Upshot ID] = currID)[GlobalIndex] )
+				    + 1),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Total", each [#"Q1. Relationships:"]+[#"Q2. Employability:"]+[#"Q3. Key Skills:"]+[#"Q4. Aspiration and Motivation:"]+[#"Q5. Social Involvement:"]+[#"Q6. A Healthy Lifestyle:"]+[#"Q7. Emotional Wellbeing:"]+[#"Q8. Home and Stability:"]+[#"Q9. Communication:"]+[#"Q10. Identity:"]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"ME Tool order", Int64.Type},{"Total", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

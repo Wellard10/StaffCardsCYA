@@ -1,0 +1,60 @@
+table Project
+	lineageTag: 9782af3c-906e-46ff-9707-685922cd3dec
+
+	measure 'Total Project Hours' = ```
+			
+			SUMX(
+			    VALUES('Project'[Session ID]),
+			    CALCULATE( MAX('Project'[Duration (hrs)]))
+			)
+			
+			```
+		lineageTag: 2f5730e6-ca46-4da8-951f-2a13747965c2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Session ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: c284cbed-3cf9-4b23-82ce-bb6799f122c8
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 0d5c1f04-9e07-4ed8-8798-9c7e88e87aa9
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Duration (hrs)'
+		dataType: double
+		lineageTag: ce3d308e-244c-41b0-bf42-c840b095b329
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Project = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"New Reg Data_Sheet" = Source{[Item="New Reg Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"New Reg Data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", Int64.Type}, {"Activity ID", Int64.Type}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", Int64.Type}, {"Date", type date}, {"Start time", type datetime}, {"Duration (hrs)", type number}, {"Session registrar", type text}, {"Tags", type any}, {"Status", type text}, {"Session ID", Int64.Type}, {"Session notes", type any}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type any}, {"Attendee ID", Int64.Type}, {"Unique session registrar", Int64.Type}, {"Unique session time", type number}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Column28", type any}, {"Column29", type any}, {"Column30", Int64.Type}, {"Column31", Int64.Type}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}, {"Column35", Int64.Type}, {"Column36", Int64.Type}, {"Column37", Int64.Type}, {"Column38", type number}, {"Column39", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([Session registrar] <> null)),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Project", "Duration (hrs)", "Session ID"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,91 @@
+table 'Latest Status'
+	lineageTag: c819f06a-540b-4158-a8b8-2d2019f9a4a7
+
+	measure 'Status (Selected Person)' =
+			
+			SELECTEDVALUE ( 'Latest Status'[Current Status], "–" )
+		lineageTag: 51cedffe-6397-4fc5-84cb-1b54173583b1
+
+	measure 'Status Date (Selected Person)' =
+			
+			MAX ( 'Latest Status'[Status Date] )
+		formatString: General Date
+		lineageTag: 04e6b41a-ebee-4984-8f6c-a2983c09bc44
+
+	measure 'Latest Status People' =
+			
+			COUNTROWS ( 'Latest Status' )  -- one row per person in this table
+			-- or use DISTINCTCOUNT('Latest Status'[Upshot ID]) if you prefer
+		formatString: 0
+		lineageTag: acce27bc-a4d6-44da-a742-dc7092b5ce8a
+
+	column 'Status Date'
+		formatString: General Date
+		lineageTag: e3b8ee15-ea67-4922-9d99-da6a31cdac9e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Status Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Status'
+		lineageTag: 9c56e9a2-c9f6-45ba-919e-6a2a791b25ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Current Status]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee ID'
+		lineageTag: f1e81988-5f21-4d59-afca-82af90b4fdfb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: TE - Data[Attendee ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Latest Status' = calculated
+		mode: import
+		source = ```
+				
+				VAR Filtered =
+				    FILTER (
+				        'TE - Data',
+				        NOT ISBLANK ( 'TE - Data'[Event value] )
+				            && 'TE - Data'[Event value] <> ""
+				            && CONTAINSSTRING ( 'TE - Data'[Event type], "Current Status" )
+				    )
+				-- one row per person with their last event date
+				VAR LastDatePerId =
+				    SUMMARIZE (
+				        Filtered,
+				        'TE - Data'[Attendee ID],
+				        "Status Date", MAX ( 'TE - Data'[Event date] )
+				    )
+				RETURN
+				ADDCOLUMNS (
+				    LastDatePerId,
+				    "Current Status",
+				        VAR __ID = 'TE - Data'[Attendee ID]
+				        VAR __DT = [Status Date]
+				        VAR __RowsAtMaxDate =
+				            FILTER (
+				                Filtered,
+				                'TE - Data'[Attendee ID] = __ID
+				                    && 'TE - Data'[Event date] = __DT
+				            )
+				        VAR __TopRow =
+				            TOPN (
+				                1,
+				                __RowsAtMaxDate,
+				                'TE - Data'[Event date], DESC,
+				                'TE - Data'[Event value], DESC  -- tie-breaker if same timestamp
+				            )
+				        RETURN
+				            MAXX ( __TopRow, 'TE - Data'[Event value] )
+				)
+				
+				```
+
+	annotation PBI_Id = 73a90d6571174978abbd8a89e743673b
+

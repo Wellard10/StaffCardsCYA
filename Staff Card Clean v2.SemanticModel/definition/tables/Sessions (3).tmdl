@@ -1,0 +1,100 @@
+table 'Sessions (3)'
+	lineageTag: be951c2f-4d9b-45e7-b649-e8103635c19f
+
+	measure 'Total Unique Hours' = ```
+			
+			SUMX(
+			    VALUES('Sessions (3)'[Session ID]),
+			    CALCULATE( MAX('Sessions (3)'[Duration (hrs)]) )
+			)
+			
+			```
+		lineageTag: 71817b7b-de2f-4353-9c47-cdc7b422c8e4
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "TotalForSelectedCategory"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: 8e2535e9-904a-4bbd-96e7-93867fe08165
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: dedac4a8-470c-4618-ac92-842d162eed5a
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Duration (hrs)'
+		dataType: double
+		lineageTag: 616dd9d1-d92e-43a6-aa1e-a7fc8df3d558
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Project
+		dataType: string
+		lineageTag: 0826f7c5-370a-485f-9fd9-3b1df15d6453
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 00a535d2-ca4a-4327-ac98-ef2c86b52632
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Staff Name'
+		dataType: string
+		lineageTag: 2dfd7c79-0249-4237-934f-6c965a74dfb8
+		summarizeBy: none
+		sourceColumn: Staff Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sessions (3)' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"New Reg Data_Sheet" = Source{[Item="New Reg Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"New Reg Data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", Int64.Type}, {"Activity ID", Int64.Type}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", Int64.Type}, {"Date", type date}, {"Start time", type datetime}, {"Duration (hrs)", type number}, {"Session registrar", type text}, {"Tags", type any}, {"Status", type text}, {"Session ID", type text}, {"Session notes", type any}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type any}, {"Attendee ID", Int64.Type}, {"Unique session registrar", Int64.Type}, {"Unique session time", type number}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Column28", type any}, {"Column29", type any}, {"Column30", Int64.Type}, {"Column31", Int64.Type}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}, {"Column35", Int64.Type}, {"Column36", Int64.Type}, {"Column37", Int64.Type}, {"Column38", type number}, {"Column39", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Full Name] <> "Callum Hyslop" and [Full Name] <> "Claire Price" and [Full Name] <> "Conor Johnston" and [Full Name] <> "Damien Morris" and [Full Name] <> "Dana Hawkins" and [Full Name] <> "Emma McAvoy" and [Full Name] <> "Eve Hampson" and [Full Name] <> "Isabel Savage" and [Full Name] <> "Jade Maguire" and [Full Name] <> "Jamie Harrison" and [Full Name] <> "Jolene Barr" and [Full Name] <> "Kim Kimberlee-Smith" and [Full Name] <> "Maya Wannop" and [Full Name] <> "Michelle Brunskill" and [Full Name] <> "Rosie Barton" and [Full Name] <> "Rosie Murdoch" and [Full Name] <> "Scott Ferguson" and [Full Name] <> "Shannon Rush" and [Full Name] <> "Anna Witty"),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Project", "Activity type", "Date", "Duration (hrs)", "Session ID", "Registrar & Session Leader"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Registrar & Session Leader", Splitter.SplitTextByDelimiter(" and ", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Registrar & Session Leader"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Registrar & Session Leader", "Staff Name"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"Session ID", "Staff Name", "Activity type", "Duration (hrs)", "Project"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Reordered Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Session ID", Order.Ascending}}),
+				    #"Removed Duplicates1" = Table.Distinct(#"Sorted Rows", {"Session ID", "Staff Name"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Removed Duplicates1", each ([Session ID] <> null))
+				in
+				    #"Filtered Rows1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

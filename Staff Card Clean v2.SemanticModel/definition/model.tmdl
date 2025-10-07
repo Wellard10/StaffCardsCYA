@@ -1,0 +1,87 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 16/05/2025 09:14:17.
+queryGroup 'Query Errors - 16/05/2025 09:14:17'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 13/06/2025 09:56:11.
+queryGroup 'Query Errors - 13/06/2025 09:56:11'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errors in queries that were loaded on 04/09/2025 09:42:34.
+queryGroup 'Query Errors - 04/09/2025 09:42:34'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Errors in queries that were loaded on 04/09/2025 11:21:19.
+queryGroup 'Query Errors - 04/09/2025 11:21:19'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// Errors in queries that were loaded on 08/09/2025 12:43:25.
+queryGroup 'Query Errors - 08/09/2025 12:43:25'
+
+	annotation PBI_QueryGroupOrder = 4
+
+annotation PBI_QueryOrder = ["TE - Data","Calendar","Staff ID","Project","Project ID","User Access","Sessions (3)","Global only","ActivityTypeTable1","Viewer Table","New Reg Data","Strat2","Global Outcomes","Strategic Outcomes","Sessions + Activities (2)","CYA ME Tool (2)","CYA People Report (2)","CYA TLE (2)","CYA Event Types","CYA Attendance (2)","Young People (2)","Barriers (2)","Neuro (2)","DIM BARRIER (2)","DIM Neuro (2)","Projects involved in (2)","DIM Projects involved in (2)","DOMETool","BFMETool","BFAttendance","BFPeople","BFTLE","DOAttendance","DOPeople","DOTLE","InfraAttendance","InfraPeople","InfraTLE","KPI Test"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","WebModelingEdit","DevMode"]
+
+ref table 'TE - Data'
+ref table Calendar
+ref table DateTable
+ref table 'Staff ID'
+ref table StaffSchedule
+ref table 'Project ID'
+ref table 'User Access'
+ref table 'Global only'
+ref table 'Viewer Table'
+ref table 'New Reg Data'
+ref table Project
+ref table 'Sessions (3)'
+ref table ActivityTypeTable1
+ref table Strat2
+ref table 'Global Outcomes'
+ref table 'Strategic Outcomes'
+ref table 'Sessions + Activities (2)'
+ref table DOMETool
+ref table BFMETool
+ref table BFAttendance
+ref table BFPeople
+ref table BFTLE
+ref table DOAttendance
+ref table DOPeople
+ref table DOTLE
+ref table InfraAttendance
+ref table InfraPeople
+ref table InfraTLE
+ref table 'CYA Event Types'
+ref table 'CYA ME Tool (2)'
+ref table 'CYA People Report (2)'
+ref table 'CYA TLE (2)'
+ref table 'CYA Attendance (2)'
+ref table 'Young People (2)'
+ref table 'Barriers (2)'
+ref table 'Neuro (2)'
+ref table 'DIM BARRIER (2)'
+ref table 'DIM Neuro (2)'
+ref table 'Projects involved in (2)'
+ref table 'DIM Projects involved in (2)'
+ref table 'KPI Test'
+ref table 'Latest Status'
+
+ref role 'Viewer Table'
+ref role ViewerRLS
+
+ref cultureInfo en-GB
+

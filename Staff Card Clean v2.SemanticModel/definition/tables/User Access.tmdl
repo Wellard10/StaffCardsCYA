@@ -1,0 +1,35 @@
+table 'User Access'
+	lineageTag: 2e2339d9-3295-4165-b441-a72ebe3d7267
+
+	column 'Staff Email'
+		dataType: string
+		lineageTag: 78910ec4-b314-40b8-be7f-cc23452087d9
+		summarizeBy: none
+		sourceColumn: Staff Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column StaffName
+		dataType: string
+		lineageTag: f9571357-ab47-436a-b14a-e1c6278b81e8
+		summarizeBy: none
+		sourceColumn: StaffName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Access' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"User Access_Sheet" = Source{[Item="User Access",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"User Access_Sheet",{{"Column1", type text}, {"Column2", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Staff Email", type text}, {"StaffName", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

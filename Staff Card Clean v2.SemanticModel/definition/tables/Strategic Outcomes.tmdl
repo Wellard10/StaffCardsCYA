@@ -1,0 +1,46 @@
+table 'Strategic Outcomes'
+	lineageTag: 5175331d-68f2-462b-91d3-a399d97d6836
+
+	column 'Strategic Outcomes'
+		dataType: string
+		lineageTag: 17698c3b-ef70-49d7-a87a-1777520cf088
+		summarizeBy: none
+		sourceColumn: Strategic Outcomes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Strategic Outcome Code'
+		dataType: string
+		lineageTag: c7aeb295-fcf9-4b80-90de-c8bc6c1a3760
+		summarizeBy: none
+		sourceColumn: Strategic Outcome Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Outcome Code'
+		dataType: string
+		lineageTag: df3d4151-87ea-45aa-b0dc-6063f0f6bb77
+		summarizeBy: none
+		sourceColumn: Global Outcome Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Strategic Outcomes' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"Strategic Outcomes_Sheet" = Source{[Item="Strategic Outcomes",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Strategic Outcomes_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Strategic Outcomes", type text}, {"Strategic Outcome Code", type text}, {"Global Outcome Codes", type text}}),
+				    #"Uppercased Text" = Table.TransformColumns(#"Changed Type1",{{"Global Outcome Codes", Text.Upper, type text}}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Uppercased Text", {{"Global Outcome Codes", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Global Outcome Codes"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Global Outcome Codes", "Global Outcome Code"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

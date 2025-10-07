@@ -1,0 +1,338 @@
+table Calender
+	lineageTag: 3e950f6c-d8fa-4da8-866c-bcd5e78e1e02
+
+	measure 'Time Calc (Allocated)' = ```
+			
+			VAR d = SELECTEDVALUE ( 'DateTable'[Date] )
+			
+			/* iterate each entry once; ignore axis date and any Start/End Date filters */
+			VAR EntryIDs =
+			    CALCULATETABLE (
+			        VALUES ( 'Calender'[Entry ID] ),
+			        REMOVEFILTERS ( 'DateTable' ),
+			        REMOVEFILTERS ( 'Calender'[Start Date] ),
+			        REMOVEFILTERS ( 'Calender'[End Date] )
+			    )
+			
+			RETURN
+			SUMX (
+			    EntryIDs,
+			    VAR EID    = SELECTEDVALUE ( 'Calender'[Entry ID] )
+			    VAR Cat    = LOWER ( LOOKUPVALUE ( 'Calender'[Categories],            'Calender'[Entry ID], EID ) )
+			    VAR TDec   = COALESCE ( LOOKUPVALUE ( 'Calender'[Time Spent Decimal], 'Calender'[Entry ID], EID ), 0 )
+			    VAR AL     = COALESCE ( LOOKUPVALUE ( 'Calender'[Time Calcuation AL], 'Calender'[Entry ID], EID ), 0 )
+			    VAR sd     = LOOKUPVALUE ( 'Calender'[Start Date],                    'Calender'[Entry ID], EID )
+			    VAR edRaw  = LOOKUPVALUE ( 'Calender'[End Date],                      'Calender'[Entry ID], EID )
+			    VAR st     = LOOKUPVALUE ( 'Calender'[Start Time],                    'Calender'[Entry ID], EID )
+			    VAR et     = LOOKUPVALUE ( 'Calender'[End Time],                      'Calender'[Entry ID], EID )
+			    VAR staff  = LOOKUPVALUE ( 'Calender'[Staff Name],                    'Calender'[Entry ID], EID )
+			
+			    VAR IsAllDay = NOT ISBLANK ( sd ) && NOT ISBLANK ( edRaw ) && sd <> edRaw && st = TIME ( 0,0,0 ) && et = TIME ( 0,0,0 )
+			    VAR ed       = IF ( IsAllDay, edRaw - 1, edRaw )
+			
+			    VAR Contract =
+			        COALESCE (
+			            LOOKUPVALUE ( 'StaffSchedule'[ContractType], 'StaffSchedule'[Staff Name], staff ),
+			            "Full Time"
+			        )
+			
+			    VAR ShouldSpread =
+			        Cat = "personal" && ABS ( TDec ) < 1e-6 && NOT ISBLANK ( sd ) && NOT ISBLANK ( ed )
+			
+			    /* denominator: sum scheduled hours across the full span (no DateTable filter) */
+			    VAR TotalWeight =
+			        IF (
+			            ShouldSpread,
+			            CALCULATE (
+			                SUMX (
+			                    VALUES ( 'DateTable'[Date] ),
+			                    VAR DayNum = SELECTEDVALUE ( 'DateTable'[DayOfWeek] )
+			                    VAR IsHol  = SELECTEDVALUE ( 'DateTable'[IsHoliday], FALSE() )
+			                    RETURN
+			                        SWITCH (
+			                            TRUE(),
+			                            IsHol, 0,
+			
+			                            Contract = "Full Time" && ( DayNum = 6 || DayNum = 7 ), 0,
+			                            Contract = "Full Time" && DayNum = 5, 7,
+			                            Contract = "Full Time", 7.5,
+			
+			                            Contract = "PT1" && ( DayNum = 1 || DayNum = 6 || DayNum = 7 ), 0,
+			                            Contract = "PT1" && DayNum = 5, 7,
+			                            Contract = "PT1" && ( DayNum = 2 || DayNum = 3 || DayNum = 4 ), 7.5,
+			
+			                            Contract = "PT2" && ( DayNum = 5 || DayNum = 6 || DayNum = 7 ), 0,
+			                            Contract = "PT2" && DayNum = 1, 4,
+			                            Contract = "PT2" && ( DayNum = 2 || DayNum = 3 || DayNum = 4 ), 7.5,
+			
+			                            Contract = "PT3" && ( DayNum = 5 || DayNum = 6 || DayNum = 7 ), 0,
+			                            Contract = "PT3" && ( DayNum = 1 || DayNum = 2 || DayNum = 3 || DayNum = 4 ), 7.5,
+			
+			                            0
+			                        )
+			                ),
+			                REMOVEFILTERS ( 'DateTable' ),
+			                'DateTable'[Date] >= sd,
+			                'DateTable'[Date] <= ed
+			            ),
+			            0
+			        )
+			
+			    /* weight for the current axis date d */
+			    VAR DayWeight =
+			        IF (
+			            ShouldSpread && NOT ISBLANK ( d ),
+			            VAR DayNum_d = LOOKUPVALUE ( 'DateTable'[DayOfWeek], 'DateTable'[Date], d )
+			            VAR IsHol_d  = LOOKUPVALUE ( 'DateTable'[IsHoliday], 'DateTable'[Date], d )
+			            RETURN
+			                SWITCH (
+			                    TRUE(),
+			                    IsHol_d, 0,
+			
+			                    Contract = "Full Time" && ( DayNum_d = 6 || DayNum_d = 7 ), 0,
+			                    Contract = "Full Time" && DayNum_d = 5, 7,
+			                    Contract = "Full Time", 7.5,
+			
+			                    Contract = "PT1" && ( DayNum_d = 1 || DayNum_d = 6 || DayNum_d = 7 ), 0,
+			                    Contract = "PT1" && DayNum_d = 5, 7,
+			                    Contract = "PT1" && ( DayNum_d = 2 || DayNum_d = 3 || DayNum_d = 4 ), 7.5,
+			
+			                    Contract = "PT2" && ( DayNum_d = 5 || DayNum_d = 6 || DayNum_d = 7 ), 0,
+			                    Contract = "PT2" && DayNum_d = 1, 4,
+			                    Contract = "PT2" && ( DayNum_d = 2 || DayNum_d = 3 || DayNum_d = 4 ), 7.5,
+			
+			                    Contract = "PT3" && ( DayNum_d = 5 || DayNum_d = 6 || DayNum_d = 7 ), 0,
+			                    Contract = "PT3" && ( DayNum_d = 1 || DayNum_d = 2 || DayNum_d = 3 || DayNum_d = 4 ), 7.5,
+			
+			                    0
+			                ),
+			            0
+			        )
+			
+			    VAR OnStart = NOT ISBLANK ( d ) && d = sd
+			
+			    RETURN
+			        IF (
+			            ShouldSpread,
+			            IF ( TotalWeight > 0, AL * DIVIDE ( DayWeight, TotalWeight, 0 ), 0 ),
+			            IF ( Cat = "personal",
+			                 IF ( OnStart, TDec, 0 ),
+			                 IF ( OnStart, AL, 0 )
+			            )
+			        )
+			)
+			
+			```
+		formatString: #,0.00
+		lineageTag: a22ffd23-a75a-4b0c-befa-1ab179580872
+
+		changedProperty = IsHidden
+
+	measure 'Debug – Maya AL Allocation (Template)' = ```
+			
+			VAR d = SELECTEDVALUE ( 'DateTable'[Date] )
+			VAR TargetID = "Maya Wannop|Annual Leave|28/07/2025|00:00|00:00|02/08/2025|Personal"
+			
+			VAR EID   = TargetID
+			VAR Cat   = LOWER ( LOOKUPVALUE ( 'Calender'[Categories], 'Calender'[Entry ID], EID ) )
+			VAR TDec  = COALESCE ( LOOKUPVALUE ( 'Calender'[Time Spent Decimal], 'Calender'[Entry ID], EID ), 0 )
+			VAR AL    = COALESCE ( LOOKUPVALUE ( 'Calender'[Time Calcuation AL], 'Calender'[Entry ID], EID ), 0 )
+			VAR sd    = LOOKUPVALUE ( 'Calender'[Start Date], 'Calender'[Entry ID], EID )
+			VAR edRaw = LOOKUPVALUE ( 'Calender'[End Date],   'Calender'[Entry ID], EID )
+			VAR st    = LOOKUPVALUE ( 'Calender'[Start Time], 'Calender'[Entry ID], EID )
+			VAR et    = LOOKUPVALUE ( 'Calender'[End Time],   'Calender'[Entry ID], EID )
+			
+			VAR IsAllDay = NOT ISBLANK ( sd ) && NOT ISBLANK ( edRaw ) && sd <> edRaw && st = TIME ( 0,0,0 ) && et = TIME ( 0,0,0 )
+			VAR ed       = IF ( IsAllDay, edRaw - 1, edRaw )
+			
+			VAR StaffName = LOOKUPVALUE ( 'Calender'[Staff Name], 'Calender'[Entry ID], EID )
+			VAR Contract  = COALESCE ( LOOKUPVALUE ( 'StaffSchedule'[ContractType], 'StaffSchedule'[Staff Name], StaffName ), "Full Time" )
+			
+			VAR ShouldSpread = Cat = "personal" && ABS ( TDec ) < 1e-6 && NOT ISBLANK ( sd ) && NOT ISBLANK ( ed )
+			VAR InSpan       = ShouldSpread && NOT ISBLANK ( d ) && d >= sd && d <= ed
+			
+			/* Map Mon=1 … Sun=7. Adjust templates if needed. */
+			VAR DayNum_d = LOOKUPVALUE ( 'DateTable'[DayOfWeek], 'DateTable'[Date], d )
+			VAR IsHol_d  = LOOKUPVALUE ( 'DateTable'[IsHoliday], 'DateTable'[Date], d )
+			
+			VAR DayHrs_d =
+			    IF (
+			        IsHol_d, 0,
+			        SWITCH (
+			            TRUE(),
+			            Contract = "Full Time", SWITCH ( DayNum_d, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 ),
+			            Contract = "PT1",       SWITCH ( DayNum_d, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 ),
+			            Contract = "PT2",       SWITCH ( DayNum_d, 1,4.0, 2,7.5, 3,7.5, 4,7.5, 0 ),
+			            Contract = "PT3",       SWITCH ( DayNum_d, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 0 ),
+			            /* default template */
+			            SWITCH ( DayNum_d, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 )
+			        )
+			    )
+			
+			VAR TotalWeight =
+			    IF (
+			        ShouldSpread,
+			        CALCULATE (
+			            SUMX (
+			                VALUES ( 'DateTable'[Date] ),
+			                VAR DayNum_x = SELECTEDVALUE ( 'DateTable'[DayOfWeek] )
+			                VAR IsHol_x  = SELECTEDVALUE ( 'DateTable'[IsHoliday], FALSE() )
+			                RETURN
+			                    IF (
+			                        IsHol_x, 0,
+			                        SWITCH (
+			                            TRUE(),
+			                            Contract = "Full Time", SWITCH ( DayNum_x, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 ),
+			                            Contract = "PT1",       SWITCH ( DayNum_x, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 ),
+			                            Contract = "PT2",       SWITCH ( DayNum_x, 1,4.0, 2,7.5, 3,7.5, 4,7.5, 0 ),
+			                            Contract = "PT3",       SWITCH ( DayNum_x, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 0 ),
+			                            SWITCH ( DayNum_x, 1,7.5, 2,7.5, 3,7.5, 4,7.5, 5,7.0, 0 )
+			                        )
+			                    )
+			            ),
+			            REMOVEFILTERS ( 'DateTable' ),
+			            'DateTable'[Date] >= sd,
+			            'DateTable'[Date] <= ed
+			        ),
+			        0
+			    )
+			
+			RETURN
+			IF (
+			    ShouldSpread,
+			    IF ( InSpan && TotalWeight > 0, AL * DIVIDE ( DayHrs_d, TotalWeight, 0 ), 0 ),
+			    IF ( d = sd, TDec, 0 )
+			)
+			
+			```
+		formatString: #,0.00
+		lineageTag: 38a79206-cd0d-496a-8737-561a9507b919
+
+	column 'Staff Name'
+		dataType: string
+		lineageTag: f20b11f5-2c6b-41a0-b711-6fd49fef908b
+		summarizeBy: none
+		sourceColumn: Staff Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subject
+		dataType: string
+		lineageTag: c1d2dbca-226e-489a-a0d8-b0d52adad22d
+		summarizeBy: none
+		sourceColumn: Subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 98e08f01-7ded-4fdf-8e7a-305e81b75f48
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d04a0398-790a-489a-8b80-72ae40deeb5d
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 830d052b-39ee-48b4-a776-9cccfd48b307
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 327e4e38-356a-4e43-8d09-8297da3b3980
+		summarizeBy: none
+		sourceColumn: End Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Time Spent'
+		dataType: double
+		lineageTag: 9bedea57-a2b8-4df5-b65c-aefbac5f7475
+		summarizeBy: sum
+		sourceColumn: Time Spent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Time Spent Decimal'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 57f39427-78eb-427d-8e12-9c0134686574
+		summarizeBy: sum
+		sourceColumn: Time Spent Decimal
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categories
+		dataType: string
+		lineageTag: ee140647-c168-4e08-b785-c546f87c9043
+		summarizeBy: none
+		sourceColumn: Categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Calcuation AL'
+		dataType: decimal
+		formatString: 0.00
+		lineageTag: 8ff661a6-728d-4b96-a715-eb28b89e055b
+		summarizeBy: sum
+		sourceColumn: Time Calcuation AL
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entry ID'
+		dataType: string
+		lineageTag: 46e6e583-1c80-448e-966c-10fc03adbfef
+		summarizeBy: none
+		sourceColumn: Entry ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calender = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    Calendar_Table = Source{[Item="Calendar",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Calendar_Table,{{"Staff Name", type text}, {"Subject", type text}, {"Start Date", type date}, {"Start Time", type time}, {"End Time", type time}, {"End Date", type date}, {"Categories", type text}, {"Time Spent", type time}, {"Time Spent Decimal", type number}, {"Time Calcuation AL", type number}}),
+				    #"Trimmed Text" = Table.TransformColumns(Table.TransformColumnTypes(#"Changed Type", {{"Start Date", type text}, {"Start Time", type text}, {"End Time", type text}, {"End Date", type text}, {"Time Spent", type text}, {"Time Spent Decimal", type text}, {"Time Calcuation AL", type text}}, "en-GB"),{{"Staff Name", Text.Trim, type text}, {"Subject", Text.Trim, type text}, {"Start Date", Text.Trim, type text}, {"Start Time", Text.Trim, type text}, {"End Time", Text.Trim, type text}, {"End Date", Text.Trim, type text}, {"Categories", Text.Trim, type text}, {"Time Spent", Text.Trim, type text}, {"Time Spent Decimal", Text.Trim, type text}, {"Time Calcuation AL", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Staff Name", Text.Clean, type text}, {"Subject", Text.Clean, type text}, {"Start Date", Text.Clean, type text}, {"Start Time", Text.Clean, type text}, {"End Time", Text.Clean, type text}, {"End Date", Text.Clean, type text}, {"Categories", Text.Clean, type text}, {"Time Spent", Text.Clean, type text}, {"Time Spent Decimal", Text.Clean, type text}, {"Time Calcuation AL", Text.Clean, type text}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Cleaned Text",{{"Staff Name", type text}, {"Subject", type text}, {"Start Date", type date}, {"Start Time", type time}, {"End Time", type time}, {"End Date", type date}, {"Categories", type text}, {"Time Spent", type duration}, {"Time Spent Decimal", type number}, {"Time Calcuation AL", type number}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type1", "Entry ID", each Text.Combine({[Staff Name], [Subject], Text.From([Start Date], "en-GB"), Text.From([Start Time], "en-GB"), Text.From([End Time], "en-GB"), Text.From([End Date], "en-GB"), [Categories]}, "|"), type text)
+				in
+				    #"Inserted Merged Column"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

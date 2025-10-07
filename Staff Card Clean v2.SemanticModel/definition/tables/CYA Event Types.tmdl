@@ -1,0 +1,169 @@
+table 'CYA Event Types'
+	lineageTag: 5c6de195-b417-4c9d-8a3b-6b4528ce63c4
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: e4d1552c-9396-4645-a5a4-15435c1d5f55
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: 17528b5c-db86-4281-a1e3-04596756583d
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 13b59641-262e-4286-aedd-f6c3e67dd39c
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: aac0f0cf-f747-4344-8f3c-1079e778262d
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event ID'
+		dataType: string
+		lineageTag: a2101fbe-6f0e-4030-85ba-d0d5991089b3
+		summarizeBy: none
+		sourceColumn: Event ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dfad45f5-4c12-41ab-9e5c-e812c1845ed8
+		summarizeBy: none
+		sourceColumn: Event date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Expiry date'
+		dataType: string
+		lineageTag: af8b0aff-2403-43c9-9d2e-3566f6b77293
+		summarizeBy: none
+		sourceColumn: Expiry date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event type'
+		dataType: string
+		lineageTag: 55e32240-b86f-4968-a884-4ee6c947c08d
+		summarizeBy: none
+		sourceColumn: Event type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event value'
+		dataType: string
+		lineageTag: 647be72b-e7fe-48d1-809e-e19a94dc423a
+		summarizeBy: none
+		sourceColumn: Event value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 8682abdc-2ffb-4181-998c-6b550381edf9
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 2c074f57-dad6-4d8f-97d0-4a9d78fc76d5
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 41b9c83b-71ea-45f0-a8df-9a14be083bd8
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Group'
+		dataType: string
+		lineageTag: 0fff3e71-3483-4b9a-9952-6be65203d8ba
+		summarizeBy: none
+		sourceColumn: Activity Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Type'
+		dataType: string
+		lineageTag: d0bd588e-ded4-468e-b8aa-4a8741114329
+		summarizeBy: none
+		sourceColumn: Activity Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user first name'
+		dataType: string
+		lineageTag: 6e6e76df-8a92-4be8-8f75-051f6c18a171
+		summarizeBy: none
+		sourceColumn: Recording user first name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user last name'
+		dataType: string
+		lineageTag: b2cfbbfc-8f4f-4256-a9a6-b905ad461568
+		summarizeBy: none
+		sourceColumn: Recording user last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date recorded'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b25d9dd6-e7bc-4078-97b9-438b8345ce65
+		summarizeBy: none
+		sourceColumn: Date recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Time recorded'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 105e9d47-8c2e-4099-90e7-3114ee92a568
+		summarizeBy: none
+		sourceColumn: Time recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition 'CYA Event Types' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOTLE, BFTLE, InfraTLE}),
+				    #"Removed Duplicates" = Table.Distinct(Source, {"Upshot ID", "Event date", "Event type"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

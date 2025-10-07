@@ -1,0 +1,300 @@
+table 'TE - Data'
+	lineageTag: 2f6bf492-f9af-4288-9eb1-9016603547c3
+
+	measure 'Count of Event value (Latest per Attendee)' = ```
+			
+			VAR ThisValue = SELECTEDVALUE('CYA TLE (2)'[Event value])
+			
+			-- one row per attendee in current slicers (not restricted by axis bin)
+			VAR LatestPerAttendee =
+			    ADDCOLUMNS(
+			        VALUES('CYA TLE (2)'[Upshot ID]),
+			        "LatestDate",
+			            CALCULATE(
+			                MAX('CYA TLE (2)'[Event date]),
+			                REMOVEFILTERS('CYA TLE (2)'[Event value])   -- ignore axis filter
+			            )
+			    )
+			
+			-- attach the Event value that occurred on that LatestDate
+			VAR LatestWithValue =
+			    ADDCOLUMNS(
+			        LatestPerAttendee,
+			        "ValueAtLatest",
+			        VAR AID = [Upshot ID]
+			        VAR LD  = [LatestDate]
+			        RETURN
+			            CALCULATE(
+			                MAXX(
+			                    FILTER(
+			                        'CYA TLE (2)',
+			                        'CYA TLE (2)'[Upshot ID] = AID &&
+			                        'CYA TLE (2)'[Event Date] = LD
+			                    ),
+			                    'CYA TLE (2)'[Event value]
+			                ),
+			                REMOVEFILTERS('CYA TLE (2)'[Event value])   -- ignore axis filter
+			            )
+			    )
+			RETURN
+			COUNTROWS( FILTER(LatestWithValue, [ValueAtLatest] = ThisValue) )
+			
+			```
+		formatString: 0
+		lineageTag: 7b56eb4e-2aeb-44b2-8e2d-d21c9d6f7632
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 2d99fe14-edbe-4e6f-83c0-e4285067b3f1
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: b6d1142c-7952-4c0c-ab4b-efe1f74a6f9f
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: b1eb8f03-2575-4454-804b-c29779198027
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 751b8b25-dc96-453f-bc0d-0b5d46dc38bc
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event ID'
+		dataType: string
+		lineageTag: 1f814b5d-825e-40a2-b1c9-35fe21c724ad
+		summarizeBy: none
+		sourceColumn: Event ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: ffbf2cc3-f28e-46d8-9194-26818f9b611b
+		summarizeBy: none
+		sourceColumn: Event date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Expiry date'
+		dataType: string
+		lineageTag: c707f14d-3153-42f3-875c-3a7757a9bfc0
+		summarizeBy: none
+		sourceColumn: Expiry date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event type'
+		dataType: string
+		lineageTag: 01d9b857-b545-43ab-8e4a-6a813e16ef18
+		summarizeBy: none
+		sourceColumn: Event type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event value'
+		dataType: string
+		lineageTag: 872f41ad-ffc7-4a96-90af-7662da458f7a
+		summarizeBy: none
+		sourceColumn: Event value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 635f4919-ba95-4b15-a1b8-d9d24104302e
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: 45d3ab1f-4cb1-4652-9c1e-3d8c48d28de5
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: d0b8c9eb-6bae-499d-ba54-dd7605329d8f
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Group'
+		dataType: string
+		lineageTag: acd67f70-c279-40e7-af7d-dc0874b83338
+		summarizeBy: none
+		sourceColumn: Activity Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity Type'
+		dataType: string
+		lineageTag: d77acee2-3021-40c3-bcf6-7ac77841e2a2
+		summarizeBy: none
+		sourceColumn: Activity Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user first name'
+		dataType: string
+		lineageTag: d5d1bc55-371b-41db-95de-a4a8631fab27
+		summarizeBy: none
+		sourceColumn: Recording user first name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording user last name'
+		dataType: string
+		lineageTag: 0ee08970-7b16-4b45-897f-b6e26decfbb8
+		summarizeBy: none
+		sourceColumn: Recording user last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date recorded'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af9dcf84-ba9f-4afd-bfc4-349d08f74a89
+		summarizeBy: none
+		sourceColumn: Date recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Time recorded'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 7da7a776-d4b5-45ea-a49b-9a52268dae20
+		summarizeBy: none
+		sourceColumn: Time recorded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Recording User Full name'
+		dataType: string
+		lineageTag: 503299c4-0ca7-4e79-b0b6-a4769d8c9931
+		summarizeBy: none
+		sourceColumn: Recording User Full name
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyDate
+		dataType: string
+		lineageTag: a2a8165a-ca05-4384-801c-fd212dfea734
+		summarizeBy: none
+		sourceColumn: _KeyDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyAct
+		dataType: string
+		lineageTag: 3d3051a8-83f5-4f75-ba05-7161596762af
+		summarizeBy: none
+		sourceColumn: _KeyAct
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyNotes
+		dataType: string
+		lineageTag: 7fcce4e5-42b2-47e4-a872-f95122204f71
+		summarizeBy: none
+		sourceColumn: _KeyNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyProj
+		dataType: string
+		lineageTag: aa8c686c-cba0-41d2-8ffa-e4c8dcb022ff
+		summarizeBy: none
+		sourceColumn: _KeyProj
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFull
+		dataType: string
+		lineageTag: 11471a94-e33e-43ff-9037-097ac8568d6d
+		summarizeBy: none
+		sourceColumn: _AttendeeFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFullN
+		dataType: string
+		lineageTag: 11faae18-215b-42f0-a8df-80697ff64b62
+		summarizeBy: none
+		sourceColumn: _AttendeeFullN
+
+		annotation SummarizationSetBy = Automatic
+
+	column _IsStaffAttendee
+		dataType: string
+		lineageTag: d222ee8a-a9c1-4d33-9570-88d1694c8030
+		summarizeBy: none
+		sourceColumn: _IsStaffAttendee
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SessionKey
+		dataType: string
+		lineageTag: fa94893f-67a3-45aa-a490-30813080cfcc
+		summarizeBy: none
+		sourceColumn: _SessionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Youth Worker'
+		dataType: string
+		lineageTag: 769b1a15-36c4-472a-8e43-73b99c0528a1
+		summarizeBy: none
+		sourceColumn: Session Youth Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'TE - Data' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"TE - Data_Sheet" = Source{[Item="TE - Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"TE - Data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Attendee ID", Int64.Type}, {"First name", type text}, {"Last name", type text}, {"Status", type text}, {"Event ID", Int64.Type}, {"Event date", type date}, {"Expiry date", type any}, {"Event type", type text}, {"Event value", type text}, {"Notes", type text}, {"Project", type text}, {"Activity", type text}, {"Activity Group", type text}, {"Activity Type", type text}, {"Recording user first name", type text}, {"Recording user last name", type text}, {"Date recorded", type date}, {"Time recorded", type datetime}, {"Recording User Full name", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Attendee ID] <> null and [Attendee ID] <> ""),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Filtered Rows", {{"Session Youth Workers", Splitter.SplitTextByDelimiter(" and ", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Session Youth Workers"),
+				    #"Filtered Rows1" = Table.SelectRows(#"Split Column by Delimiter", each [_AttendeeFull] <> "Callum Hyslop" and [_AttendeeFull] <> "Claire Price" and [_AttendeeFull] <> "Conor Johnston" and [_AttendeeFull] <> "Damien Morris" and [_AttendeeFull] <> "Dana Hawkins" and [_AttendeeFull] <> "Emma McAvoy" and [_AttendeeFull] <> "Eve Hampson" and [_AttendeeFull] <> "Isabel Savage" and [_AttendeeFull] <> "Jade Maguire" and [_AttendeeFull] <> "Jamie Harrison" and [_AttendeeFull] <> "Jolene Barr" and [_AttendeeFull] <> "Kim Kimberlee-Smith" and [_AttendeeFull] <> "Maya Wannop" and [_AttendeeFull] <> "Michelle Brunskill" and [_AttendeeFull] <> "Rosie Barton" and [_AttendeeFull] <> "Rosie Murdoch" and [_AttendeeFull] <> "Scott Ferguson" and [_AttendeeFull] <> "Shannon Rush" and [_AttendeeFull] <> "Anna Witty"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Session Youth Workers", "Session Youth Worker"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns",{{"Attendee ID", type text}, {"First name", type text}, {"Last name", type text}, {"Status", type text}, {"Event ID", type text}, {"Event type", type text}, {"Event value", type text}, {"Notes", type text}, {"Project", type text}, {"Activity", type text}, {"Activity Group", type text}, {"Activity Type", type text}, {"Recording user first name", type text}, {"Recording user last name", type text}, {"Recording User Full name", type text}, {"_KeyDate", type text}, {"_KeyAct", type text}, {"_KeyNotes", type text}, {"_KeyProj", type text}, {"_AttendeeFull", type text}, {"_AttendeeFullN", type text}, {"_IsStaffAttendee", type text}, {"_SessionKey", type text}, {"Session Youth Worker", type text}, {"Time recorded", type time}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

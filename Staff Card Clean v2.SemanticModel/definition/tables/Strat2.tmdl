@@ -1,0 +1,790 @@
+table Strat2
+	lineageTag: 023dce6c-5c8a-443e-9deb-ade55bb59f47
+
+	column 'Strat '
+		dataType: string
+		lineageTag: 6164c1dd-8b6b-4c77-bdba-003b9b7a1817
+		summarizeBy: none
+		sourceColumn: "Strat "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Outcome'
+		dataType: string
+		lineageTag: 1e73cb5e-06b1-4793-9cd4-22b1789f4177
+		summarizeBy: none
+		sourceColumn: Global Outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: a4a4c2fa-a040-40d6-aedf-122f7b8e0c22
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: 07cad5c3-1b92-4707-a159-60288d566a40
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project
+		dataType: string
+		lineageTag: fbdcfd1a-dac5-4af1-8df5-12f6a6a893bc
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique attendees'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a2c2074-b145-4f66-a3e2-f1bed0114cb1
+		summarizeBy: sum
+		sourceColumn: Unique attendees
+
+		annotation SummarizationSetBy = Automatic
+
+	column Male
+		dataType: int64
+		formatString: 0
+		lineageTag: 229c5168-c156-4f3e-851a-af24b75cb188
+		summarizeBy: sum
+		sourceColumn: Male
+
+		annotation SummarizationSetBy = Automatic
+
+	column Female
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a01abbb-fbfb-4794-8a8b-36e410bbf657
+		summarizeBy: sum
+		sourceColumn: Female
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transgender
+		dataType: int64
+		formatString: 0
+		lineageTag: 43d25d3a-8dbf-4519-b106-e0ce879f34a4
+		summarizeBy: sum
+		sourceColumn: Transgender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intersex
+		dataType: int64
+		formatString: 0
+		lineageTag: 0575e3c5-b8c5-405a-91d7-a24a9297fa84
+		summarizeBy: sum
+		sourceColumn: Intersex
+
+		annotation SummarizationSetBy = Automatic
+
+	column Non-binary
+		dataType: int64
+		formatString: 0
+		lineageTag: 16d66e1b-d865-4dba-a710-1f534f0ac4e1
+		summarizeBy: sum
+		sourceColumn: Non-binary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agender
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bba5733-addd-4703-b69b-195348f7ba3d
+		summarizeBy: sum
+		sourceColumn: Agender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender fluid'
+		dataType: int64
+		formatString: 0
+		lineageTag: 97b91724-76bf-4857-8c76-3523267d35b2
+		summarizeBy: sum
+		sourceColumn: Gender fluid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender neutral'
+		dataType: int64
+		formatString: 0
+		lineageTag: 91e75946-7801-4190-aef1-84c3d08e627f
+		summarizeBy: sum
+		sourceColumn: Gender neutral
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genderqueer
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ef9efd0-3689-4c86-b474-ea82a688fc2a
+		summarizeBy: sum
+		sourceColumn: Genderqueer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neutrois
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e9b3e00-3ab8-4625-8126-9e1016366426
+		summarizeBy: sum
+		sourceColumn: Neutrois
+
+		annotation SummarizationSetBy = Automatic
+
+	column Questioning
+		dataType: int64
+		formatString: 0
+		lineageTag: 767396b4-e055-4e99-93fa-da4810787d74
+		summarizeBy: sum
+		sourceColumn: Questioning
+
+		annotation SummarizationSetBy = Automatic
+
+	column Other
+		dataType: int64
+		formatString: 0
+		lineageTag: b2162639-539d-4f65-a9f9-94366c0e1637
+		summarizeBy: sum
+		sourceColumn: Other
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prefer to self describe'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c158383-b02a-4921-ad0f-20b969ec53cf
+		summarizeBy: sum
+		sourceColumn: Prefer to self describe
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prefer not to say'
+		dataType: int64
+		formatString: 0
+		lineageTag: fccbfb91-6c9a-4fe5-965e-c8c7ad6074ab
+		summarizeBy: sum
+		sourceColumn: Prefer not to say
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Not provided'
+		dataType: int64
+		formatString: 0
+		lineageTag: 48b4d468-6db5-4f17-96ee-0cabdf036a3b
+		summarizeBy: sum
+		sourceColumn: Not provided
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0-5
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ca6a961-1658-44b0-8880-d91ad81095a9
+		summarizeBy: sum
+		sourceColumn: 0-5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 6-10
+		dataType: int64
+		formatString: 0
+		lineageTag: a1c8e65c-fc1f-4bf9-ab4c-9aa1846bd9bc
+		summarizeBy: sum
+		sourceColumn: 6-10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 11-15
+		dataType: int64
+		formatString: 0
+		lineageTag: 0448844c-4776-49df-9094-54bcbeb2265a
+		summarizeBy: sum
+		sourceColumn: 11-15
+
+		annotation SummarizationSetBy = Automatic
+
+	column 16-20
+		dataType: int64
+		formatString: 0
+		lineageTag: 1688a8a4-1e67-45ce-99ed-c44519a5e648
+		summarizeBy: sum
+		sourceColumn: 16-20
+
+		annotation SummarizationSetBy = Automatic
+
+	column 21-25
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d440659-b6cc-4a8d-ae6f-e035c2231328
+		summarizeBy: sum
+		sourceColumn: 21-25
+
+		annotation SummarizationSetBy = Automatic
+
+	column 26-29
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e1c8d0b-a15a-47f4-bb31-e9351f5cfb88
+		summarizeBy: sum
+		sourceColumn: 26-29
+
+		annotation SummarizationSetBy = Automatic
+
+	column 30-39
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bc3f8e5-b17c-44a8-8a89-95bd4ca87ed6
+		summarizeBy: sum
+		sourceColumn: 30-39
+
+		annotation SummarizationSetBy = Automatic
+
+	column 40-49
+		dataType: int64
+		formatString: 0
+		lineageTag: 422268f7-13fe-4dff-b304-0b831a2e0335
+		summarizeBy: sum
+		sourceColumn: 40-49
+
+		annotation SummarizationSetBy = Automatic
+
+	column 50-59
+		dataType: int64
+		formatString: 0
+		lineageTag: a5b474b1-b459-4f95-b088-474dbcca35c7
+		summarizeBy: sum
+		sourceColumn: 50-59
+
+		annotation SummarizationSetBy = Automatic
+
+	column 60
+		dataType: int64
+		formatString: 0
+		lineageTag: 45bf67de-50bf-4024-ba0b-c15ba3649efa
+		summarizeBy: sum
+		sourceColumn: 60
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No data available'
+		dataType: int64
+		formatString: 0
+		lineageTag: 72a2a286-06b3-4c71-9acc-71ad958d5850
+		summarizeBy: sum
+		sourceColumn: No data available
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White English'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b84db3d-3040-471a-8dae-6082ed1463cb
+		summarizeBy: sum
+		sourceColumn: White English
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White Northern Irish'
+		dataType: int64
+		formatString: 0
+		lineageTag: 295280d7-3f27-46f5-9f12-aa50e433caba
+		summarizeBy: sum
+		sourceColumn: White Northern Irish
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White Scottish'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36fe3b5b-4b64-4802-83dd-a70e70f121f8
+		summarizeBy: sum
+		sourceColumn: White Scottish
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White Welsh'
+		dataType: int64
+		formatString: 0
+		lineageTag: d0b4e22b-5a22-4fca-b62b-578e7524fec6
+		summarizeBy: sum
+		sourceColumn: White Welsh
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White British'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2928d5cf-5048-4e7c-8550-af2b4371015f
+		summarizeBy: sum
+		sourceColumn: White British
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White Irish'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b6852a3-e715-4e10-b5f3-7b8ab1d56879
+		summarizeBy: sum
+		sourceColumn: White Irish
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White Eastern European'
+		dataType: int64
+		formatString: 0
+		lineageTag: 31be4af1-08a7-4b39-be9a-e8b7e4eea533
+		summarizeBy: sum
+		sourceColumn: White Eastern European
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other White background'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c423141-0194-461f-b474-a491d8487cd5
+		summarizeBy: sum
+		sourceColumn: Other White background
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White and Black Caribbean'
+		dataType: int64
+		formatString: 0
+		lineageTag: d488a9c8-4a9b-4c2f-a4f5-00d95487e3aa
+		summarizeBy: sum
+		sourceColumn: White and Black Caribbean
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White and Black African'
+		dataType: int64
+		formatString: 0
+		lineageTag: 70ea22fc-55ed-4dc5-8368-97e61c588528
+		summarizeBy: sum
+		sourceColumn: White and Black African
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White and Black British'
+		dataType: int64
+		formatString: 0
+		lineageTag: eaae6d44-eb29-45f1-a063-b31be9900fb2
+		summarizeBy: sum
+		sourceColumn: White and Black British
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'White and Asian'
+		dataType: int64
+		formatString: 0
+		lineageTag: c9aace90-3f25-4bf1-93c5-1baad1a92872
+		summarizeBy: sum
+		sourceColumn: White and Asian
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Mixed background'
+		dataType: int64
+		formatString: 0
+		lineageTag: 119c44b7-455b-4e2c-b77d-c674c26b64ec
+		summarizeBy: sum
+		sourceColumn: Other Mixed background
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indian
+		dataType: int64
+		formatString: 0
+		lineageTag: 25af3e99-a147-4037-8789-c6415f40fbcb
+		summarizeBy: sum
+		sourceColumn: Indian
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pakistani
+		dataType: int64
+		formatString: 0
+		lineageTag: b30dd02a-07b0-421b-a134-224f24a39c8e
+		summarizeBy: sum
+		sourceColumn: Pakistani
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bangladeshi
+		dataType: int64
+		formatString: 0
+		lineageTag: c2231566-5970-44db-b8bb-774a18c605e0
+		summarizeBy: sum
+		sourceColumn: Bangladeshi
+
+		annotation SummarizationSetBy = Automatic
+
+	column Chinese
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b4df72f-49f8-4be4-96da-54024a07daf5
+		summarizeBy: sum
+		sourceColumn: Chinese
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Asian background'
+		dataType: int64
+		formatString: 0
+		lineageTag: 34000321-ca91-41f6-98b4-5c93d32aed67
+		summarizeBy: sum
+		sourceColumn: Other Asian background
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Black Caribbean'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4fbddc0-7f19-40d3-b543-4063319d281b
+		summarizeBy: sum
+		sourceColumn: Black Caribbean
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Black African'
+		dataType: int64
+		formatString: 0
+		lineageTag: 411c6daa-3d8b-4167-84eb-9f709d028fd3
+		summarizeBy: sum
+		sourceColumn: Black African
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Black British'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0646a433-13e8-408f-960d-b08c3ca24439
+		summarizeBy: sum
+		sourceColumn: Black British
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Black background'
+		dataType: int64
+		formatString: 0
+		lineageTag: be794e0c-9238-4e42-a09e-30e647cfaaa7
+		summarizeBy: sum
+		sourceColumn: Other Black background
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arab
+		dataType: int64
+		formatString: 0
+		lineageTag: 6306c076-fb11-42b2-9971-e46990998a3e
+		summarizeBy: sum
+		sourceColumn: Arab
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gypsy/Romany/Irish Traveller'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac9eb247-20d5-4d9b-ba35-f2dd7c82e512
+		summarizeBy: sum
+		sourceColumn: Gypsy/Romany/Irish Traveller
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other ethnic group'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81539535-e788-4e30-bdf5-c611540cd0c2
+		summarizeBy: sum
+		sourceColumn: Other ethnic group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prefer not to say_1'
+		dataType: int64
+		formatString: 0
+		lineageTag: cdbc5f92-f308-45c9-b3bf-df111d9d3ff8
+		summarizeBy: sum
+		sourceColumn: Prefer not to say_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Not provided_2'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6746475b-2231-4bad-b20c-c25170cdda6f
+		summarizeBy: sum
+		sourceColumn: Not provided_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No data available_3'
+		dataType: int64
+		formatString: 0
+		lineageTag: ef829736-8fc3-4c71-a4ae-9393c95be05e
+		summarizeBy: sum
+		sourceColumn: No data available_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0-10
+		dataType: int64
+		formatString: 0
+		lineageTag: 77ab48eb-d77d-4b40-b46d-382528ff5a3c
+		summarizeBy: sum
+		sourceColumn: 0-10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 10-20
+		dataType: int64
+		formatString: 0
+		lineageTag: 264284fe-bb2a-4bf9-b205-c43f59bb67ff
+		summarizeBy: sum
+		sourceColumn: 10-20
+
+		annotation SummarizationSetBy = Automatic
+
+	column 20-30
+		dataType: int64
+		formatString: 0
+		lineageTag: 76a06c44-6266-473d-9335-cc4a5502fbce
+		summarizeBy: sum
+		sourceColumn: 20-30
+
+		annotation SummarizationSetBy = Automatic
+
+	column 30-40
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e744e99-3fe9-46b9-a14b-e2c670eb2cb8
+		summarizeBy: sum
+		sourceColumn: 30-40
+
+		annotation SummarizationSetBy = Automatic
+
+	column 40-50
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d17e012-9a36-48a2-ab70-bd3f3892fb74
+		summarizeBy: sum
+		sourceColumn: 40-50
+
+		annotation SummarizationSetBy = Automatic
+
+	column 50-60
+		dataType: int64
+		formatString: 0
+		lineageTag: fcdd46f8-d2b5-4d12-928b-6d352f6f9bae
+		summarizeBy: sum
+		sourceColumn: 50-60
+
+		annotation SummarizationSetBy = Automatic
+
+	column 60-70
+		dataType: int64
+		formatString: 0
+		lineageTag: ed9c4ef8-450d-43e4-b171-eef78c3104a8
+		summarizeBy: sum
+		sourceColumn: 60-70
+
+		annotation SummarizationSetBy = Automatic
+
+	column 70-80
+		dataType: int64
+		formatString: 0
+		lineageTag: 41330050-3a75-43da-9c24-387d36f49f94
+		summarizeBy: sum
+		sourceColumn: 70-80
+
+		annotation SummarizationSetBy = Automatic
+
+	column 80-90
+		dataType: int64
+		formatString: 0
+		lineageTag: b5589bd2-1805-4ffc-b9ff-2a0b3480e8d7
+		summarizeBy: sum
+		sourceColumn: 80-90
+
+		annotation SummarizationSetBy = Automatic
+
+	column 90-100
+		dataType: int64
+		formatString: 0
+		lineageTag: edb088db-76c6-45ed-8918-d62733f0e2f0
+		summarizeBy: sum
+		sourceColumn: 90-100
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'No data available_4'
+		dataType: int64
+		formatString: 0
+		lineageTag: c18f2ecc-5bcd-4ceb-99d3-f90d57f00d7a
+		summarizeBy: sum
+		sourceColumn: No data available_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendances - Total'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4a57dee-2448-4fc6-a903-9b808003b980
+		summarizeBy: sum
+		sourceColumn: Attendances - Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendances - Registers'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8418a040-3333-4d3e-8535-8bd7fd4388e8
+		summarizeBy: sum
+		sourceColumn: Attendances - Registers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendances - Headcount'
+		dataType: int64
+		formatString: 0
+		lineageTag: a094cc11-368a-470f-8383-51d0eb6d6ba1
+		summarizeBy: sum
+		sourceColumn: Attendances - Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sessions delivered - Total'
+		dataType: int64
+		formatString: 0
+		lineageTag: ca1f973d-4cfe-4d49-a7e3-1be891870b12
+		summarizeBy: sum
+		sourceColumn: Sessions delivered - Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sessions delivered - Registers'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ef08dd9-1f80-4d54-9040-c7df5c2deb86
+		summarizeBy: sum
+		sourceColumn: Sessions delivered - Registers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sessions delivered - Headcount'
+		dataType: int64
+		formatString: 0
+		lineageTag: b698829f-0169-418a-aef3-1ff0aab2c2c8
+		summarizeBy: sum
+		sourceColumn: Sessions delivered - Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session hours - Total'
+		dataType: double
+		lineageTag: f68182d1-5930-4451-af49-b854766fad07
+		summarizeBy: sum
+		sourceColumn: Session hours - Total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Session hours - Registers'
+		dataType: double
+		lineageTag: b58c010f-159c-4cb9-a6d3-2244f23aac92
+		summarizeBy: sum
+		sourceColumn: Session hours - Registers
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sessions hours - Headcount'
+		dataType: int64
+		formatString: 0
+		lineageTag: ca60d645-5de0-44d1-a621-8377a5ee240d
+		summarizeBy: sum
+		sourceColumn: Sessions hours - Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact hours'
+		dataType: double
+		lineageTag: d29bfe31-abe5-4e94-9467-ccfb5a6c3128
+		summarizeBy: sum
+		sourceColumn: Contact hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Contact hours - Registers'
+		dataType: double
+		lineageTag: 5fc29002-0bfd-4bb1-a41d-5bbd1b006ffa
+		summarizeBy: sum
+		sourceColumn: Contact hours - Registers
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Contact hours - Headcount'
+		dataType: int64
+		formatString: 0
+		lineageTag: 31beb3c5-f7c9-4d39-9a71-b795c7a6dcb9
+		summarizeBy: sum
+		sourceColumn: Contact hours - Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Outcome Code'
+		dataType: string
+		lineageTag: e980a514-05ad-489d-a4ab-a64e121792ba
+		summarizeBy: none
+		sourceColumn: Global Outcome Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month of Strat'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ce946a3-e2ea-4122-8b53-5560f5eaecd6
+		summarizeBy: none
+		sourceColumn: Month of Strat
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Strat2 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    Strat2_Sheet = Source{[Item="Strat2",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Strat2_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}, {"Column27", type any}, {"Column28", type any}, {"Column29", type any}, {"Column30", type any}, {"Column31", Int64.Type}, {"Column32", type any}, {"Column33", type any}, {"Column34", type any}, {"Column35", type any}, {"Column36", type any}, {"Column37", type any}, {"Column38", type any}, {"Column39", type any}, {"Column40", type any}, {"Column41", type any}, {"Column42", type any}, {"Column43", type any}, {"Column44", type any}, {"Column45", type any}, {"Column46", type any}, {"Column47", type any}, {"Column48", type any}, {"Column49", type any}, {"Column50", type any}, {"Column51", type any}, {"Column52", type any}, {"Column53", type any}, {"Column54", type any}, {"Column55", type any}, {"Column56", type any}, {"Column57", type any}, {"Column58", type any}, {"Column59", type any}, {"Column60", type any}, {"Column61", type any}, {"Column62", type any}, {"Column63", type any}, {"Column64", type any}, {"Column65", type any}, {"Column66", type any}, {"Column67", type any}, {"Column68", type any}, {"Column69", type any}, {"Column70", type any}, {"Column71", type any}, {"Column72", type any}, {"Column73", type any}, {"Column74", type any}, {"Column75", type any}, {"Column76", type any}, {"Column77", type any}, {"Column78", type any}, {"Column79", type any}, {"Column80", type any}, {"Column81", type any}, {"Column82", type any}, {"Column83", type any}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Strat ", type text}, {"Outcome", type text}, {"Activity", type text}, {"Activity type", type text}, {"Project", type text}, {"Unique attendees", Int64.Type}, {"Male", Int64.Type}, {"Female", Int64.Type}, {"Transgender", Int64.Type}, {"Intersex", Int64.Type}, {"Non-binary", Int64.Type}, {"Agender", Int64.Type}, {"Gender fluid", Int64.Type}, {"Gender neutral", Int64.Type}, {"Genderqueer", Int64.Type}, {"Neutrois", Int64.Type}, {"Questioning", Int64.Type}, {"Other", Int64.Type}, {"Prefer to self describe", Int64.Type}, {"Prefer not to say", Int64.Type}, {"Not provided", Int64.Type}, {"0-5", Int64.Type}, {"6-10", Int64.Type}, {"11-15", Int64.Type}, {"16-20", Int64.Type}, {"21-25", Int64.Type}, {"26-29", Int64.Type}, {"30-39", Int64.Type}, {"40-49", Int64.Type}, {"50-59", Int64.Type}, {"60", Int64.Type}, {"No data available", Int64.Type}, {"White English", Int64.Type}, {"White Northern Irish", Int64.Type}, {"White Scottish", Int64.Type}, {"White Welsh", Int64.Type}, {"White British", Int64.Type}, {"White Irish", Int64.Type}, {"White Eastern European", Int64.Type}, {"Other White background", Int64.Type}, {"White and Black Caribbean", Int64.Type}, {"White and Black African", Int64.Type}, {"White and Black British", Int64.Type}, {"White and Asian", Int64.Type}, {"Other Mixed background", Int64.Type}, {"Indian", Int64.Type}, {"Pakistani", Int64.Type}, {"Bangladeshi", Int64.Type}, {"Chinese", Int64.Type}, {"Other Asian background", Int64.Type}, {"Black Caribbean", Int64.Type}, {"Black African", Int64.Type}, {"Black British", Int64.Type}, {"Other Black background", Int64.Type}, {"Arab", Int64.Type}, {"Gypsy/Romany/Irish Traveller", Int64.Type}, {"Other ethnic group", Int64.Type}, {"Prefer not to say_1", Int64.Type}, {"Not provided_2", Int64.Type}, {"No data available_3", Int64.Type}, {"0-10", Int64.Type}, {"10-20", Int64.Type}, {"20-30", Int64.Type}, {"30-40", Int64.Type}, {"40-50", Int64.Type}, {"50-60", Int64.Type}, {"60-70", Int64.Type}, {"70-80", Int64.Type}, {"80-90", Int64.Type}, {"90-100", Int64.Type}, {"No data available_4", Int64.Type}, {"Attendances - Total", Int64.Type}, {"Attendances - Registers", Int64.Type}, {"Attendances - Headcount", Int64.Type}, {"Sessions delivered - Total", Int64.Type}, {"Sessions delivered - Registers", Int64.Type}, {"Sessions delivered - Headcount", Int64.Type}, {"Session hours - Total", type number}, {"Session hours - Registers", type number}, {"Sessions hours - Headcount", Int64.Type}, {"Contact hours", type number}, {"Contact hours - Registers", type number}, {"Contact hours - Headcount", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Outcome", "Global Outcome"}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "Global Outcome", "Global Outcome - Copy"),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Duplicated Column", "Global Outcome - Copy", Splitter.SplitTextByDelimiter(". ", QuoteStyle.Csv), {"Global Outcome - Copy.1", "Global Outcome - Copy.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Global Outcome - Copy.1", type text}, {"Global Outcome - Copy.2", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Global Outcome - Copy.2"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Global Outcome - Copy.1", "Global Outcome Code"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

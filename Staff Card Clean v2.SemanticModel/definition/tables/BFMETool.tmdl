@@ -1,0 +1,151 @@
+table BFMETool
+	lineageTag: 071fe521-22e2-4beb-98f6-60d93ff1c2a8
+
+	column 'Sent ID'
+		dataType: string
+		lineageTag: 8e00afb9-ea3e-49c1-9794-4196b1ee214d
+		summarizeBy: none
+		sourceColumn: Sent ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sent name'
+		dataType: string
+		lineageTag: 52f6ebb9-c473-4db4-bb7d-2fe906900252
+		summarizeBy: none
+		sourceColumn: Sent name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Participant name'
+		dataType: string
+		lineageTag: 6a926524-725f-4d7c-9590-76f8662e6cd3
+		summarizeBy: none
+		sourceColumn: Participant name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: ddfcce9e-07ae-4c34-88a4-58ec5ec78992
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Submitted
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 919e30a9-788a-4742-bc3b-92e518674d15
+		summarizeBy: none
+		sourceColumn: Submitted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Q1. Relationships:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d7c331e-0bb1-4806-b365-d2c434687e3a
+		summarizeBy: sum
+		sourceColumn: Q1. Relationships:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q2. Employability:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13cff276-7b59-43f8-920f-de9ec0ded380
+		summarizeBy: sum
+		sourceColumn: Q2. Employability:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q3. Key Skills:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c085564-86a5-4599-947e-8f165cf56e5e
+		summarizeBy: sum
+		sourceColumn: Q3. Key Skills:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q4. Aspiration and Motivation:'
+		dataType: int64
+		formatString: 0
+		lineageTag: b4002fb0-2dfa-4057-b433-56e38ea5fa9c
+		summarizeBy: sum
+		sourceColumn: Q4. Aspiration and Motivation:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q5. Social Involvement:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 975df6a5-ee15-4788-968e-1bae22f9b5b7
+		summarizeBy: sum
+		sourceColumn: Q5. Social Involvement:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q6. A Healthy Lifestyle:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 347801ec-39f8-4e52-9a7f-1fce5f19a183
+		summarizeBy: sum
+		sourceColumn: Q6. A Healthy Lifestyle:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q7. Emotional Wellbeing:'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab225513-efef-4184-8669-3f597bbd2fea
+		summarizeBy: sum
+		sourceColumn: Q7. Emotional Wellbeing:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q8. Home and Stability:'
+		dataType: int64
+		formatString: 0
+		lineageTag: f0893c74-4a4b-48f4-b70f-098424448aa0
+		summarizeBy: sum
+		sourceColumn: Q8. Home and Stability:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q9. Communication:'
+		dataType: int64
+		formatString: 0
+		lineageTag: 08af4ae4-cd59-49b7-b15e-0cde40b63262
+		summarizeBy: sum
+		sourceColumn: Q9. Communication:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q10. Identity:'
+		dataType: int64
+		formatString: 0
+		lineageTag: d0bc4881-4a31-43b8-bc09-a69156abdf2b
+		summarizeBy: sum
+		sourceColumn: Q10. Identity:
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BFMETool = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    DOMETool_Table = Source{[Item="BFMETool",Kind="Table"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(DOMETool_Table,{"Sent ID", "Sent name", "Participant name", "Upshot ID", "Submitted", "Q1. Relationships:", "Q2. Employability:", "Q3. Key Skills:", "Q4. Aspiration and Motivation:", "Q5. Social Involvement:", "Q6. A Healthy Lifestyle:", "Q7. Emotional Wellbeing:", "Q8. Home and Stability:", "Q9. Communication:", "Q10. Identity:"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Sent ID", type text}, {"Sent name", type text}, {"Participant name", type text}, {"Upshot ID", type text}, {"Submitted", type date}, {"Q1. Relationships:", Int64.Type}, {"Q2. Employability:", Int64.Type}, {"Q3. Key Skills:", Int64.Type}, {"Q4. Aspiration and Motivation:", Int64.Type}, {"Q5. Social Involvement:", Int64.Type}, {"Q6. A Healthy Lifestyle:", Int64.Type}, {"Q7. Emotional Wellbeing:", Int64.Type}, {"Q8. Home and Stability:", Int64.Type}, {"Q9. Communication:", Int64.Type}, {"Q10. Identity:", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,13 @@
+DailyContractedHours :=
+VAR PatternHours =
+    LOOKUPVALUE (
+        StaffDayPattern[HoursPerDay],
+        StaffDayPattern[StaffID], StaffSchedule[StaffID],
+        StaffDayPattern[DayOfWeek], DateTable[DayOfWeek]
+    )
+VAR UseHours =
+    IF ( NOT ISBLANK ( PatternHours ),
+         PatternHours,
+         DIVIDE ( RELATED ( 'Staff ID'[HoursContracted] ), 5 )
+    )
+RETURN IF ( [IsWorkingDay], UseHours, 0 )

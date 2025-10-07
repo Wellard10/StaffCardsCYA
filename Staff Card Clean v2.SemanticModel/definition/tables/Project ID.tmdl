@@ -1,0 +1,47 @@
+table 'Project ID'
+	lineageTag: 373e53f1-5ef8-4a09-bf2a-e1723adc8048
+
+	column Project
+		dataType: string
+		lineageTag: dbaf5e25-e097-490a-b6cc-daf59f50bd5f
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project ID'
+		dataType: string
+		lineageTag: 9ceb1a3f-d5b3-4ba2-b15e-ae14d385bbbf
+		summarizeBy: none
+		sourceColumn: Project ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Project ID' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    Project_Sheet = Source{[Item="Project",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Project_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Session ID", Int64.Type}, {"Registrar & Session Leader", type text}, {"Project", type text}, {"Max of Duration (hrs)", type number}}),
+				    #"Removed Bottom Rows" = Table.RemoveLastN(#"Changed Type",1),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Removed Bottom Rows", "Registrar & Session Leader", Splitter.SplitTextByDelimiter(" and ", QuoteStyle.Csv), {"Registrar & Session Leader.1", "Registrar & Session Leader.2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Registrar & Session Leader.1", type text}, {"Registrar & Session Leader.2", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"Registrar & Session Leader.2"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Registrar & Session Leader.1", "Staff Name"}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Renamed Columns", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Index",{{"Index", "Project ID"}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Renamed Columns1", {"Project"}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Removed Duplicates",{"Project ID"}),
+				    #"Added Index1" = Table.AddIndexColumn(#"Removed Columns1", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Index1",{{"Index", "Project ID"}}),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Renamed Columns2",{"Session ID", "Staff Name", "Max of Duration (hrs)"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Removed Columns2",{{"Project ID", type text}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

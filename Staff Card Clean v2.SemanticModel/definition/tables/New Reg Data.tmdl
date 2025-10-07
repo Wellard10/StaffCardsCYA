@@ -1,0 +1,273 @@
+table 'New Reg Data'
+	lineageTag: f840c515-a27f-462c-812d-31ffe08770bb
+
+	column Project
+		dataType: string
+		lineageTag: a33dba50-8cda-4429-92d4-b4a89627bc71
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: f14702f7-fd63-47f4-afe6-1c1c0f1fd7ab
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group'
+		dataType: string
+		lineageTag: e54aaac1-1536-43ee-bca6-5778a8bfc3ec
+		summarizeBy: none
+		sourceColumn: Activity group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group ID'
+		dataType: string
+		lineageTag: 5eefa652-a189-467c-8e30-466f806840bb
+		summarizeBy: none
+		sourceColumn: Activity group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity ID'
+		dataType: string
+		lineageTag: 95d0430d-a1dd-4403-b353-6ca64ec751c0
+		summarizeBy: none
+		sourceColumn: Activity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 2e5eb681-b373-40c4-acf7-4cee0055168d
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 18fd199b-6205-4fd0-b76c-e311fe609566
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 56e82de9-1013-408e-8e31-ddd504eddb7c
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: 9eaa4f3a-be16-4ff5-ab41-9159c1db71b6
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 93627f98-fedf-46a4-b95e-3eee392fbbfe
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 672eb5b2-a738-4e74-bd20-2986ad35aae4
+		summarizeBy: none
+		sourceColumn: Start time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Duration (hrs)'
+		dataType: double
+		lineageTag: b496a19d-9867-455a-ae76-78d80bf2e1c5
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Session registrar'
+		dataType: string
+		lineageTag: d4b5ced6-da9a-4075-8e82-549288add8f5
+		summarizeBy: none
+		sourceColumn: Session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: aa8e01c3-dbb7-4aa3-8054-3d34036783d9
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 4f547c49-c77c-483b-ad41-56e38dffe01e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: a5b200e7-e56c-4277-8b68-dc9bd2735fb8
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session notes'
+		dataType: string
+		lineageTag: 1f45c241-c4a1-4953-87ce-9ae8950baddd
+		summarizeBy: none
+		sourceColumn: Session notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee type'
+		dataType: string
+		lineageTag: fee7688d-a383-42bb-b499-f2046f3ea528
+		summarizeBy: none
+		sourceColumn: Attendee type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: 61534a5a-7a30-4da7-a09d-8e21ab13695d
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 111dc466-b8ac-470f-a54c-3b7c6acfc0d1
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nickname
+		dataType: string
+		lineageTag: cac24175-80aa-40cf-b3c6-cd2f7b376bd2
+		summarizeBy: none
+		sourceColumn: Nickname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 2f01a35e-682c-4960-9d13-ff411c5b2623
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique session registrar'
+		dataType: string
+		lineageTag: 3d7aa4e5-6979-4af3-9c4d-a2fe0fbf8cb2
+		summarizeBy: none
+		sourceColumn: Unique session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique session time'
+		dataType: double
+		lineageTag: edbb2a4a-0046-4ac1-bce5-6f403b7269da
+		summarizeBy: sum
+		sourceColumn: Unique session time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: d57cfeee-bd78-4a17-bb7c-26ba27c527c2
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Leader'
+		dataType: string
+		lineageTag: 9707bd69-c6d5-4de9-89a8-91f63a3712c8
+		summarizeBy: none
+		sourceColumn: Session Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pseudonym = ```
+			
+			VAR f = TRIM('New Reg Data'[First name])
+			VAR l = TRIM('New Reg Data'[Last name])
+			VAR attID = 'New Reg Data'[Attendee ID]
+			VAR attIDText = FORMAT(attID, "0")
+			VAR lClean = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(l, " ", ""), "-", ""), "'", "")
+			VAR initial = IF(NOT ISBLANK(f), UPPER(LEFT(f, 1)), "")
+			VAR last1 = IF(LEN(lClean) >= 1, UPPER(LEFT(lClean, 1)), "")
+			VAR last2 = IF(LEN(lClean) >= 2, LOWER(MID(lClean, 2, 1)), "")
+			RETURN
+			IF(
+			    ISBLANK(attID) || ISBLANK(f) || ISBLANK(l),
+			    BLANK(),
+			    attIDText & " - " & initial & last1 & last2
+			)
+			
+			```
+		lineageTag: 98dfe392-7644-4f23-865f-81d33e879425
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Youth Worker'
+		dataType: string
+		lineageTag: 8959667c-391f-48bd-81f4-accdde5c2f9e
+		summarizeBy: none
+		sourceColumn: Session Youth Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New Reg Data' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"New Reg Data_Sheet" = Source{[Item="New Reg Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"New Reg Data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", Int64.Type}, {"Activity ID", Int64.Type}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", Int64.Type}, {"Date", type date}, {"Start time", type datetime}, {"Duration (hrs)", type number}, {"Session registrar", type text}, {"Tags", type any}, {"Status", type text}, {"Session ID", Int64.Type}, {"Session notes", type any}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type any}, {"Attendee ID", Int64.Type}, {"Unique session registrar", Int64.Type}, {"Unique session time", type number}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Column28", type any}, {"Column29", type any}, {"Column30", Int64.Type}, {"Column31", Int64.Type}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}, {"Column35", Int64.Type}, {"Column36", Int64.Type}, {"Column37", Int64.Type}, {"Column38", type number}, {"Column39", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([Session registrar] <> null)),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Tags", "Status", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Unique session registrar", "Unique session time", "Full Name", "Session Leader", "Registrar & Session Leader"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", type text}, {"Activity ID", type text}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", type text}, {"Session registrar", type text}, {"Tags", type text}, {"Status", type text}, {"Session ID", type text}, {"Session notes", type text}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type text}, {"Attendee ID", type text}, {"Unique session registrar", type text}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Start time", type time}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Changed Type1", each [Full Name] <> "Callum Hyslop" and [Full Name] <> "Claire Price" and [Full Name] <> "Conor Johnston" and [Full Name] <> "Damien Morris" and [Full Name] <> "Dana Hawkins" and [Full Name] <> "Emma McAvoy" and [Full Name] <> "Eve Hampson" and [Full Name] <> "Isabel Savage" and [Full Name] <> "Jade Maguire" and [Full Name] <> "Jamie Harrison" and [Full Name] <> "Jolene Barr" and [Full Name] <> "Kim Kimberlee-Smith" and [Full Name] <> "Maya Wannop" and [Full Name] <> "Michelle Brunskill" and [Full Name] <> "Rosie Barton" and [Full Name] <> "Rosie Murdoch" and [Full Name] <> "Scott Ferguson" and [Full Name] <> "Shannon Rush" and [Full Name] <> "Anna Witty"),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Filtered Rows1", {{"Registrar & Session Leader", Splitter.SplitTextByDelimiter(" and ", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Registrar & Session Leader"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Registrar & Session Leader", "Session Youth Worker"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

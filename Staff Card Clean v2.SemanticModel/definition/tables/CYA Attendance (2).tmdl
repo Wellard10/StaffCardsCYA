@@ -1,0 +1,286 @@
+table 'CYA Attendance (2)'
+	lineageTag: 7279be71-242d-49a5-9de9-6a6786446188
+
+	measure 'Total Hours (unique sessions)' = ```
+			
+			SUMX(
+			    VALUES('CYA Attendance (2)'[Session ID]),
+			    CALCULATE( MAX('CYA Attendance (2)'[Duration (hrs)]) )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 112ea3e5-d447-447d-961b-c9b0c389d7d5
+
+	measure 'Attendance Count' =
+			
+			COUNTROWS('CYA Attendance (2)')
+		formatString: 0
+		lineageTag: 4a83c20c-6479-4dcf-bc6e-6960f4f684b8
+
+	measure 'Attendees (Distinct People)' =
+			
+			DISTINCTCOUNT('CYA Attendance (2)'[Attendee ID])
+		formatString: 0
+		lineageTag: 037bcd14-03bb-4b85-b6ef-bb083d4a9949
+
+	measure 'Attendance (Orphans vs People)' =
+			
+			VAR Orphans =
+			    COUNTROWS(
+			        EXCEPT(
+			            VALUES('CYA Attendance (2)'[Attendee ID]),
+			            VALUES('CYA People Report (2)'[Upshot ID])
+			        )
+			    )
+			RETURN Orphans
+		formatString: 0
+		lineageTag: 1a0de052-9756-46f5-a5dc-bd9e6146eb45
+
+	column Project
+		dataType: string
+		lineageTag: 008ea4d6-3575-42be-857b-8428d7d7d291
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: 1f854423-1829-47f0-b9c6-cebf049f7c94
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group'
+		dataType: string
+		lineageTag: 8081c803-e4d7-4a91-9e83-d347d4a181cb
+		summarizeBy: none
+		sourceColumn: Activity group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group ID'
+		dataType: string
+		lineageTag: 2465c99b-f5fa-42ca-baed-9bfe5116e4fb
+		summarizeBy: none
+		sourceColumn: Activity group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity ID'
+		dataType: string
+		lineageTag: d2cbb02e-7146-4e68-a5b0-9588775a9ab2
+		summarizeBy: none
+		sourceColumn: Activity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 209aaeb9-843c-488d-ba1b-421782b93e71
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 337d391c-281e-4859-805c-16d7c9923eee
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 5a0135fd-230f-43b7-a107-fa67dd36678d
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: 10f12fb5-4b0b-4bc3-838a-a732ab3eb37e
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4ecec5fa-8144-4228-a8c6-2a687ed2f718
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: e8899da1-3aa3-4011-ac76-11849950860e
+		summarizeBy: none
+		sourceColumn: Start time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Duration (hrs)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 970911d0-4b84-4300-83ff-63f5efc89dcd
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session registrar'
+		dataType: string
+		lineageTag: d972cd0d-9ebb-4e2e-aa7b-981eb61a3a54
+		summarizeBy: none
+		sourceColumn: Session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: ae940da3-a35d-4165-973d-c43a2a7bf140
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 401aa191-dca8-4683-a657-92c2bf2aaece
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 644f09f6-5ab3-44e8-826c-7ce155f53715
+		summarizeBy: none
+		sourceColumn: Created on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created by'
+		dataType: string
+		lineageTag: 01075067-ec60-4ca8-818c-c1d9dcddcafd
+		summarizeBy: none
+		sourceColumn: Created by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edited on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 13969068-bdda-4fe2-800b-6c100175705e
+		summarizeBy: none
+		sourceColumn: Edited on
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edited by'
+		dataType: string
+		lineageTag: 3fb0508e-bbf5-47cc-9a2a-33bd61838496
+		summarizeBy: none
+		sourceColumn: Edited by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: a5ec102e-1de5-44f8-8c1c-91e7816ca8c0
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session notes'
+		dataType: string
+		lineageTag: 1f50faa2-17d6-4f4d-942c-45512b8057b0
+		summarizeBy: none
+		sourceColumn: Session notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee type'
+		dataType: string
+		lineageTag: c12455a6-f803-4756-9b50-2be242f1e870
+		summarizeBy: none
+		sourceColumn: Attendee type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: 509e53b1-4c08-4a1c-816d-5fa3176700b9
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 28dd4fb1-451b-43a6-95e1-ec03fa0b89b0
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nickname
+		dataType: string
+		lineageTag: 355872de-c4ac-4ef9-a5cd-4a19de5f22a8
+		summarizeBy: none
+		sourceColumn: Nickname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 63b1346f-faaf-4c76-a6b1-81df0ca49ab9
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee status'
+		dataType: string
+		lineageTag: ab97bc94-4805-480c-a751-d0f76d417669
+		summarizeBy: none
+		sourceColumn: Attendee status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Archived on'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1d65315a-64ab-4488-bb2d-e78e8bd9dcb9
+		summarizeBy: none
+		sourceColumn: Archived on
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CYA Attendance (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOAttendance, BFAttendance, InfraAttendance}),
+				    #"Removed Duplicates" = Table.Distinct(Source, {"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Status", "Created on", "Created by", "Edited on", "Edited by", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Attendee status", "Archived on"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

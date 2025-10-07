@@ -1,0 +1,187 @@
+relationship f32a4150-f17e-e6d3-01dc-2997e33d3347
+	fromColumn: 'TE - Data'.'Event date'
+	toColumn: DateTable.Date
+
+relationship fb88b317-2ab7-71f6-c2bb-340e01d5badf
+	fromColumn: Calender.'Start Date'
+	toColumn: DateTable.Date
+
+relationship 34fc4423-f6d2-a3c6-b6cd-8bcda84107e5
+	fromColumn: Calender.'Staff Name'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship 4190001e-2538-b14f-02c8-5d7b8b7fbea7
+	fromColumn: 'User Access'.StaffName
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship AutoDetected_05bf7743-d9af-4a80-88e3-09a2dd04c48f
+	isActive: false
+	fromColumn: 'New Reg Data'.Project
+	toColumn: 'Project ID'.Project
+
+relationship AutoDetected_c1986341-14c8-4311-92d2-a159cd471272
+	isActive: false
+	fromColumn: 'Sessions (3)'.Project
+	toColumn: 'Project ID'.Project
+
+relationship 60616e48-11c0-69b5-c882-659dc4818759
+	fromColumn: 'Sessions (3)'.'Staff Name'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship 7c99921f-c297-680f-0dd2-e400cc8b52db
+	fromColumn: 'TE - Data'.'Session Youth Worker'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship ad328766-3361-1610-bfeb-7b07ce9cdafb
+	fromColumn: 'New Reg Data'.Date
+	toColumn: DateTable.Date
+
+relationship f7655cb9-3a57-3e62-8a0a-8776c06d6eaa
+	fromColumn: 'Sessions (3)'.Date
+	toColumn: DateTable.Date
+
+relationship 6feb20be-fc3f-c70f-b7e0-abe9105f54f7
+	fromColumn: 'New Reg Data'.'Session Youth Worker'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Strategic Outcomes'.'Global Outcome Code'
+	toColumn: 'Global Outcomes'.'Global Outcome Code'
+
+relationship 3684741f-1973-a6be-66fa-fee91f9a08aa
+	fromColumn: Strat2.'Global Outcome Code'
+	toColumn: 'Global Outcomes'.'Global Outcome Code'
+
+relationship 833ba475-842b-0e0d-0197-44e37659d650
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Strat2.Activity
+	toColumn: 'Sessions + Activities (2)'.Activity
+
+relationship 71f41517-7c7a-77e9-4d84-fd30f75c695f
+	fromColumn: 'Viewer Table'.'Staff Name'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship f27b2ab4-77cb-8864-f71e-2f8005c5aaaf
+	fromColumn: 'Sessions + Activities (2)'.Date
+	toColumn: DateTable.Date
+
+relationship 9d589eeb-573e-92e2-3a6d-46d6a04f0694
+	fromColumn: 'Barriers (2)'.Barriers
+	toColumn: 'DIM BARRIER (2)'.Barriers
+
+relationship 8f3f801c-434a-0e91-2237-4d35562e6f0a
+	fromColumn: 'Barriers (2)'.'Upshot ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship 2ddf55bd-2f95-d208-6595-9cd8c4cb8f4f
+	fromColumn: 'CYA Attendance (2)'.'Activity type'
+	toColumn: ActivityTypeTable1.'Activity type'
+
+relationship 9e215247-23cf-5bd6-f83b-e96f860a2648
+	fromColumn: 'CYA Attendance (2)'.'Activity ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship a0ada496-6715-c9d8-7b9d-6f44d296f920
+	fromColumn: 'CYA ME Tool (2)'.'Upshot ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship 28d4be5f-d54d-57dc-5bde-5b4f21dff38a
+	fromColumn: 'CYA People Report (2)'.'Please indicate if you have any of the following neurodivergent conditions (select all that apply):'
+	toColumn: 'DIM Neuro (2)'.Neurodivergent
+
+relationship cb689806-a0a5-43c5-e4bb-3bb2ef5d9bc2
+	fromColumn: 'CYA People Report (2)'.'Project(s) involved in:'
+	toColumn: 'DIM Projects involved in (2)'.'Project(s) involved in:'
+
+relationship b8f235c4-f53e-c609-432a-2f22a80f4f76
+	fromColumn: 'Neuro (2)'.'Upshot ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship a892a5c3-6fb3-2082-aef1-d1ffdbab58a5
+	isActive: false
+	fromColumn: 'Neuro (2)'.Neurodivergent
+	toColumn: 'DIM Neuro (2)'.Neurodivergent
+
+relationship 0e0e1c04-56c6-460a-3bec-4d110c3f3129
+	isActive: false
+	fromColumn: 'Neuro (2)'.'Upshot ID'
+	toColumn: 'Young People (2)'.'Upshot ID'
+
+relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'New Reg Data'.'Attendee ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship fd466d2f-f15e-c7d2-e103-a902b442cea2
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'New Reg Data'.'Attendee ID'
+	toColumn: 'CYA ME Tool (2)'.'Upshot ID'
+
+relationship 0073a982-d560-ba9c-8694-3f9398e2d614
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'New Reg Data'.'Attendee ID'
+	toColumn: 'CYA TLE (2)'.'Upshot ID'
+
+relationship f4396f82-944b-5a11-95b4-5c2139b4b115
+	isActive: false
+	fromColumn: 'Projects involved in (2)'.'Project(s) involved in:'
+	toColumn: 'DIM Projects involved in (2)'.'Project(s) involved in:'
+
+relationship 1a0703f5-5ecd-c47d-e455-340f77111f75
+	fromColumn: 'Projects involved in (2)'.'Upshot ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship 8799de30-d095-49da-fc7a-ec5aefbb7c35
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Young People (2)'.'Upshot ID'
+	toColumn: 'CYA People Report (2)'.'Upshot ID'
+
+relationship ae3b8e6d-0bfc-67b8-c74c-d80864f080be
+	toCardinality: many
+	fromColumn: 'Sessions + Activities (2)'.'Session ID'
+	toColumn: 'New Reg Data'.'Session ID'
+
+relationship 81492bbd-e422-8a13-d54b-cd47351e8c41
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Project.'Session ID'
+	toColumn: 'New Reg Data'.'Session ID'
+
+relationship 09434988-c961-8998-4939-24f09bfa3185
+	toCardinality: many
+	fromColumn: 'TE - Data'.Project
+	toColumn: 'Sessions + Activities (2)'.Project
+
+relationship ac802fcd-b474-753b-5bdf-b3bd9e50bd6e
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'New Reg Data'.'Attendee ID'
+	toColumn: 'CYA Attendance (2)'.'Attendee ID'
+
+relationship 24cb3711-5d9c-76f2-2a7c-10a9bceb7959
+	toCardinality: many
+	fromColumn: 'CYA Event Types'.'Upshot ID'
+	toColumn: 'New Reg Data'.'Attendee ID'
+
+relationship 4b7df31a-cdbd-a6a6-6f6a-1781fef8328a
+	fromColumn: 'KPI Test'.ProjectID
+	toColumn: 'Project ID'.Project
+
+relationship a7941c5c-588b-9301-a524-1cb8390fb07c
+	fromColumn: StaffSchedule.Date
+	toColumn: DateTable.Date
+
+relationship 83bfa2fd-542d-f39d-f715-3d473a6538db
+	toCardinality: many
+	fromColumn: StaffSchedule.Date
+	toColumn: Calender.'Start Date'
+
+relationship 927dadc6-d065-23fe-73e9-f6c4afbdb558
+	fromColumn: StaffSchedule.'Staff Name'
+	toColumn: 'Staff ID'.'Staff Name'
+
