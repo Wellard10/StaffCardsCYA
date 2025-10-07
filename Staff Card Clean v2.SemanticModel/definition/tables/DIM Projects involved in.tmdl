@@ -1,4 +1,4 @@
-table 'DIM Projects involved in (2)'
+table 'DIM Projects involved in'
 	lineageTag: dac89fd0-7dfd-4be8-bbf7-1175d86c8688
 
 	column 'Project(s) involved in:'
@@ -9,7 +9,7 @@ table 'DIM Projects involved in (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'DIM Projects involved in (2)' = m
+	partition 'DIM Projects involved in' = m
 		mode: import
 		source =
 				let
@@ -27,4 +27,5 @@ table 'DIM Projects involved in (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

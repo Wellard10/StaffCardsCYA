@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance (2)"
+                      "Entity": "CYA Attendance"
                     }
                   },
                   "Property": "Date"
                 }
               },
-              "queryRef": "CYA Attendance (2).Date",
+              "queryRef": "CYA Attendance.Date",
               "nativeQueryRef": "Count of Date",
               "active": true
             }
@@ -41,7 +41,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA Attendance (2)"
+                          "Entity": "CYA Attendance"
                         }
                       },
                       "Property": "Session ID"
@@ -50,7 +50,7 @@
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(CYA Attendance (2).Session ID)",
+              "queryRef": "CountNonNull(CYA Attendance.Session ID)",
               "nativeQueryRef": "Count of Session ID1"
             }
           ]
@@ -63,7 +63,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CYA Attendance (2)"
+                    "Entity": "CYA Attendance"
                   }
                 },
                 "Property": "Date"

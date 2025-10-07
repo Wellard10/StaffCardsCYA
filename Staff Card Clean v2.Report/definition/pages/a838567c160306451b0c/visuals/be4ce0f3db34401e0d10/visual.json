@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Sessions + Activities (2)"
+                          "Entity": "Sessions + Activities"
                         }
                       },
                       "Property": "Attendee ID"
@@ -31,7 +31,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Min(Sessions + Activities (2).Attendee ID)",
+              "queryRef": "Min(Sessions + Activities.Attendee ID)",
               "nativeQueryRef": "Count of Attendee ID"
             }
           ]
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Sessions + Activities (2)"
+                        "Entity": "Sessions + Activities"
                       }
                     },
                     "Property": "Attendee ID"

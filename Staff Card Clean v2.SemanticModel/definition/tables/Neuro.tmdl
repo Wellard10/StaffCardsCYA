@@ -1,4 +1,4 @@
-table 'Neuro (2)'
+table 'Neuro'
 	lineageTag: 46604ba1-ee45-4c19-854e-7e83b6e07007
 
 	column 'Upshot ID'
@@ -17,7 +17,7 @@ table 'Neuro (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Neuro (2)' = m
+	partition 'Neuro' = m
 		mode: import
 		source =
 				let
@@ -34,4 +34,5 @@ table 'Neuro (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

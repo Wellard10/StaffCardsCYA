@@ -1,11 +1,11 @@
-table 'CYA ME Tool (2)'
+table 'CYA ME Tool'
 	lineageTag: fe541d8e-d971-4de7-a823-7f7b612f6b10
 
-	measure 'ME Identity Total' = SUM('CYA ME Tool (2)'[Q10. Identity:])
+	measure 'ME Identity Total' = SUM('CYA ME Tool'[Q10. Identity:])
 		formatString: 0
 		lineageTag: f93ce5d7-9971-4938-bc28-69cc087d549d
 
-	measure 'ME Emotional Wellbeing Total' = SUM('CYA ME Tool (2)'[Q7. Emotional Wellbeing:])
+	measure 'ME Emotional Wellbeing Total' = SUM('CYA ME Tool'[Q7. Emotional Wellbeing:])
 		formatString: 0
 		lineageTag: 593924c4-b825-4daf-8975-91607550ba0e
 
@@ -169,7 +169,7 @@ table 'CYA ME Tool (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'CYA ME Tool (2)' = m
+	partition 'CYA ME Tool' = m
 		mode: import
 		source =
 				let
@@ -190,4 +190,5 @@ table 'CYA ME Tool (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

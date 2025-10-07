@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA People Report (2)"
+                          "Entity": "CYA People Report"
                         }
                       },
                       "Property": "Age"
@@ -31,7 +31,7 @@
                   "Function": 1
                 }
               },
-              "queryRef": "Sum(CYA People Report (2).Age)",
+              "queryRef": "Sum(CYA People Report.Age)",
               "nativeQueryRef": "Average of Age",
               "displayName": "Age",
               "format": "0"
@@ -48,7 +48,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "CYA People Report (2)"
+                        "Entity": "CYA People Report"
                       }
                     },
                     "Property": "Age"

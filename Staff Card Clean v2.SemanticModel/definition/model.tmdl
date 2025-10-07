@@ -31,7 +31,7 @@ queryGroup 'Query Errors - 08/09/2025 12:43:25'
 
 	annotation PBI_QueryGroupOrder = 4
 
-annotation PBI_QueryOrder = ["TE - Data","Calendar","Staff ID","Project","Project ID","User Access","Sessions (3)","Global only","ActivityTypeTable1","Viewer Table","New Reg Data","Strat2","Global Outcomes","Strategic Outcomes","Sessions + Activities (2)","CYA ME Tool (2)","CYA People Report (2)","CYA TLE (2)","CYA Event Types","CYA Attendance (2)","Young People (2)","Barriers (2)","Neuro (2)","DIM BARRIER (2)","DIM Neuro (2)","Projects involved in (2)","DIM Projects involved in (2)","DOMETool","BFMETool","BFAttendance","BFPeople","BFTLE","DOAttendance","DOPeople","DOTLE","InfraAttendance","InfraPeople","InfraTLE","KPI Test"]
+annotation PBI_QueryOrder = ["TE - Data","Calendar","Staff ID","Project","Project ID","User Access","Sessions (3)","Global only","ActivityTypeTable1","Viewer Table","New Reg Data","Strat2","Global Outcomes","Strategic Outcomes","Sessions + Activities","CYA ME Tool","CYA People Report","CYA TLE","CYA Event Types","CYA Attendance","Young People","Barriers","Neuro","DIM BARRIER","DIM Neuro","Projects involved in","DIM Projects involved in","DOMETool","BFMETool","BFAttendance","BFPeople","BFTLE","DOAttendance","DOPeople","DOTLE","InfraAttendance","InfraPeople","InfraTLE","KPI Test"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
@@ -53,7 +53,7 @@ ref table ActivityTypeTable1
 ref table Strat2
 ref table 'Global Outcomes'
 ref table 'Strategic Outcomes'
-ref table 'Sessions + Activities (2)'
+ref table 'Sessions + Activities'
 ref table DOMETool
 ref table BFMETool
 ref table BFAttendance
@@ -66,17 +66,17 @@ ref table InfraAttendance
 ref table InfraPeople
 ref table InfraTLE
 ref table 'CYA Event Types'
-ref table 'CYA ME Tool (2)'
-ref table 'CYA People Report (2)'
-ref table 'CYA TLE (2)'
-ref table 'CYA Attendance (2)'
-ref table 'Young People (2)'
-ref table 'Barriers (2)'
-ref table 'Neuro (2)'
-ref table 'DIM BARRIER (2)'
-ref table 'DIM Neuro (2)'
-ref table 'Projects involved in (2)'
-ref table 'DIM Projects involved in (2)'
+ref table 'CYA ME Tool'
+ref table 'CYA People Report'
+ref table 'CYA TLE'
+ref table 'CYA Attendance'
+ref table 'Young People'
+ref table 'Barriers'
+ref table 'Neuro'
+ref table 'DIM BARRIER'
+ref table 'DIM Neuro'
+ref table 'Projects involved in'
+ref table 'DIM Projects involved in'
 ref table 'KPI Test'
 ref table 'Latest Status'
 
@@ -84,4 +84,5 @@ ref role 'Viewer Table'
 ref role ViewerRLS
 
 ref cultureInfo en-GB
+
 

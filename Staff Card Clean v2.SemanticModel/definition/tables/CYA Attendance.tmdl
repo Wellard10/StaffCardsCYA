@@ -1,11 +1,11 @@
-table 'CYA Attendance (2)'
+table 'CYA Attendance'
 	lineageTag: 7279be71-242d-49a5-9de9-6a6786446188
 
 	measure 'Total Hours (unique sessions)' = ```
 			
 			SUMX(
-			    VALUES('CYA Attendance (2)'[Session ID]),
-			    CALCULATE( MAX('CYA Attendance (2)'[Duration (hrs)]) )
+			    VALUES('CYA Attendance'[Session ID]),
+			    CALCULATE( MAX('CYA Attendance'[Duration (hrs)]) )
 			)
 			
 			```
@@ -14,13 +14,13 @@ table 'CYA Attendance (2)'
 
 	measure 'Attendance Count' =
 			
-			COUNTROWS('CYA Attendance (2)')
+			COUNTROWS('CYA Attendance')
 		formatString: 0
 		lineageTag: 4a83c20c-6479-4dcf-bc6e-6960f4f684b8
 
 	measure 'Attendees (Distinct People)' =
 			
-			DISTINCTCOUNT('CYA Attendance (2)'[Attendee ID])
+			DISTINCTCOUNT('CYA Attendance'[Attendee ID])
 		formatString: 0
 		lineageTag: 037bcd14-03bb-4b85-b6ef-bb083d4a9949
 
@@ -29,8 +29,8 @@ table 'CYA Attendance (2)'
 			VAR Orphans =
 			    COUNTROWS(
 			        EXCEPT(
-			            VALUES('CYA Attendance (2)'[Attendee ID]),
-			            VALUES('CYA People Report (2)'[Upshot ID])
+			            VALUES('CYA Attendance'[Attendee ID]),
+			            VALUES('CYA People Report'[Upshot ID])
 			        )
 			    )
 			RETURN Orphans
@@ -271,7 +271,7 @@ table 'CYA Attendance (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'CYA Attendance (2)' = m
+	partition 'CYA Attendance' = m
 		mode: import
 		source =
 				let
@@ -283,4 +283,5 @@ table 'CYA Attendance (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

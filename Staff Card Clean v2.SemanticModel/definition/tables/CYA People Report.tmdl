@@ -1,9 +1,9 @@
-table 'CYA People Report (2)'
+table 'CYA People Report'
 	lineageTag: 34c15d4b-b26c-459a-bfa5-404d3bf44270
 
 	measure 'People (Distinct)' =
 			
-			DISTINCTCOUNT('CYA People Report (2)'[Upshot ID])
+			DISTINCTCOUNT('CYA People Report'[Upshot ID])
 		formatString: 0
 		lineageTag: 3f812bd4-c99b-427d-9108-cd1ee82efc85
 
@@ -848,7 +848,7 @@ table 'CYA People Report (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'CYA People Report (2)' = m
+	partition 'CYA People Report' = m
 		mode: import
 		source =
 				let
@@ -859,4 +859,5 @@ table 'CYA People Report (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

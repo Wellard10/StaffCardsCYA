@@ -20,7 +20,7 @@ This report is an automated, read-only analysis of the exported Power BI report 
 - Excel as source: many table partitions use Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/.../CYA Staff Card POW BI V2.xlsx")) — the authoritative data source is a SharePoint-hosted Excel file. See e.g. `Staff ID.tmdl`, `TE - Data.tmdl`.
 - DAX example: `DAXQueries/Query 1.dax` contains measure `DailyContractedHours` which uses LOOKUPVALUE and RELATED; such logic depends on clean relationships (see note below).
 - Relationships: `relationships.tmdl` shows numerous joins to `DateTable.Date` (Event date, Sessions Date, StaffSchedule.Date, Calendar.Start Date). Multiple relationships are marked `isActive: false` (AutoDetected_*). Several relationships use `crossFilteringBehavior: bothDirections` and `toCardinality: many` — these can create ambiguous filter propagation and performance issues.
-- Duplicate / exported copies: many tables include `(2)` in their filenames (for example `CYA People Report (2).tmdl`, `Barriers (2).tmdl`) and `.bak` files exist (e.g., `StaffSchedule.tmdl.bak`). These are likely exported duplicates or backups and should be reviewed before consolidation.
+- Duplicate / exported copies: many tables include `(2)` in their filenames (for example `CYA People Report.tmdl`, `Barriers.tmdl`) and `.bak` files exist (e.g., `StaffSchedule.tmdl.bak`). These are likely exported duplicates or backups and should be reviewed before consolidation.
 - Role-based RLS: Role `ViewerRLS` is present and applies a table-level filter to `Staff ID` using `Viewer Table` and `USERPRINCIPALNAME()`; changes to `Viewer Table` or `Staff ID` must be validated carefully.
 
 ## Problems that commonly reduce health or performance (observed here)
@@ -35,7 +35,7 @@ This report is an automated, read-only analysis of the exported Power BI report 
    - Validation: open `definition/tables/` and confirm only canonical table(s) remain referenced in `model.tmdl`/`relationships.tmdl`.
 
 2. Replace unnecessary bothDirections relationships with single-direction where the relationship only needs to flow from lookup -> fact. Why: improves query plan and reduces filter ambiguity.
-   - Example candidate: relationships with `crossFilteringBehavior: bothDirections` between `Strat2.Activity` and `'Sessions + Activities (2)'.Activity` (see `relationships.tmdl`).
+   - Example candidate: relationships with `crossFilteringBehavior: bothDirections` between `Strat2.Activity` and `'Sessions + Activities'.Activity` (see `relationships.tmdl`).
    - Validation: run visuals that rely on those relationships in Power BI Desktop and confirm expected filters after change.
 
 3. Consolidate date relationships: ensure the model uses a single Date table (DateTable) with a clear active relationship per fact-date. If multiple date columns exist (Start Date, Event Date, Session Date), prefer using inactive relationships for secondary dates and use USERELATIONSHIP in measures when needed.
@@ -109,3 +109,4 @@ If you'd like, I will now create `MODEL_HEALTH_REPORT.md` in the repository (thi
 - "Stop" — keep the report only.
 
 Report created: `MODEL_HEALTH_REPORT.md` (this file).
+

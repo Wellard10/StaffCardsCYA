@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA People Report (2)"
+                          "Entity": "CYA People Report"
                         }
                       },
                       "Property": "Gender"
@@ -31,7 +31,7 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(CYA People Report (2).Gender)",
+              "queryRef": "Min(CYA People Report.Gender)",
               "nativeQueryRef": "Gender",
               "displayName": "Gender"
             }

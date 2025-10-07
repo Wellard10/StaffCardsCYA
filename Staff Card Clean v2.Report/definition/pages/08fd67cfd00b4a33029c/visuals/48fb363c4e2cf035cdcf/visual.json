@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Projects involved in (2)"
+                      "Entity": "Projects involved in"
                     }
                   },
                   "Property": "Project(s) involved in:"
                 }
               },
-              "queryRef": "Projects involved in (2).Project(s) involved in:",
+              "queryRef": "Projects involved in.Project(s) involved in:",
               "nativeQueryRef": "Project(s) involved in:",
               "active": true
             }
@@ -41,7 +41,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Projects involved in (2)"
+                          "Entity": "Projects involved in"
                         }
                       },
                       "Property": "Upshot ID"
@@ -50,7 +50,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "CountNonNull(Projects involved in (2).Upshot ID)",
+              "queryRef": "CountNonNull(Projects involved in.Upshot ID)",
               "nativeQueryRef": "Count of Upshot ID"
             }
           ]
@@ -65,7 +65,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Projects involved in (2)"
+                        "Entity": "Projects involved in"
                       }
                     },
                     "Property": "Upshot ID"

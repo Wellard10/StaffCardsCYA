@@ -1,11 +1,11 @@
-table 'Sessions + Activities (2)'
+table 'Sessions + Activities'
 	lineageTag: 59c9c10c-6937-48b4-9a3c-5bfc82c44ec3
 
 	measure 'Unique Session Hours' = ```
 			
 			SUMX(
-			    VALUES('Sessions + Activities (2)'[Session ID]),
-			    CALCULATE( MAX('Sessions + Activities (2)'[Duration (hrs)]))
+			    VALUES('Sessions + Activities'[Session ID]),
+			    CALCULATE( MAX('Sessions + Activities'[Duration (hrs)]))
 			)
 			
 			```
@@ -239,7 +239,7 @@ table 'Sessions + Activities (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Sessions + Activities (2)' = m
+	partition 'Sessions + Activities' = m
 		mode: import
 		source =
 				let
@@ -257,4 +257,5 @@ table 'Sessions + Activities (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

@@ -1,4 +1,4 @@
-table 'Projects involved in (2)'
+table 'Projects involved in'
 	lineageTag: 9992f150-a162-43e6-b9b2-322becce9b2e
 
 	column 'Upshot ID'
@@ -17,7 +17,7 @@ table 'Projects involved in (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Projects involved in (2)' = m
+	partition 'Projects involved in' = m
 		mode: import
 		source =
 				let
@@ -34,4 +34,5 @@ table 'Projects involved in (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

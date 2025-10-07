@@ -118,3 +118,4 @@ If you want, I can add a concrete Tabular Editor script example (e.g., update me
 If anything here is unclear or you'd like the instructions to include additional automation examples (specific Tabular Editor CLI flags, or a community pack/unpack script), tell me which tooling you prefer and I'll update this file.
 
 ````
+

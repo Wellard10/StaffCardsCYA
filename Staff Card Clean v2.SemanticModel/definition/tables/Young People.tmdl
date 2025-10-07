@@ -1,4 +1,4 @@
-table 'Young People (2)'
+table 'Young People'
 	lineageTag: c83bb040-e763-447c-b6ce-b58a4fa1c041
 
 	column 'Upshot ID'
@@ -842,7 +842,7 @@ table 'Young People (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Young People (2)' = m
+	partition 'Young People' = m
 		mode: import
 		source =
 				let
@@ -853,4 +853,5 @@ table 'Young People (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 

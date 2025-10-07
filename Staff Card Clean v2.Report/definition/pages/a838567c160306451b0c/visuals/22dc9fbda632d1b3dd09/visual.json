@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Sessions + Activities (2)"
+                      "Entity": "Sessions + Activities"
                     }
                   },
                   "Property": "Project"
                 }
               },
-              "queryRef": "Sessions + Activities (2).Project",
+              "queryRef": "Sessions + Activities.Project",
               "nativeQueryRef": "Project",
               "active": true
             }
@@ -39,13 +39,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Sessions + Activities (2)"
+                      "Entity": "Sessions + Activities"
                     }
                   },
                   "Property": "Unique Session Hours"
                 }
               },
-              "queryRef": "Sessions + Activities (2).Unique Session Hours",
+              "queryRef": "Sessions + Activities.Unique Session Hours",
               "nativeQueryRef": "Unique Session Hours"
             }
           ]
@@ -58,7 +58,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Sessions + Activities (2)"
+                    "Entity": "Sessions + Activities"
                   }
                 },
                 "Property": "Unique Session Hours"

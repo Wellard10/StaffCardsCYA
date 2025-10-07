@@ -40,89 +40,89 @@ relationship 833ba475-842b-0e0d-0197-44e37659d650
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: Strat2.Activity
-	toColumn: 'Sessions + Activities (2)'.Activity
+	toColumn: 'Sessions + Activities'.Activity
 
 relationship 71f41517-7c7a-77e9-4d84-fd30f75c695f
 	fromColumn: 'Viewer Table'.'Staff Name'
 	toColumn: 'Staff ID'.'Staff Name'
 
 relationship f27b2ab4-77cb-8864-f71e-2f8005c5aaaf
-	fromColumn: 'Sessions + Activities (2)'.Date
+	fromColumn: 'Sessions + Activities'.Date
 	toColumn: DateTable.Date
 
 relationship 9d589eeb-573e-92e2-3a6d-46d6a04f0694
-	fromColumn: 'Barriers (2)'.Barriers
-	toColumn: 'DIM BARRIER (2)'.Barriers
+	fromColumn: 'Barriers'.Barriers
+	toColumn: 'DIM BARRIER'.Barriers
 
 relationship 8f3f801c-434a-0e91-2237-4d35562e6f0a
-	fromColumn: 'Barriers (2)'.'Upshot ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'Barriers'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 2ddf55bd-2f95-d208-6595-9cd8c4cb8f4f
-	fromColumn: 'CYA Attendance (2)'.'Activity type'
+	fromColumn: 'CYA Attendance'.'Activity type'
 	toColumn: ActivityTypeTable1.'Activity type'
 
 relationship a0ada496-6715-c9d8-7b9d-6f44d296f920
-	fromColumn: 'CYA ME Tool (2)'.'Upshot ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'CYA ME Tool'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 28d4be5f-d54d-57dc-5bde-5b4f21dff38a
-	fromColumn: 'CYA People Report (2)'.'Please indicate if you have any of the following neurodivergent conditions (select all that apply):'
-	toColumn: 'DIM Neuro (2)'.Neurodivergent
+	fromColumn: 'CYA People Report'.'Please indicate if you have any of the following neurodivergent conditions (select all that apply):'
+	toColumn: 'DIM Neuro'.Neurodivergent
 
 relationship cb689806-a0a5-43c5-e4bb-3bb2ef5d9bc2
-	fromColumn: 'CYA People Report (2)'.'Project(s) involved in:'
-	toColumn: 'DIM Projects involved in (2)'.'Project(s) involved in:'
+	fromColumn: 'CYA People Report'.'Project(s) involved in:'
+	toColumn: 'DIM Projects involved in'.'Project(s) involved in:'
 
 relationship b8f235c4-f53e-c609-432a-2f22a80f4f76
-	fromColumn: 'Neuro (2)'.'Upshot ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'Neuro'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship a892a5c3-6fb3-2082-aef1-d1ffdbab58a5
 	isActive: false
-	fromColumn: 'Neuro (2)'.Neurodivergent
-	toColumn: 'DIM Neuro (2)'.Neurodivergent
+	fromColumn: 'Neuro'.Neurodivergent
+	toColumn: 'DIM Neuro'.Neurodivergent
 
 relationship 0e0e1c04-56c6-460a-3bec-4d110c3f3129
 	isActive: false
-	fromColumn: 'Neuro (2)'.'Upshot ID'
-	toColumn: 'Young People (2)'.'Upshot ID'
+	fromColumn: 'Neuro'.'Upshot ID'
+	toColumn: 'Young People'.'Upshot ID'
 
 relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
 	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship fd466d2f-f15e-c7d2-e103-a902b442cea2
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA ME Tool (2)'.'Upshot ID'
+	toColumn: 'CYA ME Tool'.'Upshot ID'
 
 relationship 0073a982-d560-ba9c-8694-3f9398e2d614
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA TLE (2)'.'Upshot ID'
+	toColumn: 'CYA TLE'.'Upshot ID'
 
 relationship f4396f82-944b-5a11-95b4-5c2139b4b115
 	isActive: false
-	fromColumn: 'Projects involved in (2)'.'Project(s) involved in:'
-	toColumn: 'DIM Projects involved in (2)'.'Project(s) involved in:'
+	fromColumn: 'Projects involved in'.'Project(s) involved in:'
+	toColumn: 'DIM Projects involved in'.'Project(s) involved in:'
 
 relationship 1a0703f5-5ecd-c47d-e455-340f77111f75
-	fromColumn: 'Projects involved in (2)'.'Upshot ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'Projects involved in'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 8799de30-d095-49da-fc7a-ec5aefbb7c35
 	isActive: false
 	crossFilteringBehavior: bothDirections
 	fromCardinality: one
-	fromColumn: 'Young People (2)'.'Upshot ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'Young People'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship ae3b8e6d-0bfc-67b8-c74c-d80864f080be
 	toCardinality: many
-	fromColumn: 'Sessions + Activities (2)'.'Session ID'
+	fromColumn: 'Sessions + Activities'.'Session ID'
 	toColumn: 'New Reg Data'.'Session ID'
 
 relationship 81492bbd-e422-8a13-d54b-cd47351e8c41
@@ -135,7 +135,7 @@ relationship ac802fcd-b474-753b-5bdf-b3bd9e50bd6e
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA Attendance (2)'.'Attendee ID'
+	toColumn: 'CYA Attendance'.'Attendee ID'
 
 relationship 24cb3711-5d9c-76f2-2a7c-10a9bceb7959
 	toCardinality: many
@@ -160,8 +160,8 @@ relationship 927dadc6-d065-23fe-73e9-f6c4afbdb558
 	toColumn: 'Staff ID'.'Staff Name'
 
 relationship e6f30c9b-cbca-17fc-d961-a5e147b62f9c
-	fromColumn: 'CYA Attendance (2)'.'Attendee ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'CYA Attendance'.'Attendee ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 60616e48-11c0-69b5-c882-659dc4818759
 	fromColumn: 'Sessions (3)'.'Staff Name'
@@ -182,15 +182,16 @@ relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
 
 relationship 79a17502-8ae4-49e4-aaa5-a2d71c2f834e
 	crossFilteringBehavior: bothDirections
-	fromColumn: 'Sessions + Activities (2)'.'Attendee ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	fromColumn: 'Sessions + Activities'.'Attendee ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 55517e67-8a2e-bc06-4599-ed42864dbfd0
 	fromColumn: 'Latest Status'.'Attendee ID'
-	toColumn: 'CYA People Report (2)'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 6aba1efd-fd22-da95-3848-2288d677c62f
 	toCardinality: many
 	fromColumn: 'TE - Data'.'Attendee ID'
-	toColumn: 'Sessions + Activities (2)'.'Attendee ID'
+	toColumn: 'Sessions + Activities'.'Attendee ID'
+
 

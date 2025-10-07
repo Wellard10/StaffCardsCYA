@@ -1,4 +1,4 @@
-table 'DIM Neuro (2)'
+table 'DIM Neuro'
 	lineageTag: 7c85359d-a7a5-4998-b5aa-b39797641cf7
 
 	column Neurodivergent
@@ -9,7 +9,7 @@ table 'DIM Neuro (2)'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'DIM Neuro (2)' = m
+	partition 'DIM Neuro' = m
 		mode: import
 		source =
 				let
@@ -27,4 +27,5 @@ table 'DIM Neuro (2)'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
 
