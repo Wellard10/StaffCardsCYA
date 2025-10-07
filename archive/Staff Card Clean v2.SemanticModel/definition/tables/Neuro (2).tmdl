@@ -1,0 +1,37 @@
+table 'Neuro (2)'
+	lineageTag: 46604ba1-ee45-4c19-854e-7e83b6e07007
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: 85ded6e0-7203-4d47-8f0c-55b0121a8ed8
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neurodivergent
+		dataType: string
+		lineageTag: 336ee37f-83c1-4759-98e6-d438f940b070
+		summarizeBy: none
+		sourceColumn: Neurodivergent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Neuro (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Upshot ID", "Please indicate if you have any of the following neurodivergent conditions (select all that apply):"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Please indicate if you have any of the following neurodivergent conditions (select all that apply):"),
+				    #"Trimmed Text" = Table.TransformColumns(#"Split Column by Delimiter",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Text.Clean, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each ([#"Please indicate if you have any of the following neurodivergent conditions (select all that apply):"] <> null and [#"Please indicate if you have any of the following neurodivergent conditions (select all that apply):"] <> "None")),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", "Neurodivergent"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,862 @@
+table 'CYA People Report (2)'
+	lineageTag: 34c15d4b-b26c-459a-bfa5-404d3bf44270
+
+	measure 'People (Distinct)' =
+			
+			DISTINCTCOUNT('CYA People Report (2)'[Upshot ID])
+		formatString: 0
+		lineageTag: 3f812bd4-c99b-427d-9108-cd1ee82efc85
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: 515a079b-a449-490d-a718-898a0a55865c
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 845dc6bf-2efb-46af-86c4-e0635897cda4
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Archived on'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: af2364ee-fade-40f6-ab16-ad6d918dac1d
+		summarizeBy: none
+		sourceColumn: Archived on
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'First Name'
+		dataType: string
+		lineageTag: fe917b9a-2202-4e7d-9537-f92c2b53e39a
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: db92a092-d6d4-40cd-b733-bf7427ce5535
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nickname
+		dataType: string
+		lineageTag: c64c93e8-21a2-4441-b72d-ad6643a8cfc8
+		summarizeBy: none
+		sourceColumn: Nickname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 33c7f13d-6d6c-492e-9aca-e0194a22a69c
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Birth'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 602d153b-8258-4d41-b854-a1446ed4f232
+		summarizeBy: none
+		sourceColumn: Date of Birth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e190152-7103-4a1f-8d22-cbd04c026621
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Identifying notes'
+		dataType: string
+		lineageTag: 80f10345-8de6-4649-8ec3-3aa39de05b36
+		summarizeBy: none
+		sourceColumn: Identifying notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address line 1'
+		dataType: string
+		lineageTag: ff85604f-f7fc-440b-aa1f-18cd41dd6ed1
+		summarizeBy: none
+		sourceColumn: Address line 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address line 2'
+		dataType: string
+		lineageTag: 5709291e-ac6d-42c8-9a87-e75d237dda35
+		summarizeBy: none
+		sourceColumn: Address line 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address line 3'
+		dataType: string
+		lineageTag: 4e517b3f-a77a-46ed-8685-cfb1272d9f63
+		summarizeBy: none
+		sourceColumn: Address line 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Town/City
+		dataType: string
+		lineageTag: 2ed8a4b4-8127-4a18-9047-a669a22388ec
+		summarizeBy: none
+		sourceColumn: Town/City
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: 55f11431-7ca4-4c87-b995-59db15a730a2
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Postcode
+		dataType: string
+		lineageTag: 4d6e54a8-571e-4bf6-87f1-4643bff517af
+		summarizeBy: none
+		sourceColumn: Postcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: 3482f381-a75a-40ff-a33a-5dbb53a08418
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Latitude
+		dataType: double
+		lineageTag: 2735d330-7646-4ec4-bb7b-e9f699498cdb
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Strategic Authority'
+		dataType: string
+		lineageTag: 43905149-7f7b-44c3-951a-342907e98cdb
+		summarizeBy: none
+		sourceColumn: Strategic Authority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'County or Unitary Authority'
+		dataType: string
+		lineageTag: adc68eca-6920-4335-96e4-e5187a1c9c9b
+		summarizeBy: none
+		sourceColumn: County or Unitary Authority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Local Authority'
+		dataType: string
+		lineageTag: f3b14a84-9213-4736-b670-6eac7c78d724
+		summarizeBy: none
+		sourceColumn: Local Authority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Constituency
+		dataType: string
+		lineageTag: 9d8849fe-68d6-4dc7-9b80-7ff22b7549ab
+		summarizeBy: none
+		sourceColumn: Constituency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ward
+		dataType: string
+		lineageTag: 94915542-5b54-418d-a16d-6538a730905f
+		summarizeBy: none
+		sourceColumn: Ward
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LSOA code'
+		dataType: string
+		lineageTag: da31ffe9-ab5a-47b8-8cab-d3e31fa9c91e
+		summarizeBy: none
+		sourceColumn: LSOA code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IMD percent'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9aa0eddc-7466-4850-b694-4972f8385ad7
+		summarizeBy: sum
+		sourceColumn: IMD percent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact relationship type'
+		dataType: string
+		lineageTag: ee4accd0-53a0-4f13-a98c-d568cea41a10
+		summarizeBy: none
+		sourceColumn: Contact relationship type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact first name'
+		dataType: string
+		lineageTag: d2617c3a-41b2-4419-860c-616944d7366d
+		summarizeBy: none
+		sourceColumn: Contact first name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact last name'
+		dataType: string
+		lineageTag: c43b393e-b1f7-405a-83f1-fba8d520c3c2
+		summarizeBy: none
+		sourceColumn: Contact last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 3c01bc58-08d6-4693-8dc7-9d85911fac19
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mobile Phone'
+		dataType: string
+		lineageTag: 93bf820a-1673-496c-8315-c3804dd646ba
+		summarizeBy: none
+		sourceColumn: Mobile Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other telephone'
+		dataType: string
+		lineageTag: 9be8d33b-196b-42e8-8d6b-fc4ab6081b72
+		summarizeBy: none
+		sourceColumn: Other telephone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emergency contact details'
+		dataType: string
+		lineageTag: e6c9ab7b-0271-45ea-a6ee-97bb8fd06d85
+		summarizeBy: none
+		sourceColumn: Emergency contact details
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Specific medical conditions'
+		dataType: string
+		lineageTag: 59811ef1-f9ca-4a30-b389-49debc11935b
+		summarizeBy: none
+		sourceColumn: Specific medical conditions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Any other conditions, allergies or dietary requirements etc'
+		dataType: string
+		lineageTag: db35a236-e92d-4ab2-882a-5db84f9a002b
+		summarizeBy: none
+		sourceColumn: Any other conditions, allergies or dietary requirements etc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disability
+		dataType: string
+		lineageTag: 52a8ab90-7133-42b2-adc6-91b23bd3e8ab
+		summarizeBy: none
+		sourceColumn: Disability
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ethnicity
+		dataType: string
+		lineageTag: f7506869-f424-4977-bc3c-ec02a1ce7c48
+		summarizeBy: none
+		sourceColumn: Ethnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faith
+		dataType: string
+		lineageTag: 8c4f41bc-4f58-4d46-8be1-f5600016fa88
+		summarizeBy: none
+		sourceColumn: Faith
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sexual orientation'
+		dataType: string
+		lineageTag: f22e24b4-999b-44ea-bf59-1dc88e64bbac
+		summarizeBy: none
+		sourceColumn: Sexual orientation
+
+		annotation SummarizationSetBy = Automatic
+
+	column School/College/University
+		dataType: string
+		lineageTag: d6bcfc66-0029-4484-acca-708398ae9f9b
+		summarizeBy: none
+		sourceColumn: School/College/University
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: ce9eb2e8-183e-41ab-be94-ca8256b7546d
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edubase URN'
+		dataType: string
+		lineageTag: cd1f9906-488c-4d9a-ac3d-9727f199cf22
+		summarizeBy: none
+		sourceColumn: Edubase URN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FA number'
+		dataType: string
+		lineageTag: 2f6e88d3-ebd6-4fde-947f-f2b741743b3d
+		summarizeBy: none
+		sourceColumn: FA number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Membership ID/number'
+		dataType: string
+		lineageTag: 769b8382-88d7-4dd8-ae72-cd08d548829d
+		summarizeBy: none
+		sourceColumn: Membership ID/number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has permission: Media consent'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d9013585-ca76-4154-b574-806b7a2eb286
+		summarizeBy: none
+		sourceColumn: Has permission: Media consent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has permission: Receive surveys via Upshot'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f36b3541-935f-4feb-b3ff-914dc3c1ebf4
+		summarizeBy: none
+		sourceColumn: Has permission: Receive surveys via Upshot
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has permission: Receive emails via Upshot'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a19b0ebe-9c95-4c34-a043-9b3de06d0c5f
+		summarizeBy: none
+		sourceColumn: Has permission: Receive emails via Upshot
+
+		annotation SummarizationSetBy = Automatic
+
+	column Registered
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cd9a54a0-b6cb-4e5f-954a-4a204cf2ca3d
+		summarizeBy: none
+		sourceColumn: Registered
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Added to Upshot'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fe5dd77b-32a9-4be9-be1d-9ba0cbc57793
+		summarizeBy: none
+		sourceColumn: Added to Upshot
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Added by'
+		dataType: string
+		lineageTag: 1f2be4e2-fc44-43b8-9d3c-78997f3f7577
+		summarizeBy: none
+		sourceColumn: Added by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Added via'
+		dataType: string
+		lineageTag: fbbebb93-c422-40a2-8cbc-af90d570a77e
+		summarizeBy: none
+		sourceColumn: Added via
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last updated'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9644cb6b-5a0e-4977-a131-a4d5f66043fb
+		summarizeBy: none
+		sourceColumn: Last updated
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Last updated by'
+		dataType: string
+		lineageTag: 5bacf0fc-6b2c-456e-b1a6-eb9372e4a6f0
+		summarizeBy: none
+		sourceColumn: Last updated by
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First session in time period'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 17fb03e0-1cd9-4530-9188-3d7f88d20bbb
+		summarizeBy: none
+		sourceColumn: First session in time period
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Last session in time period'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b9154a53-1e63-4fe6-ad99-e9f84b302b54
+		summarizeBy: none
+		sourceColumn: Last session in time period
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Project restrictions'
+		dataType: string
+		lineageTag: f9cae700-4e9b-4549-a24b-429dcb176838
+		summarizeBy: none
+		sourceColumn: Project restrictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NI Number:'
+		dataType: string
+		lineageTag: d790af50-cbf9-4eed-9b7b-b406cf1dc619
+		summarizeBy: none
+		sourceColumn: NI Number:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'What is the highest level of education you have completed?'
+		dataType: string
+		lineageTag: 1082b172-14d0-4562-bcb6-fe38935c6242
+		summarizeBy: none
+		sourceColumn: What is the highest level of education you have completed?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do you have any paid work/long term volunteering experience since leaving school?'
+		dataType: string
+		lineageTag: 5e01fc85-98bb-4a07-9210-adc0cb0503e0
+		summarizeBy: none
+		sourceColumn: Do you have any paid work/long term volunteering experience since leaving school?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do you have a driving licence?'
+		dataType: string
+		lineageTag: 8fbd0287-abb9-442b-8109-43bdd20414ca
+		summarizeBy: none
+		sourceColumn: Do you have a driving licence?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status at start of program'
+		dataType: string
+		lineageTag: a08b6428-e9e5-4096-881e-e75a2918da3b
+		summarizeBy: none
+		sourceColumn: Status at start of program
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'How long have you been unemployed?'
+		dataType: string
+		lineageTag: b58fe9c7-caad-4a05-9978-f163afbe744e
+		summarizeBy: none
+		sourceColumn: How long have you been unemployed?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'What area/sector would you like to like to work in?'
+		dataType: string
+		lineageTag: 15d6249a-2785-4d15-90e4-40ab1c68daf5
+		summarizeBy: none
+		sourceColumn: What area/sector would you like to like to work in?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Allergies
+		dataType: string
+		lineageTag: dd531dae-2214-4f01-849b-ec20e58a7184
+		summarizeBy: none
+		sourceColumn: Allergies
+
+		annotation SummarizationSetBy = Automatic
+
+	column Other
+		dataType: string
+		lineageTag: 24edae9a-06d5-4c81-a97b-c48164a4d9b1
+		summarizeBy: none
+		sourceColumn: Other
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do you personally consider yourself to have a disability, regardless of clinical diagnosis?'
+		dataType: string
+		lineageTag: 89872e36-e9d0-4892-b4d8-aeea84708a3f
+		summarizeBy: none
+		sourceColumn: Do you personally consider yourself to have a disability, regardless of clinical diagnosis?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do you personally consider yourself to be transgender?'
+		dataType: string
+		lineageTag: f235e851-59ed-469a-aa76-473d4c885020
+		summarizeBy: none
+		sourceColumn: Do you personally consider yourself to be transgender?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Please indicate if you have any of the following neurodivergent conditions (select all that apply):'
+		dataType: string
+		lineageTag: 70801ea4-0441-4a2c-bdf5-b816532f011b
+		summarizeBy: none
+		sourceColumn: Please indicate if you have any of the following neurodivergent conditions (select all that apply):
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do you have access to the following types of healthcare services?'
+		dataType: string
+		lineageTag: 229efaa4-bac4-4217-9811-5fb11d2ed475
+		summarizeBy: none
+		sourceColumn: Do you have access to the following types of healthcare services?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Are you care experienced?'
+		dataType: string
+		lineageTag: 3abb2813-fc48-4bdc-98c1-cc3fa1e4be73
+		summarizeBy: none
+		sourceColumn: Are you care experienced?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Where is your PA based?'
+		dataType: string
+		lineageTag: 31c711f3-6cb7-47d4-b109-9656966b88c4
+		summarizeBy: none
+		sourceColumn: Where is your PA based?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barriers
+		dataType: string
+		lineageTag: 878b8f3c-4a06-4212-b064-894f7a1f098a
+		summarizeBy: none
+		sourceColumn: Barriers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'If any of the options on ''Barriers to Employment'' said please state, list detail here:'
+		dataType: string
+		lineageTag: 39404d8f-8dab-4d5d-b1b9-0abf0c21a485
+		summarizeBy: none
+		sourceColumn: If any of the options on 'Barriers to Employment' said please state, list detail here:
+
+		annotation SummarizationSetBy = Automatic
+
+	column Benefits:
+		dataType: string
+		lineageTag: f31c5e73-e8ff-49f3-8e76-0b07b8fe8c6f
+		summarizeBy: none
+		sourceColumn: Benefits:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Claim for above:'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: afcec026-02e3-482a-8b18-d85fa904e752
+		summarizeBy: none
+		sourceColumn: Date of Claim for above:
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Other benefits:'
+		dataType: string
+		lineageTag: caa1bb88-03dd-47be-bf4a-ab3472f63c8a
+		summarizeBy: none
+		sourceColumn: Other benefits:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Living Arrangements:'
+		dataType: string
+		lineageTag: f45113bb-baaa-4da8-b6b0-d071511c27e6
+		summarizeBy: none
+		sourceColumn: Living Arrangements:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Are you working with any other service?'
+		dataType: string
+		lineageTag: 1630f132-f7a1-40fb-aa05-b9e640bfd7d2
+		summarizeBy: none
+		sourceColumn: Are you working with any other service?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'If other services worked with, please state:'
+		dataType: string
+		lineageTag: 2463b67f-21df-4b44-938f-fd5d4d895d49
+		summarizeBy: none
+		sourceColumn: If other services worked with, please state:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Which Services?'
+		dataType: string
+		lineageTag: 40f4bbfe-124b-463a-8b7e-03d7f4063c08
+		summarizeBy: none
+		sourceColumn: Which Services?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Referred from:'
+		dataType: string
+		lineageTag: 93f37b84-132a-4c6b-b227-566a7c64c38b
+		summarizeBy: none
+		sourceColumn: Referred from:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Center referred by?'
+		dataType: string
+		lineageTag: f3aed271-c4a0-4f9b-8a5b-9a594103e672
+		summarizeBy: none
+		sourceColumn: Job Center referred by?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes:
+		dataType: string
+		lineageTag: 0dc147d6-c659-4b06-966c-66a468c2c8d2
+		summarizeBy: none
+		sourceColumn: Notes:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project(s) involved in:'
+		dataType: string
+		lineageTag: 2488db7c-92f7-4575-878c-6910170cf7c5
+		summarizeBy: none
+		sourceColumn: Project(s) involved in:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Benny Walker Worker'
+		dataType: string
+		lineageTag: 8f015a80-7bd8-48d8-bd85-74eea329388f
+		summarizeBy: none
+		sourceColumn: Benny Walker Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forging Futures Worker'
+		dataType: string
+		lineageTag: fb3e5ac6-0dc4-4f9c-b6d3-b5c59125d9bd
+		summarizeBy: none
+		sourceColumn: Forging Futures Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Maintaining Relationships Worker'
+		dataType: string
+		lineageTag: ea15cb6d-22a0-44f8-98b2-b7f2e7e126bd
+		summarizeBy: none
+		sourceColumn: Maintaining Relationships Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leaving Care Worker'
+		dataType: string
+		lineageTag: c3b51892-e1de-4019-94b8-fe6e8cc4609e
+		summarizeBy: none
+		sourceColumn: Leaving Care Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Referral Status'
+		dataType: string
+		lineageTag: 9b6176e4-6e7b-4cce-b46e-439899400b8f
+		summarizeBy: none
+		sourceColumn: Referral Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Signposted to:'
+		dataType: string
+		lineageTag: fae6eeb5-0508-47e5-8f76-e636b1e177c5
+		summarizeBy: none
+		sourceColumn: Signposted to:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type of Profile:'
+		dataType: string
+		lineageTag: 234e6d3f-0003-4e93-a991-565f5e8a3f8a
+		summarizeBy: none
+		sourceColumn: Type of Profile:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inspira Worker'
+		dataType: string
+		lineageTag: 59c63c4f-d176-47db-b70c-51da1434c7e5
+		summarizeBy: none
+		sourceColumn: Inspira Worker
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector:
+		dataType: string
+		lineageTag: d685af8f-698f-4843-bf72-14a629d346d6
+		summarizeBy: none
+		sourceColumn: Sector:
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'What does your organisation offer?'
+		dataType: string
+		lineageTag: 77dcb6b2-538a-4c87-8059-1f97f4e4fa33
+		summarizeBy: none
+		sourceColumn: What does your organisation offer?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area(s):
+		dataType: string
+		lineageTag: 0d36bc69-8ba9-44f2-b1d8-c8584b579600
+		summarizeBy: none
+		sourceColumn: Area(s):
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'What age groups do you support?'
+		dataType: string
+		lineageTag: e66f7364-9d99-4d4f-b2a6-fffedabfd04b
+		summarizeBy: none
+		sourceColumn: What age groups do you support?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Organisations Notes'
+		dataType: string
+		lineageTag: 61bccab7-28a2-43fc-b059-a0ae53e99925
+		summarizeBy: none
+		sourceColumn: Organisations Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charity/Company Number'
+		dataType: string
+		lineageTag: 6d106a90-341f-47c2-854a-67ec948096ee
+		summarizeBy: none
+		sourceColumn: Charity/Company Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'What is the total annual income of your organisation?'
+		dataType: string
+		lineageTag: 707ed45d-51c3-4d9a-ad52-088fc8ebea01
+		summarizeBy: none
+		sourceColumn: What is the total annual income of your organisation?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'How long does the support term last?'
+		dataType: string
+		lineageTag: 4dfc52f4-3590-429c-9981-905861186de1
+		summarizeBy: none
+		sourceColumn: How long does the support term last?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Where did you learn about this organisation?'
+		dataType: string
+		lineageTag: 29184f07-a07f-4f9d-96ba-2316afed39a6
+		summarizeBy: none
+		sourceColumn: Where did you learn about this organisation?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Response time'
+		dataType: string
+		lineageTag: d69f4b85-e993-440d-a0ea-d3468ae8969c
+		summarizeBy: none
+		sourceColumn: Response time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CYA People Report (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople})
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

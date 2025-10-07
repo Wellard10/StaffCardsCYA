@@ -1,0 +1,37 @@
+table 'Projects involved in (2)'
+	lineageTag: 9992f150-a162-43e6-b9b2-322becce9b2e
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: 6706c3a7-f116-473d-b52c-82f9119a718f
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project(s) involved in:'
+		dataType: string
+		lineageTag: 7297a988-a796-46cc-8561-1c3e7edcf754
+		summarizeBy: none
+		sourceColumn: Project(s) involved in:
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Projects involved in (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Upshot ID", "Project(s) involved in:"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Project(s) involved in:", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Project(s) involved in:"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Project(s) involved in:", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Upshot ID", Text.Trim, type text}, {"Project(s) involved in:", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Upshot ID", Text.Clean, type text}, {"Project(s) involved in:", Text.Clean, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each [#"Project(s) involved in:"] <> null and [#"Project(s) involved in:"] <> "")
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
