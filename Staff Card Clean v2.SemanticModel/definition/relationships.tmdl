@@ -37,7 +37,7 @@ relationship 3684741f-1973-a6be-66fa-fee91f9a08aa
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 833ba475-842b-0e0d-0197-44e37659d650
-	crossFilteringBehavior: singleDirection
+	crossFilteringBehavior: oneDirection
 	toCardinality: many
 	fromColumn: Strat2.Activity
 	toColumn: 'Sessions + Activities'.Activity
@@ -126,7 +126,7 @@ relationship ae3b8e6d-0bfc-67b8-c74c-d80864f080be
 	toColumn: 'New Reg Data'.'Session ID'
 
 relationship 81492bbd-e422-8a13-d54b-cd47351e8c41
-	crossFilteringBehavior: singleDirection
+	crossFilteringBehavior: oneDirection
 	toCardinality: many
 	fromColumn: Project.'Session ID'
 	toColumn: 'New Reg Data'.'Session ID'
