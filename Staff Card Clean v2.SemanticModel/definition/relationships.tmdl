@@ -115,7 +115,7 @@ relationship 1a0703f5-5ecd-c47d-e455-340f77111f75
 
 relationship 8799de30-d095-49da-fc7a-ec5aefbb7c35
 	isActive: false
-	crossFilteringBehavior: oneDirection
+	crossFilteringBehavior: bothDirections
 	fromCardinality: one
 	fromColumn: 'Young People'.'Upshot ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
