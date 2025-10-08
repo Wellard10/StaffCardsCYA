@@ -35,7 +35,7 @@ annotation PBI_QueryOrder = ["TE - Data","Calendar","Staff ID","Project","Projec
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DaxQueryView_Desktop","WebModelingEdit","DevMode"]
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","WebModelingEdit","DevMode","TMDL-Extension"]
 
 ref table 'TE - Data'
 ref table Calendar
@@ -84,5 +84,3 @@ ref role 'Viewer Table'
 ref role ViewerRLS
 
 ref cultureInfo en-GB
-
-
