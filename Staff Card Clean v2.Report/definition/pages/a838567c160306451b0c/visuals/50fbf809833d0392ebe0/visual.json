@@ -202,5 +202,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2c4e9e30b8c830009e6a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sessions + Activities"
+              }
+            },
+            "Property": "Unique Session Hours"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

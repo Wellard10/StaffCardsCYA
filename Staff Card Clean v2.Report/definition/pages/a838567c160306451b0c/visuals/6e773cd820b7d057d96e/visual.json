@@ -247,6 +247,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "18043cd4e224ea2d8c64",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "StaffSchedule"
+                  }
+                },
+                "Property": "DailyHours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

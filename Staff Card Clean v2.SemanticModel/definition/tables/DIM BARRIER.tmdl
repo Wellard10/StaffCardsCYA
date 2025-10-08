@@ -30,4 +30,3 @@ table 'DIM BARRIER'
 
 	annotation PBI_ResultType = Table
 
-

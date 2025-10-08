@@ -210,6 +210,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "a0a920c70472d1cc7537",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendar"
+                  }
+                },
+                "Property": "Time Calcuation AL"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

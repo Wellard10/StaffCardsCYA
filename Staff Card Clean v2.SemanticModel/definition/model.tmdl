@@ -71,8 +71,8 @@ ref table 'CYA People Report'
 ref table 'CYA TLE'
 ref table 'CYA Attendance'
 ref table 'Young People'
-ref table 'Barriers'
-ref table 'Neuro'
+ref table Barriers
+ref table Neuro
 ref table 'DIM BARRIER'
 ref table 'DIM Neuro'
 ref table 'Projects involved in'
@@ -84,3 +84,4 @@ ref role 'Viewer Table'
 ref role ViewerRLS
 
 ref cultureInfo en-GB
+

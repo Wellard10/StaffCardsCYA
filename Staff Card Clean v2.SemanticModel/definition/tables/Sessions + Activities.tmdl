@@ -258,4 +258,3 @@ table 'Sessions + Activities'
 
 	annotation PBI_ResultType = Table
 
-

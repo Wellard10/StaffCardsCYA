@@ -86,5 +86,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "914cc90710e9080e00b8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Activity type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b12dc90813ac31049c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Total Hours (unique sessions)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,4 +1,4 @@
-table 'Barriers'
+table Barriers
 	lineageTag: 9ee5a957-2290-42d2-bdfc-1589a07d06cf
 
 	measure 'Count Nonblank Upshot ID' = CALCULATE(COUNTROWS('Barriers'), NOT ISBLANK('Barriers'[Upshot ID]))
@@ -21,7 +21,7 @@ table 'Barriers'
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Barriers' = m
+	partition Barriers = m
 		mode: import
 		source =
 				let
@@ -40,5 +40,4 @@ table 'Barriers'
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
-
 
