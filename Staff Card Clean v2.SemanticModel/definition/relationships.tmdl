@@ -93,7 +93,7 @@ relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
 	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship fd466d2f-f15e-c7d2-e103-a902b442cea2
-	crossFilteringBehavior: bothDirections
+	crossFilteringBehavior: oneDirection
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA ME Tool'.'Upshot ID'
