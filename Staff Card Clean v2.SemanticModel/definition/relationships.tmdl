@@ -51,11 +51,11 @@ relationship f27b2ab4-77cb-8864-f71e-2f8005c5aaaf
 	toColumn: DateTable.Date
 
 relationship 9d589eeb-573e-92e2-3a6d-46d6a04f0694
-	fromColumn: 'Barriers'.Barriers
+	fromColumn: Barriers.Barriers
 	toColumn: 'DIM BARRIER'.Barriers
 
 relationship 8f3f801c-434a-0e91-2237-4d35562e6f0a
-	fromColumn: 'Barriers'.'Upshot ID'
+	fromColumn: Barriers.'Upshot ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 2ddf55bd-2f95-d208-6595-9cd8c4cb8f4f
@@ -75,17 +75,17 @@ relationship cb689806-a0a5-43c5-e4bb-3bb2ef5d9bc2
 	toColumn: 'DIM Projects involved in'.'Project(s) involved in:'
 
 relationship b8f235c4-f53e-c609-432a-2f22a80f4f76
-	fromColumn: 'Neuro'.'Upshot ID'
+	fromColumn: Neuro.'Upshot ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship a892a5c3-6fb3-2082-aef1-d1ffdbab58a5
 	isActive: false
-	fromColumn: 'Neuro'.Neurodivergent
+	fromColumn: Neuro.Neurodivergent
 	toColumn: 'DIM Neuro'.Neurodivergent
 
 relationship 0e0e1c04-56c6-460a-3bec-4d110c3f3129
 	isActive: false
-	fromColumn: 'Neuro'.'Upshot ID'
+	fromColumn: Neuro.'Upshot ID'
 	toColumn: 'Young People'.'Upshot ID'
 
 relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
@@ -93,16 +93,9 @@ relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
 	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship fd466d2f-f15e-c7d2-e103-a902b442cea2
-	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA ME Tool'.'Upshot ID'
-
-relationship 0073a982-d560-ba9c-8694-3f9398e2d614
-	crossFilteringBehavior: bothDirections
-	toCardinality: many
-	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA TLE'.'Upshot ID'
 
 relationship f4396f82-944b-5a11-95b4-5c2139b4b115
 	isActive: false
@@ -126,13 +119,12 @@ relationship ae3b8e6d-0bfc-67b8-c74c-d80864f080be
 	toColumn: 'New Reg Data'.'Session ID'
 
 relationship 81492bbd-e422-8a13-d54b-cd47351e8c41
-	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: Project.'Session ID'
 	toColumn: 'New Reg Data'.'Session ID'
 
 relationship ac802fcd-b474-753b-5bdf-b3bd9e50bd6e
-	crossFilteringBehavior: bothDirections
+	crossFilteringBehavior: oneDirection
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA Attendance'.'Attendee ID'
@@ -181,7 +173,7 @@ relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 79a17502-8ae4-49e4-aaa5-a2d71c2f834e
-	crossFilteringBehavior: bothDirections
+	crossFilteringBehavior: oneDirection
 	fromColumn: 'Sessions + Activities'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
@@ -194,4 +186,8 @@ relationship 6aba1efd-fd22-da95-3848-2288d677c62f
 	fromColumn: 'TE - Data'.'Attendee ID'
 	toColumn: 'Sessions + Activities'.'Attendee ID'
 
+relationship 07237d1b-a27e-a924-4c87-bedf9056144e
+	toCardinality: many
+	fromColumn: 'CYA TLE'.'Upshot ID'
+	toColumn: 'New Reg Data'.'Attendee ID'
 
