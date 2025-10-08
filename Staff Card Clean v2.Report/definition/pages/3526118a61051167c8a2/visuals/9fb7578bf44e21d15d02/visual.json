@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA People Report (2)"
+                          "Entity": "CYA People Report"
                         }
                       },
                       "Property": "Gender"
@@ -31,7 +31,7 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(CYA People Report (2).Gender)",
+              "queryRef": "Min(CYA People Report.Gender)",
               "nativeQueryRef": "Gender",
               "displayName": "Gender"
             }
@@ -68,5 +68,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1861bf20c680d8c9ebca",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA People Report"
+                  }
+                },
+                "Property": "Gender"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

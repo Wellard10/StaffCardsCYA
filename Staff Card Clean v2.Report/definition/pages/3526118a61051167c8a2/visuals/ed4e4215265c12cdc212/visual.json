@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA TLE (2)"
+                      "Entity": "CYA TLE"
                     }
                   },
                   "Property": "Event type"
                 }
               },
-              "queryRef": "CYA TLE (2).Event type",
+              "queryRef": "CYA TLE.Event type",
               "nativeQueryRef": "Event type",
               "active": true
             },
@@ -35,13 +35,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA TLE (2)"
+                      "Entity": "CYA TLE"
                     }
                   },
                   "Property": "Event date"
                 }
               },
-              "queryRef": "CYA TLE (2).Event date.Variation.Date Hierarchy.Year",
+              "queryRef": "CYA TLE.Event date.Variation.Date Hierarchy.Year",
               "nativeQueryRef": "Event date Year",
               "active": false
             }
@@ -56,7 +56,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA TLE (2)"
+                          "Entity": "CYA TLE"
                         }
                       },
                       "Property": "Event type"
@@ -65,7 +65,7 @@
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(CYA TLE (2).Event type)",
+              "queryRef": "CountNonNull(CYA TLE.Event type)",
               "nativeQueryRef": "Count of Event type"
             }
           ]

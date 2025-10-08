@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'2359573 - HIr'"
+                                "Value": "'3349836 - KTr'"
                               }
                             }
                           ]
@@ -145,5 +145,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d9d66e9f585c902be743",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "New Reg Data"
+              }
+            },
+            "Property": "Pseudonym"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

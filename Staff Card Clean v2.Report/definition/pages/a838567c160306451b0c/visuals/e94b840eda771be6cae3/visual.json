@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Isabel Savage'"
+                                "Value": "'Jade Maguire'"
                               }
                             }
                           ]
@@ -202,6 +202,20 @@
           ]
         },
         "howCreated": "Exclude"
+      },
+      {
+        "name": "3975970072e7222023e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Staff ID"
+              }
+            },
+            "Property": "Staff Name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

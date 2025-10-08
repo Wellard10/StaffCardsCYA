@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Neuro (2)"
+                      "Entity": "Neuro"
                     }
                   },
                   "Property": "Neurodivergent"
                 }
               },
-              "queryRef": "Neuro (2).Neurodivergent",
+              "queryRef": "Neuro.Neurodivergent",
               "nativeQueryRef": "Neurodivergent",
               "active": true
             }
@@ -41,7 +41,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Neuro (2)"
+                          "Entity": "Neuro"
                         }
                       },
                       "Property": "Upshot ID"
@@ -50,7 +50,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "CountNonNull(Neuro (2).Upshot ID)",
+              "queryRef": "CountNonNull(Neuro.Upshot ID)",
               "nativeQueryRef": "Count of Upshot ID"
             }
           ]
@@ -65,7 +65,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Neuro (2)"
+                        "Entity": "Neuro"
                       }
                     },
                     "Property": "Upshot ID"

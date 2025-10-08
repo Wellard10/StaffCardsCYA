@@ -1,0 +1,30 @@
+table 'DIM Projects involved in'
+	lineageTag: dac89fd0-7dfd-4be8-bbf7-1175d86c8688
+
+	column 'Project(s) involved in:'
+		dataType: string
+		lineageTag: 569c1f1f-2ba2-4db1-8a65-a630ffcd5585
+		summarizeBy: none
+		sourceColumn: Project(s) involved in:
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM Projects involved in' = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Project(s) involved in:"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Project(s) involved in:", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Project(s) involved in:"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Project(s) involved in:", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{"Project(s) involved in:", Text.Trim, type text}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{"Project(s) involved in:", Text.Clean, type text}),
+				    #"Removed Duplicates" = Table.Distinct(#"Cleaned Text"),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([#"Project(s) involved in:"] <> null))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

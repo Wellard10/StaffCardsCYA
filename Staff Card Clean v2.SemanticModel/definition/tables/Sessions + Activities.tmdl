@@ -1,0 +1,260 @@
+table 'Sessions + Activities'
+	lineageTag: 59c9c10c-6937-48b4-9a3c-5bfc82c44ec3
+
+	measure 'Unique Session Hours' = ```
+			
+			SUMX(
+			    VALUES('Sessions + Activities'[Session ID]),
+			    CALCULATE( MAX('Sessions + Activities'[Duration (hrs)]))
+			)
+			
+			```
+		lineageTag: 032fee88-5e0c-4521-8236-e9229335c1e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Project
+		dataType: string
+		lineageTag: e2412b6d-0911-4ff9-9133-c7a72185b641
+		summarizeBy: none
+		sourceColumn: Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity type'
+		dataType: string
+		lineageTag: c9ba0695-feb6-46bf-a6e0-6282f377b5d4
+		summarizeBy: none
+		sourceColumn: Activity type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group'
+		dataType: string
+		lineageTag: 4a94201d-3d50-4710-bc2e-d5a669fd4cbb
+		summarizeBy: none
+		sourceColumn: Activity group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity group ID'
+		dataType: string
+		lineageTag: 9faf03be-dac6-4be1-8737-c91c9a6c3061
+		summarizeBy: none
+		sourceColumn: Activity group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Activity ID'
+		dataType: string
+		lineageTag: 6d00a584-8de6-4976-9c0e-17b8d5456413
+		summarizeBy: none
+		sourceColumn: Activity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity
+		dataType: string
+		lineageTag: 75550b5c-0b68-4d54-a3ec-6652e0d8c79b
+		summarizeBy: none
+		sourceColumn: Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 5bf696c6-8bcc-46ec-ae00-bcc196929216
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 79605f1f-8f51-41c8-9166-c1f2dabcbb79
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: 41fdcce4-e657-4a09-8721-9578912cefb3
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2da778c5-59ad-4be9-9d8d-850340e26f18
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: cbbee35f-ce03-4261-baa1-daf0ace79e3d
+		summarizeBy: none
+		sourceColumn: Start time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Duration (hrs)'
+		dataType: double
+		lineageTag: d55ff0a8-31a0-4a6d-904f-9cbf70834749
+		summarizeBy: sum
+		sourceColumn: Duration (hrs)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Session registrar'
+		dataType: string
+		lineageTag: 9cfe10b8-49c8-49e0-a3e4-fecdce88244a
+		summarizeBy: none
+		sourceColumn: Session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 28faa3cf-0d71-4d8c-afe5-86819a8b8446
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: fb791fe0-04ab-4a98-b299-5d31b44e723e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session ID'
+		dataType: string
+		lineageTag: 0deed75a-7d8c-4d2b-8260-e78ad77a5609
+		summarizeBy: none
+		sourceColumn: Session ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session notes'
+		dataType: string
+		lineageTag: 1cee0754-b6f9-4dee-bca6-86f043875e5c
+		summarizeBy: none
+		sourceColumn: Session notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee type'
+		dataType: string
+		lineageTag: ca438dc2-fd6e-46d7-9cb7-262a52ea45f1
+		summarizeBy: none
+		sourceColumn: Attendee type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First name'
+		dataType: string
+		lineageTag: 44e00d79-f447-46d8-a3ca-dba71d6ccb5b
+		summarizeBy: none
+		sourceColumn: First name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last name'
+		dataType: string
+		lineageTag: 3a3f2298-8297-4e66-a359-e2d680105813
+		summarizeBy: none
+		sourceColumn: Last name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nickname
+		dataType: string
+		lineageTag: 607f1f9b-2f49-4943-a509-ead83755bc18
+		summarizeBy: none
+		sourceColumn: Nickname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 07716ae0-5ec2-42c8-959e-7f68db0039c3
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique session registrar'
+		dataType: string
+		lineageTag: 6c821cde-d2db-43d5-aa8b-4bd597b5b606
+		summarizeBy: none
+		sourceColumn: Unique session registrar
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique session time'
+		dataType: double
+		lineageTag: a48e7dea-8ff3-4f4a-9863-476b2cee6e80
+		summarizeBy: sum
+		sourceColumn: Unique session time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: 6becc06e-fcdc-4c71-81a1-102e30bea9e4
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Leader'
+		dataType: string
+		lineageTag: 825b3c0c-1bac-4f53-80b5-6d74fff28b52
+		summarizeBy: none
+		sourceColumn: Session Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Registrar & Session Leader'
+		dataType: string
+		lineageTag: d0ad503c-d7d8-4830-9c22-186305f12890
+		summarizeBy: none
+		sourceColumn: Registrar & Session Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sessions + Activities' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    #"New Reg Data_Sheet" = Source{[Item="New Reg Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"New Reg Data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", Int64.Type}, {"Activity ID", Int64.Type}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", Int64.Type}, {"Date", type date}, {"Start time", type datetime}, {"Duration (hrs)", type number}, {"Session registrar", type text}, {"Tags", type any}, {"Status", type text}, {"Session ID", Int64.Type}, {"Session notes", type any}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type any}, {"Attendee ID", Int64.Type}, {"Unique session registrar", Int64.Type}, {"Unique session time", type number}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Column28", type any}, {"Column29", type any}, {"Column30", Int64.Type}, {"Column31", Int64.Type}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}, {"Column35", Int64.Type}, {"Column36", Int64.Type}, {"Column37", Int64.Type}, {"Column38", type number}, {"Column39", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([Session registrar] <> null)),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Tags", "Status", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Unique session registrar", "Unique session time", "Full Name", "Session Leader", "Registrar & Session Leader"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Project", type text}, {"Activity type", type text}, {"Activity group", type text}, {"Activity group ID", type text}, {"Activity ID", type text}, {"Activity", type text}, {"Title", type text}, {"Location", type text}, {"Location ID", type text}, {"Session registrar", type text}, {"Tags", type text}, {"Status", type text}, {"Session ID", type text}, {"Session notes", type text}, {"Attendee type", type text}, {"First name", type text}, {"Last name", type text}, {"Nickname", type text}, {"Attendee ID", type text}, {"Unique session registrar", type text}, {"Full Name", type text}, {"Session Leader", type text}, {"Registrar & Session Leader", type text}, {"Start time", type time}}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Changed Type1", each [Full Name] <> "Callum Hyslop" and [Full Name] <> "Claire Price" and [Full Name] <> "Conor Johnston" and [Full Name] <> "Damien Morris" and [Full Name] <> "Dana Hawkins" and [Full Name] <> "Emma McAvoy" and [Full Name] <> "Eve Hampson" and [Full Name] <> "Isabel Savage" and [Full Name] <> "Jade Maguire" and [Full Name] <> "Jamie Harrison" and [Full Name] <> "Jolene Barr" and [Full Name] <> "Kim Kimberlee-Smith" and [Full Name] <> "Maya Wannop" and [Full Name] <> "Michelle Brunskill" and [Full Name] <> "Rosie Barton" and [Full Name] <> "Rosie Murdoch" and [Full Name] <> "Scott Ferguson" and [Full Name] <> "Shannon Rush" and [Full Name] <> "Anna Witty")
+				in
+				    #"Filtered Rows2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

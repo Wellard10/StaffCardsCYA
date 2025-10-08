@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA Attendance (2)"
+                          "Entity": "CYA Attendance"
                         }
                       },
                       "Property": "Session ID"
@@ -31,7 +31,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Min(CYA Attendance (2).Session ID)",
+              "queryRef": "Min(CYA Attendance.Session ID)",
               "nativeQueryRef": "Total Sessions Attended",
               "displayName": "Total Sessions Attended"
             }
@@ -47,7 +47,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "CYA Attendance (2)"
+                        "Entity": "CYA Attendance"
                       }
                     },
                     "Property": "Session ID"
@@ -139,5 +139,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "00998264200c0d6c67d0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA Attendance"
+                  }
+                },
+                "Property": "Session ID"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

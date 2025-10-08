@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 1428.4743367583012,
-        "y": 196.44553697355244
+        "x": 9103.1891732127042,
+        "y": 485.05070857667272
       },
       "nodes": [
         {
@@ -19,7 +19,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 42
+          "zIndex": 39
         },
         {
           "location": {
@@ -32,7 +32,7 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 32
+          "zIndex": 31
         },
         {
           "location": {
@@ -45,7 +45,7 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 31
+          "zIndex": 30
         },
         {
           "location": {
@@ -58,7 +58,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 33
+          "zIndex": 32
         },
         {
           "location": {
@@ -84,7 +84,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 30
+          "zIndex": 29
         },
         {
           "location": {
@@ -136,7 +136,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 34
+          "zIndex": 33
         },
         {
           "location": {
@@ -208,13 +208,13 @@
             "x": 2212.9905505540523,
             "y": 415.40851847399745
           },
-          "nodeIndex": "Sessions + Activities (2)",
+          "nodeIndex": "Sessions + Activities",
           "nodeLineageTag": "59c9c10c-6937-48b4-9a3c-5bfc82c44ec3",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 41
+          "zIndex": 38
         },
         {
           "location": {
@@ -376,7 +376,7 @@
             "x": 9019.6087218942776,
             "y": 958.70023127803313
           },
-          "nodeIndex": "Barriers (2)",
+          "nodeIndex": "Barriers",
           "nodeLineageTag": "9ee5a957-2290-42d2-bdfc-1589a07d06cf",
           "size": {
             "height": 128,
@@ -389,59 +389,59 @@
             "x": 9303.6934589693738,
             "y": 470.69791123472913
           },
-          "nodeIndex": "CYA Attendance (2)",
+          "nodeIndex": "CYA Attendance",
           "nodeLineageTag": "7279be71-242d-49a5-9de9-6a6786446188",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 35
+          "zIndex": 34
         },
         {
           "location": {
             "x": 9587.6087218942776,
             "y": 872.70023127803313
           },
-          "nodeIndex": "CYA ME Tool (2)",
+          "nodeIndex": "CYA ME Tool",
           "nodeLineageTag": "fe541d8e-d971-4de7-a823-7f7b612f6b10",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 29
+          "zIndex": 42
         },
         {
           "location": {
             "x": 9871.6087218942776,
             "y": 872.70023127803313
           },
-          "nodeIndex": "CYA People Report (2)",
+          "nodeIndex": "CYA People Report",
           "nodeLineageTag": "34c15d4b-b26c-459a-bfa5-404d3bf44270",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 40
+          "zIndex": 41
         },
         {
           "location": {
             "x": 10173.318915692829,
             "y": 1157.047086335258
           },
-          "nodeIndex": "CYA TLE (2)",
+          "nodeIndex": "CYA TLE",
           "nodeLineageTag": "91ec0120-7f42-410d-b41f-5c62f0f2c08c",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 38
+          "zIndex": 37
         },
         {
           "location": {
             "x": 10439.608721894278,
             "y": 970.70023127803313
           },
-          "nodeIndex": "DIM BARRIER (2)",
+          "nodeIndex": "DIM BARRIER",
           "nodeLineageTag": "617f82cd-b746-486d-9029-20c6d0c62ded",
           "size": {
             "height": 104,
@@ -454,7 +454,7 @@
             "x": 10723.608721894278,
             "y": 970.70023127803313
           },
-          "nodeIndex": "DIM Neuro (2)",
+          "nodeIndex": "DIM Neuro",
           "nodeLineageTag": "7c85359d-a7a5-4998-b5aa-b39797641cf7",
           "size": {
             "height": 104,
@@ -467,7 +467,7 @@
             "x": 11007.608721894278,
             "y": 970.70023127803313
           },
-          "nodeIndex": "DIM Projects involved in (2)",
+          "nodeIndex": "DIM Projects involved in",
           "nodeLineageTag": "dac89fd0-7dfd-4be8-bbf7-1175d86c8688",
           "size": {
             "height": 104,
@@ -480,20 +480,20 @@
             "x": 11282.100868262583,
             "y": 674.82288713173386
           },
-          "nodeIndex": "Neuro (2)",
+          "nodeIndex": "Neuro",
           "nodeLineageTag": "46604ba1-ee45-4c19-854e-7e83b6e07007",
           "size": {
             "height": 128,
             "width": 234
           },
-          "zIndex": 36
+          "zIndex": 35
         },
         {
           "location": {
             "x": 11575.608721894278,
             "y": 879.92087261542383
           },
-          "nodeIndex": "Projects involved in (2)",
+          "nodeIndex": "Projects involved in",
           "nodeLineageTag": "9992f150-a162-43e6-b9b2-322becce9b2e",
           "size": {
             "height": 128,
@@ -506,13 +506,13 @@
             "x": 11859.608721894278,
             "y": 872.70023127803313
           },
-          "nodeIndex": "Young People (2)",
+          "nodeIndex": "Young People",
           "nodeLineageTag": "c83bb040-e763-447c-b6ce-b58a4fa1c041",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 37
+          "zIndex": 36
         },
         {
           "location": {
@@ -550,7 +550,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 39
+          "zIndex": 40
         }
       ],
       "name": "All tables",

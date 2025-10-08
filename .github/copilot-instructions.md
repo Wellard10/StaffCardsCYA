@@ -32,13 +32,12 @@ Start-Process -FilePath '.\Staff Card Clean v2.Report\Staff Card Clean v2.pbit'
 ```
 
 ## Patterns and repository conventions
-- Visuals are grouped by GUID: change-level edits to visuals live under `.../visuals/<GUID>/`.
-- The extracted layout is descriptive — prefer editing human-readable JSON keys like `title/text`, `format` or `dataBinding` only when you understand the effect. Small UI label and theme changes are low risk; changing dataset/table/column names is high risk.
-- Backups and duplicates exist (filenames including `(2)` or `.bak`). Treat `*.bak` and files with `(2)` as historical copies — do not propagate them unless explicitly required.
+ Recent action: any remaining `*.tmdl.bak`, `*.json.bak`, and files containing `(2)` have been moved into `Staff Card Clean v2.SemanticModel/archive/` on branch `chore/archive-duplicates` as a non-destructive archive. Review that branch/PR before merging.
 
 ## Integration points & external dependencies
-- Power BI Desktop — primary tool to author and validate the report. There is no CI system here that rebuilds PBIX files.
-- Tabular Editor / SSAS tools — useful for editing `.pbism`/`.tmdl` files and DAX expressions in `DAXQueries/`.
+ Additional PR guidance for archived backups
+ - When reviewing the archive PR, confirm that the archive contains only backups and that no active `.tmdl` files were removed from `definition/tables/`.
+ - If a backup in the archive should be restored instead of archived, request a targeted revert for that file in the PR (do not restore en masse without validation).
 - Theme JSON files under `StaticResources/` are consumed by the report during open-time in Power BI Desktop.
 - Role-level security is defined in `.../roles/*.tmdl`; changes should be validated with a report open and role testing.
 
@@ -118,3 +117,4 @@ If you want, I can add a concrete Tabular Editor script example (e.g., update me
 If anything here is unclear or you'd like the instructions to include additional automation examples (specific Tabular Editor CLI flags, or a community pack/unpack script), tell me which tooling you prefer and I'll update this file.
 
 ````
+

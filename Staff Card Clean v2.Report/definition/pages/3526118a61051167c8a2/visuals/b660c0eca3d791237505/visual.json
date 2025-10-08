@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA ME Tool (2)"
+                          "Entity": "CYA ME Tool"
                         }
                       },
                       "Property": "Submitted"
@@ -31,7 +31,7 @@
                   "Function": 4
                 }
               },
-              "queryRef": "Min(CYA ME Tool (2).Submitted)",
+              "queryRef": "Min(CYA ME Tool.Submitted)",
               "nativeQueryRef": "Latest Submitted",
               "format": "D"
             }
@@ -47,7 +47,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "CYA ME Tool (2)"
+                        "Entity": "CYA ME Tool"
                       }
                     },
                     "Property": "Submitted"
@@ -139,5 +139,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a0acabd3620aac20eec5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA ME Tool"
+                  }
+                },
+                "Property": "Submitted"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

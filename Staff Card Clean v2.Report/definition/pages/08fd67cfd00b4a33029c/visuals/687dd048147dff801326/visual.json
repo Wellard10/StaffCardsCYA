@@ -19,13 +19,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA People Report (2)"
+                      "Entity": "CYA People Report"
                     }
                   },
                   "Property": "Gender"
                 }
               },
-              "queryRef": "CYA People Report (2).Gender",
+              "queryRef": "CYA People Report.Gender",
               "nativeQueryRef": "Gender",
               "active": true
             }
@@ -57,5 +57,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "742ff149c096000d6369",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Gender"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

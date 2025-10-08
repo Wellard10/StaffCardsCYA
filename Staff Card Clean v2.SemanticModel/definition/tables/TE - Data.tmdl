@@ -3,16 +3,16 @@ table 'TE - Data'
 
 	measure 'Count of Event value (Latest per Attendee)' = ```
 			
-			VAR ThisValue = SELECTEDVALUE('CYA TLE (2)'[Event value])
+			VAR ThisValue = SELECTEDVALUE('CYA TLE'[Event value])
 			
 			-- one row per attendee in current slicers (not restricted by axis bin)
 			VAR LatestPerAttendee =
 			    ADDCOLUMNS(
-			        VALUES('CYA TLE (2)'[Upshot ID]),
+			        VALUES('CYA TLE'[Upshot ID]),
 			        "LatestDate",
 			            CALCULATE(
-			                MAX('CYA TLE (2)'[Event date]),
-			                REMOVEFILTERS('CYA TLE (2)'[Event value])   -- ignore axis filter
+			                MAX('CYA TLE'[Event date]),
+			                REMOVEFILTERS('CYA TLE'[Event value])   -- ignore axis filter
 			            )
 			    )
 			
@@ -27,13 +27,13 @@ table 'TE - Data'
 			            CALCULATE(
 			                MAXX(
 			                    FILTER(
-			                        'CYA TLE (2)',
-			                        'CYA TLE (2)'[Upshot ID] = AID &&
-			                        'CYA TLE (2)'[Event Date] = LD
+			                        'CYA TLE',
+			                        'CYA TLE'[Upshot ID] = AID &&
+			                        'CYA TLE'[Event Date] = LD
 			                    ),
-			                    'CYA TLE (2)'[Event value]
+			                    'CYA TLE'[Event value]
 			                ),
-			                REMOVEFILTERS('CYA TLE (2)'[Event value])   -- ignore axis filter
+			                REMOVEFILTERS('CYA TLE'[Event value])   -- ignore axis filter
 			            )
 			    )
 			RETURN

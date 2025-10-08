@@ -1,0 +1,43 @@
+table Barriers
+	lineageTag: 9ee5a957-2290-42d2-bdfc-1589a07d06cf
+
+	measure 'Count Nonblank Upshot ID' = CALCULATE(COUNTROWS('Barriers'), NOT ISBLANK('Barriers'[Upshot ID]))
+		formatString: 0
+		lineageTag: 1dce12f0-831c-4ff5-974a-c5b1017c2448
+
+	column 'Upshot ID'
+		dataType: string
+		lineageTag: becf59ec-30dc-4406-828a-cb97da8feddd
+		summarizeBy: none
+		sourceColumn: Upshot ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barriers
+		dataType: string
+		lineageTag: 2c776a7f-08d3-48f3-88da-8018d1620989
+		summarizeBy: none
+		sourceColumn: Barriers
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Barriers = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Upshot ID", "Barriers"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Removed Other Columns","Migrant, people with a foreign background, minorities (inc marginalised communities such as Roma)","Migrant; people with a foreign background; minorities (inc marginalised communities such as Roma)",Replacer.ReplaceText,{"Barriers"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Replaced Value2", {{"Barriers", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Barriers"),
+				    #"Filtered Rows" = Table.SelectRows(#"Split Column by Delimiter", each [Barriers] <> null and [Barriers] <> ""),
+				    #"Replaced Value" = Table.ReplaceValue(#"Filtered Rows","(Please state below)","",Replacer.ReplaceText,{"Barriers"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value"," (Aged up to 24 with a continuous JSA/UC claim of 6 month or more","",Replacer.ReplaceText,{"Upshot ID"}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Replaced Value1",{{"Barriers", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Barriers", Text.Clean, type text}})
+				in
+				    #"Cleaned Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

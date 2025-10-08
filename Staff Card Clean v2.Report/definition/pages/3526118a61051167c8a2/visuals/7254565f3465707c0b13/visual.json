@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA People Report (2)"
+                          "Entity": "CYA People Report"
                         }
                       },
                       "Property": "Barriers"
@@ -31,7 +31,7 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(CYA People Report (2).Barriers)",
+              "queryRef": "Min(CYA People Report.Barriers)",
               "nativeQueryRef": "First Barriers"
             }
           ]
@@ -96,5 +96,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "79a342a59210c6cab23e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA People Report"
+                  }
+                },
+                "Property": "Barriers"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

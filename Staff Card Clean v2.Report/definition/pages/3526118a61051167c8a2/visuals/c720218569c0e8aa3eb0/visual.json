@@ -21,7 +21,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA People Report (2)"
+                          "Entity": "CYA People Report"
                         }
                       },
                       "Property": "Added to Upshot"
@@ -30,7 +30,7 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(CYA People Report (2).Added to Upshot)",
+              "queryRef": "Min(CYA People Report.Added to Upshot)",
               "nativeQueryRef": "Added to Upshot",
               "displayName": "Added to Upshot"
             }
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "CYA People Report (2)"
+                        "Entity": "CYA People Report"
                       }
                     },
                     "Property": "Added to Upshot"
@@ -138,5 +138,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0f5ec8936e98c06108cb",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA People Report"
+                  }
+                },
+                "Property": "Added to Upshot"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance (2)"
+                      "Entity": "CYA Attendance"
                     }
                   },
                   "Property": "Activity type"
                 }
               },
-              "queryRef": "CYA Attendance (2).Activity type",
+              "queryRef": "CYA Attendance.Activity type",
               "nativeQueryRef": "Activity type",
               "active": true
             }
@@ -39,13 +39,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance (2)"
+                      "Entity": "CYA Attendance"
                     }
                   },
                   "Property": "Total Hours (unique sessions)"
                 }
               },
-              "queryRef": "CYA Attendance (2).Total Hours (unique sessions)",
+              "queryRef": "CYA Attendance.Total Hours (unique sessions)",
               "nativeQueryRef": "Total Hours (unique sessions)"
             }
           ]
@@ -58,7 +58,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CYA Attendance (2)"
+                    "Entity": "CYA Attendance"
                   }
                 },
                 "Property": "Total Hours (unique sessions)"
@@ -86,5 +86,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "914cc90710e9080e00b8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Activity type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b12dc90813ac31049c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Total Hours (unique sessions)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Barriers (2)"
+                      "Entity": "Barriers"
                     }
                   },
                   "Property": "Barriers"
                 }
               },
-              "queryRef": "Barriers (2).Barriers",
+              "queryRef": "Barriers.Barriers",
               "nativeQueryRef": "Barriers",
               "active": true
             }
@@ -41,7 +41,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Barriers (2)"
+                          "Entity": "Barriers"
                         }
                       },
                       "Property": "Upshot ID"
@@ -50,7 +50,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Barriers (2).Count Nonblank Upshot ID",
+              "queryRef": "Barriers.Count Nonblank Upshot ID",
               "nativeQueryRef": "Count of Upshot ID1"
             }
           ]
@@ -65,7 +65,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Barriers (2)"
+                        "Entity": "Barriers"
                       }
                     },
                     "Property": "Upshot ID"

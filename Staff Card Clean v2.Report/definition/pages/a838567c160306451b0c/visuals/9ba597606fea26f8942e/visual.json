@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Sessions + Activities (2)"
+                          "Entity": "Sessions + Activities"
                         }
                       },
                       "Property": "Session ID"
@@ -31,7 +31,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Min(Sessions + Activities (2).Session ID)",
+              "queryRef": "Min(Sessions + Activities.Session ID)",
               "nativeQueryRef": "Count of Session ID"
             }
           ]
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Sessions + Activities (2)"
+                        "Entity": "Sessions + Activities"
                       }
                     },
                     "Property": "Session ID"
@@ -205,5 +205,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "17466e1fd0a7d048996e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sessions + Activities"
+                  }
+                },
+                "Property": "Session ID"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

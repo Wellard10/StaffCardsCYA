@@ -20,13 +20,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Sessions + Activities (2)"
+                      "Entity": "Sessions + Activities"
                     }
                   },
                   "Property": "Unique Session Hours"
                 }
               },
-              "queryRef": "Sessions + Activities (2).Unique Session Hours",
+              "queryRef": "Sessions + Activities.Unique Session Hours",
               "nativeQueryRef": "Total Hours Supporting Young People",
               "displayName": "Total Hours Supporting Young People"
             }
@@ -107,7 +107,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Sessions + Activities (2)"
+                        "Entity": "Sessions + Activities"
                       }
                     },
                     "Property": "Duration (hrs)"

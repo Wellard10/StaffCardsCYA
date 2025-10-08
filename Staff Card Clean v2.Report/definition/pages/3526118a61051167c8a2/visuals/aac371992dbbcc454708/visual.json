@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'August'"
+                                "Value": "'September'"
                               }
                             }
                           ]
@@ -152,6 +152,13 @@
                     [
                       {
                         "Literal": {
+                          "Value": "'August'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
                           "Value": "'July'"
                         }
                       }
@@ -159,7 +166,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'August'"
+                          "Value": "'September'"
                         }
                       }
                     ]

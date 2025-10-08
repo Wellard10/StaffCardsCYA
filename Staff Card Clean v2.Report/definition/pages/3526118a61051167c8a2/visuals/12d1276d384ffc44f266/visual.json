@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA TLE (2)"
+                          "Entity": "CYA TLE"
                         }
                       },
                       "Property": "Event value"
@@ -31,7 +31,7 @@
                   "Function": 4
                 }
               },
-              "queryRef": "Min(CYA TLE (2).Event value)",
+              "queryRef": "Min(CYA TLE.Event value)",
               "nativeQueryRef": "Current Status",
               "displayName": "Current Status"
             }
@@ -131,7 +131,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CYA TLE (2)"
+                    "Entity": "CYA TLE"
                   }
                 },
                 "Property": "Event value"
@@ -149,7 +149,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "CYA TLE (2)"
+                "Entity": "CYA TLE"
               }
             },
             "Property": "Event type"
@@ -161,7 +161,7 @@
           "From": [
             {
               "Name": "c",
-              "Entity": "CYA TLE (2)",
+              "Entity": "CYA TLE",
               "Type": 0
             }
           ],
