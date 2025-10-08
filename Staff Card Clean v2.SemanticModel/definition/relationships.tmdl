@@ -89,13 +89,9 @@ relationship 0e0e1c04-56c6-460a-3bec-4d110c3f3129
 	toColumn: 'Young People'.'Upshot ID'
 
 relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
-
-relationship fd466d2f-f15e-c7d2-e103-a902b442cea2
-	toCardinality: many
-	fromColumn: 'New Reg Data'.'Attendee ID'
-	toColumn: 'CYA ME Tool'.'Upshot ID'
 
 relationship f4396f82-944b-5a11-95b4-5c2139b4b115
 	isActive: false
@@ -124,7 +120,6 @@ relationship 81492bbd-e422-8a13-d54b-cd47351e8c41
 	toColumn: 'New Reg Data'.'Session ID'
 
 relationship ac802fcd-b474-753b-5bdf-b3bd9e50bd6e
-	crossFilteringBehavior: oneDirection
 	toCardinality: many
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA Attendance'.'Attendee ID'
@@ -173,12 +168,7 @@ relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 79a17502-8ae4-49e4-aaa5-a2d71c2f834e
-	crossFilteringBehavior: oneDirection
 	fromColumn: 'Sessions + Activities'.'Attendee ID'
-	toColumn: 'CYA People Report'.'Upshot ID'
-
-relationship 55517e67-8a2e-bc06-4599-ed42864dbfd0
-	fromColumn: 'Latest Status'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
 relationship 6aba1efd-fd22-da95-3848-2288d677c62f
@@ -189,5 +179,14 @@ relationship 6aba1efd-fd22-da95-3848-2288d677c62f
 relationship 07237d1b-a27e-a924-4c87-bedf9056144e
 	toCardinality: many
 	fromColumn: 'CYA TLE'.'Upshot ID'
+	toColumn: 'New Reg Data'.'Attendee ID'
+
+relationship a096ddc7-0baa-c2c1-9324-ccce234b8175
+	fromColumn: 'Latest Status'.'Attendee ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
+
+relationship 3b99dac5-e779-4920-ae0f-dc3af9f5bbfc
+	toCardinality: many
+	fromColumn: 'CYA ME Tool'.'Upshot ID'
 	toColumn: 'New Reg Data'.'Attendee ID'
 
