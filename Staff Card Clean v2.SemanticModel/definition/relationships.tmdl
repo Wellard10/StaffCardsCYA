@@ -37,7 +37,7 @@ relationship 3684741f-1973-a6be-66fa-fee91f9a08aa
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 833ba475-842b-0e0d-0197-44e37659d650
-	crossFilteringBehavior: oneDirection
+	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: Strat2.Activity
 	toColumn: 'Sessions + Activities'.Activity
