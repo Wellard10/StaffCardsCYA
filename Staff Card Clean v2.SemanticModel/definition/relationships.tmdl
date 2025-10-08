@@ -173,7 +173,7 @@ relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 79a17502-8ae4-49e4-aaa5-a2d71c2f834e
-	crossFilteringBehavior: bothDirections
+	crossFilteringBehavior: oneDirection
 	fromColumn: 'Sessions + Activities'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
