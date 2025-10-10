@@ -37,7 +37,6 @@ relationship 3684741f-1973-a6be-66fa-fee91f9a08aa
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
 relationship 833ba475-842b-0e0d-0197-44e37659d650
-	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: Strat2.Activity
 	toColumn: 'Sessions + Activities'.Activity
@@ -89,7 +88,6 @@ relationship 0e0e1c04-56c6-460a-3bec-4d110c3f3129
 	toColumn: 'Young People'.'Upshot ID'
 
 relationship 7db63737-15f8-36dd-f273-b227d8ee8dc5
-	crossFilteringBehavior: bothDirections
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 
@@ -163,7 +161,6 @@ relationship 6feb20be-fc3f-c70f-b7e0-abe9105f54f7
 	toColumn: 'Staff ID'.'Staff Name'
 
 relationship 996b6c62-99ec-8e27-ad6e-13d461dc7666
-	crossFilteringBehavior: bothDirections
 	fromColumn: 'Strategic Outcomes'.'Global Outcome Code'
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
 
@@ -182,6 +179,7 @@ relationship 07237d1b-a27e-a924-4c87-bedf9056144e
 	toColumn: 'New Reg Data'.'Attendee ID'
 
 relationship a096ddc7-0baa-c2c1-9324-ccce234b8175
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'Latest Status'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
 

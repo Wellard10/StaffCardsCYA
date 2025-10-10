@@ -158,8 +158,53 @@ table 'CYA Event Types'
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOTLE, BFTLE, InfraTLE}),
-				    #"Removed Duplicates" = Table.Distinct(Source, {"Upshot ID", "Event date", "Event type"})
+				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
+				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
+				    TLETypeMap = {
+				        {"Upshot ID", type text},
+				        {"First name", type text},
+				        {"Last name", type text},
+				        {"Status", type text},
+				        {"Event ID", type text},
+				        {"Event date", type date},
+				        {"Expiry date", type text},
+				        {"Event type", type text},
+				        {"Event value", type text},
+				        {"Notes", type text},
+				        {"Project", type text},
+				        {"Activity", type text},
+				        {"Activity Group", type text},
+				        {"Activity Type", type text},
+				        {"Recording user first name", type text},
+				        {"Recording user last name", type text},
+				        {"Date recorded", type date},
+				        {"Time recorded", type time}
+				    },
+				    GetTLE = (item as text) as table =>
+				        let
+				            Raw = Source{[Item = item, Kind = "Table"]}[Data],
+				            ExistingColumns = List.Select(TLETypeMap, each List.Contains(Table.ColumnNames(Raw), _{0})),
+				            Typed = Table.TransformColumnTypes(Raw, ExistingColumns, "en-GB"),
+				            MissingColumns = List.Select(TLETypeMap, each not List.Contains(Table.ColumnNames(Typed), _{0})),
+				            WithAllColumns =
+				                List.Accumulate(
+				                    MissingColumns,
+				                    Typed,
+				                    (state, current) =>
+				                        let
+				                            columnName = current{0},
+				                            columnType = current{1}
+				                        in
+				                            Table.AddColumn(state, columnName, each null, columnType)
+				                )
+				        in
+				            WithAllColumns,
+				    Combined = Table.Combine({
+				        GetTLE("DOTLE"),
+				        GetTLE("BFTLE"),
+				        GetTLE("InfraTLE")
+				    }),
+				    #"Removed Duplicates" = Table.Distinct(Combined, {"Upshot ID", "Event date", "Event type"})
 				in
 				    #"Removed Duplicates"
 

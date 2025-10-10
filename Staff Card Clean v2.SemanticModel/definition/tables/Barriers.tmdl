@@ -25,7 +25,7 @@ table Barriers
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    Source = #"CYA People Report",
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Upshot ID", "Barriers"}),
 				    #"Replaced Value2" = Table.ReplaceValue(#"Removed Other Columns","Migrant, people with a foreign background, minorities (inc marginalised communities such as Roma)","Migrant; people with a foreign background; minorities (inc marginalised communities such as Roma)",Replacer.ReplaceText,{"Barriers"}),
 				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Replaced Value2", {{"Barriers", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Barriers"),

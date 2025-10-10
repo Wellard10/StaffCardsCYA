@@ -848,13 +848,173 @@ table 'CYA People Report'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Pseudonym
+		dataType: string
+		lineageTag: 171eaf74-b673-4660-8aa2-13980abdbe50
+		summarizeBy: none
+		sourceColumn: Pseudonym
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CYA People Report' = m
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople})
-				in
-				    Source
+								    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
+								    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
+								    PeopleTypeMap = {
+								        {"Upshot ID", type text},
+								        {"Status", type text},
+								        {"Archived on", type date},
+								        {"First Name", type text},
+								        {"Last Name", type text},
+								        {"Nickname", type text},
+								        {"Gender", type text},
+								        {"Date of Birth", type date},
+								        {"Age", Int64.Type},
+								        {"Identifying notes", type text},
+								        {"Address line 1", type text},
+								        {"Address line 2", type text},
+								        {"Address line 3", type text},
+								        {"Town/City", type text},
+								        {"County", type text},
+								        {"Postcode", type text},
+								        {"Longitude", type number},
+								        {"Latitude", type number},
+								        {"Strategic Authority", type text},
+								        {"County or Unitary Authority", type text},
+								        {"Local Authority", type text},
+								        {"Constituency", type text},
+								        {"Ward", type text},
+								        {"LSOA code", type text},
+				                        {"IMD percent", Int64.Type},
+								        {"Contact relationship type", type text},
+								        {"Contact first name", type text},
+								        {"Contact last name", type text},
+								        {"Email", type text},
+								        {"Mobile Phone", type text},
+								        {"Other telephone", type text},
+								        {"Emergency contact details", type text},
+								        {"Specific medical conditions", type text},
+								        {"Any other conditions, allergies or dietary requirements etc", type text},
+								        {"Disability", type text},
+								        {"Ethnicity", type text},
+								        {"Faith", type text},
+								        {"Sexual orientation", type text},
+								        {"School/College/University", type text},
+								        {"Type", type text},
+								        {"Edubase URN", type text},
+								        {"FA number", type text},
+								        {"Membership ID/number", type text},
+								        {"Has permission: Media consent", type logical},
+								        {"Has permission: Receive surveys via Upshot", type logical},
+								        {"Has permission: Receive emails via Upshot", type logical},
+								        {"Registered", type date},
+								        {"Added to Upshot", type date},
+								        {"Added by", type text},
+								        {"Added via", type text},
+								        {"Last updated", type date},
+								        {"Last updated by", type text},
+								        {"First session in time period", type date},
+								        {"Last session in time period", type date},
+								        {"Project restrictions", type text},
+								        {"NI Number:", type text},
+								        {"What is the highest level of education you have completed?", type text},
+								        {"Do you have any paid work/long term volunteering experience since leaving school?", type text},
+								        {"Do you have a driving licence?", type text},
+								        {"Status at start of program", type text},
+								        {"How long have you been unemployed?", type text},
+								        {"What area/sector would you like to like to work in?", type text},
+								        {"Allergies", type text},
+								        {"Other", type text},
+								        {"Do you personally consider yourself to have a disability, regardless of clinical diagnosis?", type text},
+								        {"Do you personally consider yourself to be transgender?", type text},
+								        {"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", type text},
+								        {"Do you have access to the following types of healthcare services?", type text},
+								        {"Are you care experienced?", type text},
+								        {"Where is your PA based?", type text},
+								        {"Barriers", type text},
+								        {"If any of the options on 'Barriers to Employment' said please state, list detail here:", type text},
+								        {"Benefits:", type text},
+								        {"Date of Claim for above:", type date},
+								        {"Other benefits:", type text},
+								        {"Living Arrangements:", type text},
+								        {"Are you working with any other service?", type text},
+								        {"If other services worked with, please state:", type text},
+								        {"Which Services?", type text},
+								        {"Referred from:", type text},
+								        {"Job Center referred by?", type text},
+								        {"Notes:", type text},
+								        {"Project(s) involved in:", type text},
+								        {"Benny Walker Worker", type text},
+								        {"Forging Futures Worker", type text},
+								        {"Maintaining Relationships Worker", type text},
+								        {"Leaving Care Worker", type text},
+								        {"Referral Status", type text},
+								        {"Signposted to:", type text},
+								        {"Inspira Worker", type text},
+								        {"Type of Profile:", type text},
+								        {"Sector:", type text},
+								        {"What does your organisation offer?", type text},
+								        {"Area(s):", type text},
+								        {"What age groups do you support?", type text},
+								        {"Organisations Notes", type text},
+								        {"Charity/Company Number", type text},
+								        {"What is the total annual income of your organisation?", type text},
+								        {"How long does the support term last?", type text},
+								        {"Where did you learn about this organisation?", type text},
+								        {"Response time", type text}
+								    },
+								    GetPeopleTable = (item as text) as table =>
+								        let
+								            Raw = Source{[Item = item, Kind = "Table"]}[Data],
+								            ExistingColumns = List.Select(PeopleTypeMap, each List.Contains(Table.ColumnNames(Raw), _{0})),
+								            Typed = Table.TransformColumnTypes(Raw, ExistingColumns, "en-GB"),
+								            MissingColumns = List.Select(PeopleTypeMap, each not List.Contains(Table.ColumnNames(Typed), _{0})),
+								            WithAllColumns =
+								                List.Accumulate(
+								                    MissingColumns,
+								                    Typed,
+								                    (state, current) =>
+								                        let
+								                            columnName = current{0},
+								                            columnType = current{1}
+								                        in
+								                            Table.AddColumn(state, columnName, each null, columnType)
+								                )
+								        in
+								            WithAllColumns,
+								    CombinedPeople = Table.Combine({
+								        GetPeopleTable("DOPeople"),
+								        GetPeopleTable("BFPeople"),
+								        GetPeopleTable("InfraPeople")
+								    }),
+								    #"Added Pseudonym" = Table.AddColumn(
+								        CombinedPeople,
+								        "Pseudonym",
+								        each
+								            let
+								                firstNameRaw = [#"First Name"],
+								                lastNameRaw = [#"Last Name"],
+								                idRaw = [#"Upshot ID"],
+								                firstName = if firstNameRaw <> null then Text.Trim(Text.From(firstNameRaw, "en-GB")) else "",
+								                lastName = if lastNameRaw <> null then Text.Trim(Text.From(lastNameRaw, "en-GB")) else "",
+								                attendeeId = if idRaw <> null then Text.Trim(Text.From(idRaw, "en-GB")) else "",
+								                lastClean = Text.Replace(Text.Replace(Text.Replace(lastName, " ", ""), "-", ""), "'", ""),
+								                initial = if firstName <> "" then Text.Upper(Text.Start(firstName, 1)) else "",
+								                last1 = if Text.Length(lastClean) >= 1 then Text.Upper(Text.Start(lastClean, 1)) else "",
+								                last2 = if Text.Length(lastClean) >= 2 then Text.Lower(Text.Middle(lastClean, 1, 1)) else "",
+								                pseudonym =
+								                    if attendeeId = "" or firstName = "" or lastName = "" then
+								                        null
+								                    else
+								                        attendeeId & " - " & initial & last1 & last2
+								            in
+								                pseudonym,
+								        type text
+								    )
+								in
+								    #"Added Pseudonym"
 
 	annotation PBI_NavigationStepName = Navigation
 

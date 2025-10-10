@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "New Reg Data"
+                          "Entity": "Sessions + Activities"
                         }
                       },
                       "Property": "Session ID"
@@ -31,7 +31,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Min(New Reg Data.Session ID)",
+              "queryRef": "Min(Sessions + Activities.Session ID)",
               "nativeQueryRef": "Sessions This Month",
               "displayName": "Sessions This Month"
             }
@@ -47,7 +47,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "New Reg Data"
+                        "Entity": "Sessions + Activities"
                       }
                     },
                     "Property": "Session ID"
@@ -150,7 +150,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "New Reg Data"
+                    "Entity": "Sessions + Activities"
                   }
                 },
                 "Property": "Session ID"

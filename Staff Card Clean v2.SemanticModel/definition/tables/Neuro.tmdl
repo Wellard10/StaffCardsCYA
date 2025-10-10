@@ -21,7 +21,7 @@ table Neuro
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    Source = #"CYA People Report",
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Upshot ID", "Please indicate if you have any of the following neurodivergent conditions (select all that apply):"}),
 				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Please indicate if you have any of the following neurodivergent conditions (select all that apply):"),
 				    #"Trimmed Text" = Table.TransformColumns(#"Split Column by Delimiter",{{"Please indicate if you have any of the following neurodivergent conditions (select all that apply):", Text.Trim, type text}}),

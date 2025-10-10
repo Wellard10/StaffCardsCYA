@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "New Reg Data"
+                      "Entity": "CYA People Report"
                     }
                   },
                   "Property": "Pseudonym"
                 }
               },
-              "queryRef": "New Reg Data.Pseudonym",
+              "queryRef": "CYA People Report.Pseudonym",
               "nativeQueryRef": "Pseudonym",
               "active": true
             }
@@ -50,49 +50,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "n",
-                    "Entity": "New Reg Data",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "n"
-                                }
-                              },
-                              "Property": "Pseudonym"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'3349836 - KTr'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "header": [
@@ -154,7 +112,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "New Reg Data"
+                "Entity": "CYA People Report"
               }
             },
             "Property": "Pseudonym"

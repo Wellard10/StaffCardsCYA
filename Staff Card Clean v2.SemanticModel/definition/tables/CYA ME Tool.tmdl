@@ -173,8 +173,37 @@ table 'CYA ME Tool'
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOMETool, BFMETool}),
-				    #"Sorted Rows" = Table.Sort(Source,{{"Upshot ID", Order.Ascending}, {"Submitted", Order.Ascending}}),
+				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
+				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
+				    METoolTypeMap = {
+				        {"Sent ID", type text},
+				        {"Sent name", type text},
+				        {"Participant name", type text},
+				        {"Upshot ID", type text},
+				        {"Submitted", type date},
+				        {"Q1. Relationships:", Int64.Type},
+				        {"Q2. Employability:", Int64.Type},
+				        {"Q3. Key Skills:", Int64.Type},
+				        {"Q4. Aspiration and Motivation:", Int64.Type},
+				        {"Q5. Social Involvement:", Int64.Type},
+				        {"Q6. A Healthy Lifestyle:", Int64.Type},
+				        {"Q7. Emotional Wellbeing:", Int64.Type},
+				        {"Q8. Home and Stability:", Int64.Type},
+				        {"Q9. Communication:", Int64.Type},
+				        {"Q10. Identity:", Int64.Type}
+				    },
+				    GetMETool = (item as text) as table =>
+				        let
+				            Raw = Source{[Item = item, Kind = "Table"]}[Data],
+				            #"Removed Other Columns" = Table.SelectColumns(Raw, {"Sent ID", "Sent name", "Participant name", "Upshot ID", "Submitted", "Q1. Relationships:", "Q2. Employability:", "Q3. Key Skills:", "Q4. Aspiration and Motivation:", "Q5. Social Involvement:", "Q6. A Healthy Lifestyle:", "Q7. Emotional Wellbeing:", "Q8. Home and Stability:", "Q9. Communication:", "Q10. Identity:"}),
+				            Typed = Table.TransformColumnTypes(#"Removed Other Columns", METoolTypeMap, "en-GB")
+				        in
+				            Typed,
+				    Combined = Table.Combine({
+				        GetMETool("DOMETool"),
+				        GetMETool("BFMETool")
+				    }),
+				    #"Sorted Rows" = Table.Sort(Combined,{{"Upshot ID", Order.Ascending}, {"Submitted", Order.Ascending}}),
 				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "GlobalIndex", 1, 1, Int64.Type),
 				    #"Added Custom" = Table.AddColumn(#"Added Index", "ME Tool order", each let
 				    currID = [Upshot ID]

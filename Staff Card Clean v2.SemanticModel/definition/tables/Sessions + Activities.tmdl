@@ -13,6 +13,17 @@ table 'Sessions + Activities'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Unique Session Hours (Filtered)' =
+			
+			VAR Activities =
+			    VALUES ( Strat2[Activity] )
+			RETURN
+			    CALCULATE (
+			        [Unique Session Hours],
+			        TREATAS ( Activities, 'Sessions + Activities'[Activity] )
+			    )
+		lineageTag: b8d301b6-bfe6-409e-bd44-df0412064b37
+
 	column Project
 		dataType: string
 		lineageTag: e2412b6d-0911-4ff9-9133-c7a72185b641

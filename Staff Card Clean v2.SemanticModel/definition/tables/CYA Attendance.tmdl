@@ -275,8 +275,63 @@ table 'CYA Attendance'
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOAttendance, BFAttendance, InfraAttendance}),
-				    #"Removed Duplicates" = Table.Distinct(Source, {"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Status", "Created on", "Created by", "Edited on", "Edited by", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Attendee status", "Archived on"})
+				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
+				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
+				    AttendanceTypeMap = {
+				        {"Project", type text},
+				        {"Activity type", type text},
+				        {"Activity group", type text},
+				        {"Activity group ID", type text},
+				        {"Activity ID", type text},
+				        {"Activity", type text},
+				        {"Title", type text},
+				        {"Location", type text},
+				        {"Location ID", type text},
+				        {"Date", type date},
+				        {"Start time", type time},
+				        {"Duration (hrs)", Int64.Type},
+				        {"Session registrar", type text},
+				        {"Tags", type any},
+				        {"Status", type text},
+				        {"Created on", type datetime},
+				        {"Created by", type text},
+				        {"Edited on", type datetime},
+				        {"Edited by", type text},
+				        {"Session ID", type text},
+				        {"Session notes", type any},
+				        {"Attendee type", type text},
+				        {"First name", type text},
+				        {"Last name", type text},
+				        {"Nickname", type any},
+				        {"Attendee ID", type text},
+				        {"Attendee status", type text},
+				        {"Archived on", type datetime}
+				    },
+				    GetAttendance = (item as text) as table =>
+				        let
+				            Raw = Source{[Item = item, Kind = "Table"]}[Data],
+				            ExistingColumns = List.Select(AttendanceTypeMap, each List.Contains(Table.ColumnNames(Raw), _{0})),
+				            Typed = Table.TransformColumnTypes(Raw, ExistingColumns, "en-GB"),
+				            MissingColumns = List.Select(AttendanceTypeMap, each not List.Contains(Table.ColumnNames(Typed), _{0})),
+				            WithAllColumns =
+				                List.Accumulate(
+				                    MissingColumns,
+				                    Typed,
+				                    (state, current) =>
+				                        let
+				                            columnName = current{0},
+				                            columnType = current{1}
+				                        in
+				                            Table.AddColumn(state, columnName, each null, columnType)
+				                )
+				        in
+				            WithAllColumns,
+				    Combined = Table.Combine({
+				        GetAttendance("DOAttendance"),
+				        GetAttendance("BFAttendance"),
+				        GetAttendance("InfraAttendance")
+				    }),
+				    #"Removed Duplicates" = Table.Distinct(Combined, {"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Status", "Created on", "Created by", "Edited on", "Edited by", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Attendee status", "Archived on"})
 				in
 				    #"Removed Duplicates"
 

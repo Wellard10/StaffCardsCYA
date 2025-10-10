@@ -14,8 +14,15 @@ table 'Latest Status'
 
 	measure 'Latest Status People' =
 			
-			COUNTROWS ( 'Latest Status' )  -- one row per person in this table
-			-- or use DISTINCTCOUNT('Latest Status'[Upshot ID]) if you prefer
+			VAR SelectedAttendees =
+			    CALCULATETABLE (
+			        DISTINCT ( 'Sessions + Activities'[Attendee ID] )
+			    )
+			RETURN
+			    CALCULATE (
+			        COUNTROWS ( 'Latest Status' ),
+			        TREATAS ( SelectedAttendees, 'Latest Status'[Attendee ID] )
+			    )
 		formatString: 0
 		lineageTag: acce27bc-a4d6-44da-a742-dc7092b5ce8a
 

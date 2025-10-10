@@ -35,22 +35,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Latest Status"
-                        }
-                      },
-                      "Property": "Attendee ID"
+                    "SourceRef": {
+                      "Entity": "Latest Status"
                     }
                   },
-                  "Function": 2
+                  "Property": "Latest Status People"
                 }
               },
-              "queryRef": "CountNonNull(Latest Status.Attendee ID)",
-              "nativeQueryRef": "Count of Attendee ID"
+              "queryRef": "Latest Status.Latest Status People",
+              "nativeQueryRef": "Latest Status People"
             }
           ]
         }
@@ -166,8 +161,7 @@
             "Property": "Latest Status People"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "f5075df78beb8889e500",
@@ -183,25 +177,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "78baeb73ed182a007b04",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Latest Status"
-                  }
-                },
-                "Property": "Attendee ID"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

@@ -13,16 +13,22 @@ table 'DIM Projects involved in'
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({DOPeople, BFPeople, InfraPeople}),
+				    Source = #"CYA People Report",
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Project(s) involved in:"}),
-				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Other Columns", {{"Project(s) involved in:", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Project(s) involved in:"),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(
+				        Table.TransformColumns(
+				            #"Removed Other Columns",
+				            {{"Project(s) involved in:", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}
+				        ),
+				        "Project(s) involved in:"
+				    ),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Project(s) involved in:", type text}}),
 				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{"Project(s) involved in:", Text.Trim, type text}),
 				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{"Project(s) involved in:", Text.Clean, type text}),
-				    #"Removed Duplicates" = Table.Distinct(#"Cleaned Text"),
-				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([#"Project(s) involved in:"] <> null))
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each [#"Project(s) involved in:"] <> null),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows")
 				in
-				    #"Filtered Rows"
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
 

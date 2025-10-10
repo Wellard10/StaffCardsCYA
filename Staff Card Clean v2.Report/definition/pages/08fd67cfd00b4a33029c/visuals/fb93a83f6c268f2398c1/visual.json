@@ -22,17 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "New Reg Data"
+                          "Entity": "CYA People Report"
                         }
                       },
-                      "Property": "Attendee ID"
+                      "Property": "Upshot ID"
                     }
                   },
                   "Function": 2
                 }
               },
-              "queryRef": "Min(New Reg Data.Attendee ID)",
-              "nativeQueryRef": "Count of Attendee ID1"
+              "queryRef": "Min(CYA People Report.Upshot ID)",
+              "nativeQueryRef": "Count of Upshot ID1"
             }
           ]
         }
@@ -46,10 +46,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "New Reg Data"
+                        "Entity": "CYA People Report"
                       }
                     },
-                    "Property": "Attendee ID"
+                    "Property": "Upshot ID"
                   }
                 },
                 "Function": 2

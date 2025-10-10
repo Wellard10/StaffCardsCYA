@@ -23,10 +23,10 @@
                       "Entity": "Sessions + Activities"
                     }
                   },
-                  "Property": "Unique Session Hours"
+                  "Property": "Unique Session Hours (Filtered)"
                 }
               },
-              "queryRef": "Sessions + Activities.Unique Session Hours",
+              "queryRef": "Sessions + Activities.Unique Session Hours (Filtered)",
               "nativeQueryRef": "Total Hours Supporting Young People",
               "displayName": "Total Hours Supporting Young People"
             }
@@ -63,7 +63,7 @@
               },
               "queryRef": "Strat2.Activity",
               "nativeQueryRef": "Activity",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -78,7 +78,7 @@
               },
               "queryRef": "Global Outcomes.Global Outcomes",
               "nativeQueryRef": "Global Outcomes",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -93,7 +93,7 @@
               },
               "queryRef": "Strategic Outcomes.Strategic Outcomes",
               "nativeQueryRef": "Strategic Outcomes",
-              "active": false
+              "active": true
             }
           ]
         }
@@ -205,7 +205,44 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'One to One'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'4. ME tool Assessment'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'Improved quality of life'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -293,5 +330,79 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9716fb6b40a809b2d02b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sessions + Activities"
+              }
+            },
+            "Property": "Unique Session Hours (Filtered)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b95dd2690635b5114e1e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Strat2"
+              }
+            },
+            "Property": "Activity type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7963ba1002059bab9db7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Strat2"
+              }
+            },
+            "Property": "Activity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8b3750b4cba2e9749309",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Global Outcomes"
+              }
+            },
+            "Property": "Global Outcomes"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b107a1e1e507407b3060",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Strategic Outcomes"
+              }
+            },
+            "Property": "Strategic Outcomes"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
