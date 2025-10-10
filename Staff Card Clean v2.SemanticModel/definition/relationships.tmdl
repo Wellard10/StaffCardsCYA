@@ -188,3 +188,21 @@ relationship 3b99dac5-e779-4920-ae0f-dc3af9f5bbfc
 	fromColumn: 'CYA ME Tool'.'Upshot ID'
 	toColumn: 'New Reg Data'.'Attendee ID'
 
+relationship 712d0df9-55c7-4fdd-8c6f-ae6d93f2be7f
+	fromColumn: 'People Session Link'.'Attendee ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: bothDirections
+
+relationship c6f2fa8d-8b6d-4ee5-9e2b-8f1f80353616
+	fromColumn: 'People Session Link'.Date
+	toColumn: DateTable.Date
+	fromCardinality: many
+	toCardinality: one
+
+relationship dcc0b93a-23ef-4d4a-9dfb-20cbef3aadb0
+	fromColumn: 'People Session Link'.'Session Leader'
+	toColumn: 'Staff ID'.'Staff Name'
+	fromCardinality: many
+	toCardinality: one

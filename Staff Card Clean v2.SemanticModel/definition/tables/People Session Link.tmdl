@@ -1,0 +1,43 @@
+table 'People Session Link'
+	lineageTag: 8b3db3e2-53d6-4d5f-bf53-8cc5ce68fcd6
+
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 64d1db6f-2c5d-4d6e-8513-7f3cdd6d356b
+		summarizeBy: none
+		sourceColumn: 'Attendee ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Leader'
+		dataType: string
+		lineageTag: 54c8ccc8-91d4-4fb8-b9db-7b4e367211d4
+		summarizeBy: none
+		sourceColumn: 'Session Leader'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7ca9243d-5870-46ab-b466-05a0d3d068d8
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'People Session Link' = calculated
+		mode: import
+		source = ```
+				VAR Base =
+				    SUMMARIZE (
+				        'Sessions + Activities',
+				        'Sessions + Activities'[Attendee ID],
+				        'Sessions + Activities'[Session Leader],
+				        'Sessions + Activities'[Date]
+				    )
+				RETURN
+				    Base
+				```

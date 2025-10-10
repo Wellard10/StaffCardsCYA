@@ -60,6 +60,7 @@ ref table 'CYA People Report'
 ref table 'CYA TLE'
 ref table 'CYA Attendance'
 ref table 'Young People'
+ref table 'People Session Link'
 ref table Barriers
 ref table Neuro
 ref table 'DIM BARRIER'

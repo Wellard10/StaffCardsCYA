@@ -1,6 +1,27 @@
 table 'CYA People Report'
 	lineageTag: 34c15d4b-b26c-459a-bfa5-404d3bf44270
 
+	measure 'Has Sessions In Context' =
+			
+			VAR SelectedAttendee =
+			    SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedAttendee )
+			            && CALCULATE (
+			                COUNTROWS ( 'Sessions + Activities' ),
+			                KEEPFILTERS (
+			                    FILTER (
+			                        'Sessions + Activities',
+			                        'Sessions + Activities'[Attendee ID] = SelectedAttendee
+			                    )
+			                )
+			            ) > 0,
+			        1,
+			        0
+			    )
+		formatString: 0
+
 	measure 'People (Distinct)' =
 			
 			DISTINCTCOUNT('CYA People Report'[Upshot ID])
