@@ -21,6 +21,7 @@ table 'CYA People Report'
 			        0
 			    )
 		formatString: 0
+		lineageTag: 569204a5-c56e-47ae-b30a-808a05b8c2e0
 
 	measure 'People (Distinct)' =
 			

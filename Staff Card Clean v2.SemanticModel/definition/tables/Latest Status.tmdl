@@ -12,17 +12,19 @@ table 'Latest Status'
 		formatString: General Date
 		lineageTag: 04e6b41a-ebee-4984-8f6c-a2983c09bc44
 
-	measure 'Latest Status People' =
+	measure 'Latest Status People' = ```
 			
 			VAR SelectedAttendees =
 			    CALCULATETABLE (
-			        DISTINCT ( 'Sessions + Activities'[Attendee ID] )
+			        DISTINCT ( 'People Session Link'[Attendee ID] )
 			    )
 			RETURN
 			    CALCULATE (
 			        COUNTROWS ( 'Latest Status' ),
 			        TREATAS ( SelectedAttendees, 'Latest Status'[Attendee ID] )
 			    )
+			
+			```
 		formatString: 0
 		lineageTag: acce27bc-a4d6-44da-a742-dc7092b5ce8a
 

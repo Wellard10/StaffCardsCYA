@@ -6,8 +6,7 @@
     "y": 0,
     "z": 1000,
     "height": 720,
-    "width": 1281.1111111111111,
-    "tabOrder": 2000
+    "width": 1281.1111111111111
   },
   "visual": {
     "visualType": "decompositionTreeVisual",
@@ -78,7 +77,7 @@
               },
               "queryRef": "Global Outcomes.Global Outcomes",
               "nativeQueryRef": "Global Outcomes",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -93,7 +92,7 @@
               },
               "queryRef": "Strategic Outcomes.Strategic Outcomes",
               "nativeQueryRef": "Strategic Outcomes",
-              "active": true
+              "active": false
             }
           ]
         }
@@ -215,31 +214,7 @@
                   }
                 }
               ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'4. ME tool Assessment'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'Improved quality of life'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
+              "isToggled": true
             }
           ]
         }
@@ -330,79 +305,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9716fb6b40a809b2d02b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sessions + Activities"
-              }
-            },
-            "Property": "Unique Session Hours (Filtered)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b95dd2690635b5114e1e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Strat2"
-              }
-            },
-            "Property": "Activity type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7963ba1002059bab9db7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Strat2"
-              }
-            },
-            "Property": "Activity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8b3750b4cba2e9749309",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Global Outcomes"
-              }
-            },
-            "Property": "Global Outcomes"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b107a1e1e507407b3060",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Strategic Outcomes"
-              }
-            },
-            "Property": "Strategic Outcomes"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

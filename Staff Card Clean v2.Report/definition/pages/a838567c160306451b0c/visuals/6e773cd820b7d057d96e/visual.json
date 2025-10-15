@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 152.14921819192,
     "width": 139.1450115088499,
-    "tabOrder": 3000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -249,7 +249,7 @@
         }
       },
       {
-        "name": "18043cd4e224ea2d8c64",
+        "name": "69687531811a86470458",
         "field": {
           "Aggregation": {
             "Expression": {

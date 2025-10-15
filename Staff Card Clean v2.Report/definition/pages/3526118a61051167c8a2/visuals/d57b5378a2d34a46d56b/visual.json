@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "d57b5378a2d34a46d56b",
   "position": {
-    "x": 789.35534566235413,
-    "y": 425.23755853639176,
+    "x": 789.66592427616933,
+    "y": 424.7661469933185,
     "z": 15000,
-    "height": 295.19549170569093,
-    "width": 490.25859195174218,
-    "tabOrder": 10000
+    "height": 295.05567928730511,
+    "width": 490.33407572383078,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",
@@ -20,15 +20,35 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance"
+                      "Entity": "DateTable"
                     }
                   },
                   "Property": "Date"
                 }
               },
-              "queryRef": "CYA Attendance.Date",
-              "nativeQueryRef": "Count of Date",
-              "active": true
+              "queryRef": "DateTable.Date",
+              "nativeQueryRef": "Date",
+              "active": true,
+              "format": "dd/MM/yy"
+            }
+          ],
+          "showAll": true
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA Attendance"
+                    }
+                  },
+                  "Property": "Sessions Attended (Timeline Tooltip)"
+                }
+              },
+              "queryRef": "CYA Attendance.Sessions Attended (Timeline Tooltip)",
+              "nativeQueryRef": "Sessions Attended (Timeline Tooltip)"
             }
           ]
         },
@@ -36,22 +56,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA Attendance"
-                        }
-                      },
-                      "Property": "Session ID"
+                    "SourceRef": {
+                      "Entity": "CYA Attendance"
                     }
                   },
-                  "Function": 5
+                  "Property": "Sessions Attended (Timeline)"
                 }
               },
-              "queryRef": "CountNonNull(CYA Attendance.Session ID)",
-              "nativeQueryRef": "Count of Session ID1"
+              "queryRef": "CYA Attendance.Sessions Attended (Timeline)",
+              "nativeQueryRef": "Sessions Attended (Timeline)"
             }
           ]
         }
@@ -63,7 +78,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "CYA Attendance"
+                    "Entity": "DateTable"
                   }
                 },
                 "Property": "Date"
@@ -80,6 +95,86 @@
         {
           "properties": {}
         }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scalar'"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {}
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strokeLineJoin": {
+              "expr": {
+                "Literal": {
+                  "Value": "'bevel'"
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'step'"
+                }
+              }
+            },
+            "interpolationStep": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "markerSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -87,12 +182,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "23f6d6a20d5bccc212a4",
+        "name": "a7f4feea0d90691d9ba0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "CYA Attendance"
+                "Entity": "DateTable"
               }
             },
             "Property": "Date"
@@ -101,20 +196,29 @@
         "type": "Categorical"
       },
       {
-        "name": "087b67b405a1b1be7410",
+        "name": "39b8de9c8794dae8564c",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA Attendance"
-                  }
-                },
-                "Property": "Session ID"
+              "SourceRef": {
+                "Entity": "CYA Attendance"
               }
             },
-            "Function": 5
+            "Property": "Sessions Attended (Timeline Tooltip)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b19207fc76e0a866d6c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Sessions Attended (Timeline)"
           }
         },
         "type": "Advanced"

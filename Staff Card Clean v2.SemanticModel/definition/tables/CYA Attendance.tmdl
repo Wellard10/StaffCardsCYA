@@ -37,6 +37,80 @@ table 'CYA Attendance'
 		formatString: 0
 		lineageTag: 1a0de052-9756-46f5-a5dc-bd9e6146eb45
 
+	measure 'Sessions Attended (Timeline)' =
+			
+			VAR SelectedPeople =
+			    CALCULATETABLE (
+			        VALUES ( 'CYA People Report'[Upshot ID] ),
+			        ALL ( DateTable )
+			    )
+			VAR SelectedCount = COUNTROWS ( SelectedPeople )
+			VAR CurrentDate = SELECTEDVALUE ( DateTable[Date] )
+			VAR MinSessionDate =
+			    CALCULATE (
+			        MIN ( 'CYA Attendance'[Date] ),
+			        ALL ( 'CYA Attendance' ),
+			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] )
+			    )
+			VAR MaxSessionDate =
+			    CALCULATE (
+			        MAX ( 'CYA Attendance'[Date] ),
+			        ALL ( 'CYA Attendance' ),
+			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] )
+			    )
+			VAR SessionCountOnDate =
+			    CALCULATE (
+			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			        ALL ( 'CYA Attendance' ),
+			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] ),
+			        KEEPFILTERS (
+			            FILTER (
+			                ALL ( 'CYA Attendance'[Date] ),
+			                'CYA Attendance'[Date] = CurrentDate
+			            )
+			        )
+			    )
+			RETURN
+			    IF (
+			        SelectedCount <> 1
+			            || ISBLANK ( CurrentDate )
+			            || ISBLANK ( MinSessionDate )
+			            || ISBLANK ( MaxSessionDate ),
+			        BLANK (),
+			        IF (
+			            CurrentDate < MinSessionDate
+			                || CurrentDate > MaxSessionDate,
+			            BLANK (),
+			            SessionCountOnDate
+			        )
+			    )
+		lineageTag: b28a0c56-e743-49f1-a54a-abebf7aa32dc
+
+	measure 'Sessions Attended (Timeline Tooltip)' =
+			
+			VAR SelectedPeople =
+			    CALCULATETABLE (
+			        VALUES ( 'CYA People Report'[Upshot ID] ),
+			        REMOVEFILTERS ( DateTable )
+			    )
+			VAR SelectedCount = COUNTROWS ( SelectedPeople )
+			VAR CurrentDate = SELECTEDVALUE ( DateTable[Date] )
+			VAR SessionsOnDate =
+			    CALCULATE (
+			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] ),
+			        USERELATIONSHIP ( 'CYA Attendance'[Date], DateTable[Date] )
+			    )
+			RETURN
+			    IF (
+			        SelectedCount <> 1
+			            || ISBLANK ( CurrentDate )
+			            || SessionsOnDate = 0,
+			        BLANK (),
+			        SessionsOnDate
+			    )
+		lineageTag: 17bfadcf-e5fb-46d5-9860-50b5d2c97282
+
 	column Project
 		dataType: string
 		lineageTag: 008ea4d6-3575-42be-857b-8428d7d7d291

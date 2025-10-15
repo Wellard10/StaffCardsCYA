@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "687dd048147dff801326",
   "position": {
-    "x": 144.85790340981114,
+    "x": 144.08281545754537,
     "y": 0,
     "z": 5000,
-    "height": 95.793129674229945,
-    "width": 160.044619089872
+    "height": 119.38290423625187,
+    "width": 159.17720564833581,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -57,23 +58,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "742ff149c096000d6369",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Gender"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

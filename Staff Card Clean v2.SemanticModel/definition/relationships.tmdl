@@ -1,11 +1,3 @@
-relationship f32a4150-f17e-e6d3-01dc-2997e33d3347
-	fromColumn: 'TE - Data'.'Event date'
-	toColumn: DateTable.Date
-
-relationship fb88b317-2ab7-71f6-c2bb-340e01d5badf
-	fromColumn: Calendar.'Start Date'
-	toColumn: DateTable.Date
-
 relationship 34fc4423-f6d2-a3c6-b6cd-8bcda84107e5
 	fromColumn: Calendar.'Staff Name'
 	toColumn: 'Staff ID'.'Staff Name'
@@ -24,14 +16,6 @@ relationship AutoDetected_c1986341-14c8-4311-92d2-a159cd471272
 	fromColumn: 'Sessions (3)'.Project
 	toColumn: 'Project ID'.Project
 
-relationship ad328766-3361-1610-bfeb-7b07ce9cdafb
-	fromColumn: 'New Reg Data'.Date
-	toColumn: DateTable.Date
-
-relationship f7655cb9-3a57-3e62-8a0a-8776c06d6eaa
-	fromColumn: 'Sessions (3)'.Date
-	toColumn: DateTable.Date
-
 relationship 3684741f-1973-a6be-66fa-fee91f9a08aa
 	fromColumn: Strat2.'Global Outcome Code'
 	toColumn: 'Global Outcomes'.'Global Outcome Code'
@@ -44,10 +28,6 @@ relationship 833ba475-842b-0e0d-0197-44e37659d650
 relationship 71f41517-7c7a-77e9-4d84-fd30f75c695f
 	fromColumn: 'Viewer Table'.'Staff Name'
 	toColumn: 'Staff ID'.'Staff Name'
-
-relationship f27b2ab4-77cb-8864-f71e-2f8005c5aaaf
-	fromColumn: 'Sessions + Activities'.Date
-	toColumn: DateTable.Date
 
 relationship 9d589eeb-573e-92e2-3a6d-46d6a04f0694
 	fromColumn: Barriers.Barriers
@@ -131,15 +111,6 @@ relationship 4b7df31a-cdbd-a6a6-6f6a-1781fef8328a
 	fromColumn: 'KPI Test'.ProjectID
 	toColumn: 'Project ID'.Project
 
-relationship a7941c5c-588b-9301-a524-1cb8390fb07c
-	fromColumn: StaffSchedule.Date
-	toColumn: DateTable.Date
-
-relationship 83bfa2fd-542d-f39d-f715-3d473a6538db
-	toCardinality: many
-	fromColumn: StaffSchedule.Date
-	toColumn: Calendar.'Start Date'
-
 relationship 927dadc6-d065-23fe-73e9-f6c4afbdb558
 	fromColumn: StaffSchedule.'Staff Name'
 	toColumn: 'Staff ID'.'Staff Name'
@@ -150,10 +121,6 @@ relationship e6f30c9b-cbca-17fc-d961-a5e147b62f9c
 
 relationship 60616e48-11c0-69b5-c882-659dc4818759
 	fromColumn: 'Sessions (3)'.'Staff Name'
-	toColumn: 'Staff ID'.'Staff Name'
-
-relationship 7c99921f-c297-680f-0dd2-e400cc8b52db
-	fromColumn: 'TE - Data'.'Session Youth Worker'
 	toColumn: 'Staff ID'.'Staff Name'
 
 relationship 6feb20be-fc3f-c70f-b7e0-abe9105f54f7
@@ -188,21 +155,50 @@ relationship 3b99dac5-e779-4920-ae0f-dc3af9f5bbfc
 	fromColumn: 'CYA ME Tool'.'Upshot ID'
 	toColumn: 'New Reg Data'.'Attendee ID'
 
-relationship 712d0df9-55c7-4fdd-8c6f-ae6d93f2be7f
+relationship 9aee221e-ca21-a778-6258-bf8e6d7d7775
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'People Session Link'.'Attendee ID'
 	toColumn: 'CYA People Report'.'Upshot ID'
-	fromCardinality: many
-	toCardinality: one
-	crossFilteringBehavior: bothDirections
 
-relationship c6f2fa8d-8b6d-4ee5-9e2b-8f1f80353616
+relationship c303bf97-5855-1977-b7d6-6035e19b4b71
+	fromColumn: 'People Session Link'.'Registrar & Session Leader'
+	toColumn: 'Staff ID'.'Staff Name'
+
+relationship f32a4150-f17e-e6d3-01dc-2997e33d3347
+	fromColumn: 'TE - Data'.'Event date'
+	toColumn: DateTable.Date
+
+relationship fb88b317-2ab7-71f6-c2bb-340e01d5badf
+	fromColumn: Calendar.'Start Date'
+	toColumn: DateTable.Date
+
+relationship ad328766-3361-1610-bfeb-7b07ce9cdafb
+	fromColumn: 'New Reg Data'.Date
+	toColumn: DateTable.Date
+
+relationship f7655cb9-3a57-3e62-8a0a-8776c06d6eaa
+	fromColumn: 'Sessions (3)'.Date
+	toColumn: DateTable.Date
+
+relationship f27b2ab4-77cb-8864-f71e-2f8005c5aaaf
+	fromColumn: 'Sessions + Activities'.Date
+	toColumn: DateTable.Date
+
+relationship a7941c5c-588b-9301-a524-1cb8390fb07c
+	fromColumn: StaffSchedule.Date
+	toColumn: DateTable.Date
+
+relationship d506054f-794d-ab71-11cb-9d309a510f27
 	fromColumn: 'People Session Link'.Date
 	toColumn: DateTable.Date
-	fromCardinality: many
-	toCardinality: one
 
-relationship dcc0b93a-23ef-4d4a-9dfb-20cbef3aadb0
-	fromColumn: 'People Session Link'.'Session Leader'
-	toColumn: 'Staff ID'.'Staff Name'
-	fromCardinality: many
-	toCardinality: one
+relationship 893b4505-27ba-4ccd-b112-c80bb25ddfda
+	isActive: false
+	fromColumn: 'CYA Attendance'.Date
+	toColumn: DateTable.Date
+
+relationship 83bfa2fd-542d-f39d-f715-3d473a6538db
+	toCardinality: many
+	fromColumn: StaffSchedule.Date
+	toColumn: Calendar.'Start Date'
+

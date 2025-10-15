@@ -6,8 +6,7 @@
     "y": 0,
     "z": 1000,
     "height": 65.41969831410826,
-    "width": 190.41805044999367,
-    "tabOrder": 2000
+    "width": 190.41805044999367
   },
   "visual": {
     "visualType": "slicer",
@@ -81,7 +80,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Rosie Murdoch'"
+                                "Value": "'Isabel Savage'"
                               }
                             }
                           ]

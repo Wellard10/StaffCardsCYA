@@ -1,40 +1,41 @@
 table 'People Session Link'
-	lineageTag: 8b3db3e2-53d6-4d5f-bf53-8cc5ce68fcd6
+	lineageTag: 33525e0e-2ad7-4837-8aec-989fb4a70867
 
-column 'Attendee ID'
-	dataType: string
-	lineageTag: 64d1db6f-2c5d-4d6e-8513-7f3cdd6d356b
-	summarizeBy: none
+	column 'Attendee ID'
+		lineageTag: c546c24e-21ec-4b20-8a47-13ca84bb5fec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Sessions + Activities[Attendee ID]
 
-	annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = Automatic
 
-column 'Session Leader'
-	dataType: string
-	lineageTag: 54c8ccc8-91d4-4fb8-b9db-7b4e367211d4
-	summarizeBy: none
+	column Date
+		formatString: General Date
+		lineageTag: b7c29298-f1ef-4856-92d0-55b46cc2f5d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Sessions + Activities[Date]
 
-	annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = Automatic
 
-column Date
-	dataType: dateTime
-	formatString: Long Date
-	lineageTag: 7ca9243d-5870-46ab-b466-05a0d3d068d8
-	summarizeBy: none
+	column 'Registrar & Session Leader'
+		lineageTag: 85544ea3-c27c-4ab6-8864-756535b832be
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Sessions + Activities[Registrar & Session Leader]
 
-	annotation SummarizationSetBy = Automatic
-
-	annotation UnderlyingDateTimeDataType = Date
+		annotation SummarizationSetBy = Automatic
 
 	partition 'People Session Link' = calculated
 		mode: import
-		source = ```
+		source =
 				VAR Base =
 				    SUMMARIZE (
 				        'Sessions + Activities',
 				        'Sessions + Activities'[Attendee ID],
-				        'Sessions + Activities'[Session Leader],
+				        'Sessions + Activities'[Registrar & Session Leader],
 				        'Sessions + Activities'[Date]
 				    )
 				RETURN
 				    Base
-				```
+

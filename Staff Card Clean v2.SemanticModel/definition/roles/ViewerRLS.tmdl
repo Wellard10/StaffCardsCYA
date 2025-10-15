@@ -6,13 +6,13 @@ role ViewerRLS
 			
 			    CALCULATETABLE(
 			
-			        VALUES('Viewer Table'[Staff Name]),
+			        VALUES('User Access'[StaffName]),
 			
 			        FILTER(
 			
-			            'Viewer Table',
+			            'User Access',
 			
-			            LOWER('Viewer Table'[Viewer Email]) = LOWER(USERPRINCIPALNAME())
+			            LOWER('User Access'[Staff Email]) = LOWER(USERPRINCIPALNAME())
 			
 			        )
 			

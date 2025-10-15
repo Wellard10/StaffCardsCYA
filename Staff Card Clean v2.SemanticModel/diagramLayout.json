@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 9103.1891732127042,
-        "y": 485.05070857667272
+        "x": 9103.43193540816,
+        "y": 0
       },
       "nodes": [
         {
@@ -408,6 +408,19 @@
             "width": 234
           },
           "zIndex": 40
+        },
+        {
+          "location": {
+            "x": 12093.608721894278,
+            "y": 946.70023127803313
+          },
+          "nodeIndex": "People Session Link",
+          "nodeLineageTag": "33525e0e-2ad7-4837-8aec-989fb4a70867",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

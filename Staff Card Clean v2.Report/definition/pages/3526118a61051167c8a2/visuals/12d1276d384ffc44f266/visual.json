@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 73.75,
     "width": 212.5,
-    "tabOrder": 17000
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "card",
@@ -22,17 +22,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "CYA TLE"
+                          "Entity": "Latest Status"
                         }
                       },
-                      "Property": "Event value"
+                      "Property": "Current Status"
                     }
                   },
                   "Function": 4
                 }
               },
-              "queryRef": "Min(CYA TLE.Event value)",
-              "nativeQueryRef": "Current Status",
+              "queryRef": "Min(Latest Status.Current Status)",
+              "nativeQueryRef": "Last Current Status",
               "displayName": "Current Status"
             }
           ]
@@ -140,7 +140,8 @@
             "Function": 4
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "3dd095d479b770deca5b",

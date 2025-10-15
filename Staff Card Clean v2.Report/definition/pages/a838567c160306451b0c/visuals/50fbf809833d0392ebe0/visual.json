@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 126.16656103435163,
     "width": 139.01685891748005,
-    "tabOrder": 9000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -202,23 +202,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2c4e9e30b8c830009e6a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sessions + Activities"
-              }
-            },
-            "Property": "Unique Session Hours"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -125,7 +125,7 @@ table DateTable
 		source = ```
 				
 				ADDCOLUMNS(
-				    CALENDAR(DATE(2025, 1, 1), DATE(2025, 12, 31)),
+				    CALENDAR(DATE(2022, 01, 01), DATE(2025, 12, 31)),
 				    "Year", YEAR([Date]),
 				    "Month", FORMAT([Date], "MMMM"),
 				    "MonthNumber", MONTH([Date]),

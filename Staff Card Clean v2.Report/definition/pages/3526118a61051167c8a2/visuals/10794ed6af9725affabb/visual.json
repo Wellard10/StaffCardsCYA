@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 309.575358093548,
     "width": 398.35923437698062,
-    "tabOrder": 7000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "donutChart",
@@ -86,37 +86,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "914cc90710e9080e00b8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Activity type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3b12dc90813ac31049c3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Total Hours (unique sessions)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -6,7 +6,8 @@
     "y": 315.4164025858791,
     "z": 1000,
     "height": 355.13550513373053,
-    "width": 1025.6874128533402
+    "width": 1025.6874128533402,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "InforiverCharts582F6C55AB6442EF8FA129089285CB47",

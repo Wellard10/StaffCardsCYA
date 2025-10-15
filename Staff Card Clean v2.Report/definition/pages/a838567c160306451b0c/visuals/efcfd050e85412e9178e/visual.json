@@ -6,7 +6,8 @@
     "y": 415.8823678539739,
     "z": 6000,
     "height": 304.90252249968313,
-    "width": 376.16326530612247
+    "width": 376.16326530612247,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -54,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Latest Status"
-                      }
-                    },
-                    "Property": "Attendee ID"
+                  "SourceRef": {
+                    "Entity": "Latest Status"
                   }
                 },
-                "Function": 2
+                "Property": "Latest Status People"
               }
             },
             "direction": "Descending"

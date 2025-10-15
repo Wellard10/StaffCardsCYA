@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "8afae175a6df4638a1a9",
   "position": {
-    "x": 339.19716796257666,
+    "x": 338.72340425531911,
     "y": 0,
     "z": 6000,
-    "height": 73.79480371704912,
-    "width": 116.51811113218281,
-    "tabOrder": 1000
+    "height": 73.191489361702125,
+    "width": 117.44680851063829,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "card",
@@ -147,28 +147,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "410052e0c1dd389c618b",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA People Report"
-                  }
-                },
-                "Property": "Age"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

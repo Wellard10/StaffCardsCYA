@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 127.44122549408684,
     "width": 139.1450115088499,
-    "tabOrder": 10000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -210,25 +210,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "a0a920c70472d1cc7537",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendar"
-                  }
-                },
-                "Property": "Time Calcuation AL"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -6,7 +6,8 @@
     "y": 73.75,
     "z": 5000,
     "height": 68.75,
-    "width": 182.5
+    "width": 182.5,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "card",
@@ -138,28 +139,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0f5ec8936e98c06108cb",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA People Report"
-                  }
-                },
-                "Property": "Added to Upshot"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 65.41969831410826,
     "width": 190.41805044999367,
-    "tabOrder": 6000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Rosie Murdoch'"
+                                "Value": "'Isabel Savage'"
                               }
                             }
                           ]
@@ -202,20 +202,6 @@
           ]
         },
         "howCreated": "Exclude"
-      },
-      {
-        "name": "3975970072e7222023e2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Staff ID"
-              }
-            },
-            "Property": "Staff Name"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
