@@ -6,10 +6,10 @@ table 'Timeline Dates'
 		formatString: Long Date
 		lineageTag: 46e0e176-8992-46bb-b3b4-6b066b457297
 		summarizeBy: none
+		sourceColumn: Date
 
 	partition 'Timeline Dates' = calculated
 		mode: import
 		source = ```
 				CALENDAR ( DATE ( 2020, 1, 1 ), DATE ( 2025, 12, 31 ) )
 				```
-
