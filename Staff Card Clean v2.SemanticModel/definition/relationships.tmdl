@@ -203,3 +203,7 @@ relationship 83bfa2fd-542d-f39d-f715-3d473a6538db
 	fromColumn: StaffSchedule.Date
 	toColumn: Calendar.'Start Date'
 
+relationship 48ce257f-6b48-4786-a56b-cbbb6acca9e4
+	fromColumn: 'CYA TLE'.'Event date'
+	toColumn: 'Timeline Dates'.Date
+

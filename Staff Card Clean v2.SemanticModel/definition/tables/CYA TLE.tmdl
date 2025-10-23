@@ -1,6 +1,65 @@
 table 'CYA TLE'
 	lineageTag: 91ec0120-7f42-410d-b41f-5c62f0f2c08c
 
+	measure 'TLE Events (Timeline)' =
+			
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedEventType = SELECTEDVALUE ( 'CYA TLE'[Event type] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			RETURN
+			    IF (
+			        SelectedPerson = BLANK ()
+			            || SelectedEventType = BLANK ()
+			            || CurrentDate = BLANK (),
+			        BLANK (),
+			        CALCULATE (
+			            COUNTROWS ( 'CYA TLE' ),
+			            ALL ( 'CYA TLE' ),
+			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Event type] = SelectedEventType,
+			            'CYA TLE'[Event date] = CurrentDate
+			        )
+			    )
+		lineageTag: 417f156f-7876-47a7-b15f-6155a19a58b8
+
+	measure 'TLE Events (Timeline Tooltip)' =
+			
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			RETURN
+			    IF (
+			        SelectedPerson = BLANK ()
+			            || CurrentDate = BLANK (),
+			        BLANK (),
+			        VAR EventDetails =
+			            CALCULATETABLE (
+			                SUMMARIZE (
+			                    'CYA TLE',
+			                    'CYA TLE'[Event type],
+			                    'CYA TLE'[Event value]
+			                ),
+			                ALL ( 'CYA TLE' ),
+			                'CYA TLE'[Upshot ID] = SelectedPerson,
+			                'CYA TLE'[Event date] = CurrentDate
+			            )
+			        RETURN
+			            IF (
+			                COUNTROWS ( EventDetails ) = 0,
+			                BLANK (),
+			                CONCATENATEX (
+			                    EventDetails,
+			                    'CYA TLE'[Event type]
+			                        & IF (
+			                            NOT ISBLANK ( 'CYA TLE'[Event value] ),
+			                            ": " & 'CYA TLE'[Event value],
+			                            ""
+			                        ),
+			                    UNICHAR ( 10 )
+			                )
+			            )
+			    )
+		lineageTag: 863d1f20-2ad9-4745-97e5-8df5d98a8031
+
 	column 'Upshot ID'
 		dataType: string
 		lineageTag: e429fe16-fef8-4825-a588-84ecf9e71e59

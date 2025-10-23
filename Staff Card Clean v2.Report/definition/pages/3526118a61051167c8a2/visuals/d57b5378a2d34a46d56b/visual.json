@@ -20,19 +20,38 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DateTable"
+                      "Entity": "Timeline Dates"
                     }
                   },
                   "Property": "Date"
                 }
               },
-              "queryRef": "DateTable.Date",
+              "queryRef": "Timeline Dates.Date",
               "nativeQueryRef": "Date",
               "active": true,
               "format": "dd/MM/yy"
             }
           ],
           "showAll": true
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
+                    }
+                  },
+                  "Property": "Event type"
+                }
+              },
+              "queryRef": "CYA TLE.Event type",
+              "nativeQueryRef": "Event type",
+              "active": true
+            }
+          ]
         },
         "Tooltips": {
           "projections": [
@@ -41,14 +60,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance"
+                      "Entity": "CYA TLE"
                     }
                   },
-                  "Property": "Sessions Attended (Timeline Tooltip)"
+                  "Property": "TLE Events (Timeline Tooltip)"
                 }
               },
-              "queryRef": "CYA Attendance.Sessions Attended (Timeline Tooltip)",
-              "nativeQueryRef": "Sessions Attended (Timeline Tooltip)"
+              "queryRef": "CYA TLE.TLE Events (Timeline Tooltip)",
+              "nativeQueryRef": "TLE Events (Timeline Tooltip)"
             }
           ]
         },
@@ -59,14 +78,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA Attendance"
+                      "Entity": "CYA TLE"
                     }
                   },
-                  "Property": "Sessions Attended (Timeline)"
+                  "Property": "TLE Events (Timeline)"
                 }
               },
-              "queryRef": "CYA Attendance.Sessions Attended (Timeline)",
-              "nativeQueryRef": "Sessions Attended (Timeline)"
+              "queryRef": "CYA TLE.TLE Events (Timeline)",
+              "nativeQueryRef": "TLE Events (Timeline)"
             }
           ]
         }
@@ -78,7 +97,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DateTable"
+                    "Entity": "Timeline Dates"
                   }
                 },
                 "Property": "Date"
@@ -148,7 +167,7 @@
             "lineChartType": {
               "expr": {
                 "Literal": {
-                  "Value": "'step'"
+                  "Value": "'line'"
                 }
               }
             },
@@ -162,14 +181,14 @@
             "markerSize": {
               "expr": {
                 "Literal": {
-                  "Value": "5D"
+                  "Value": "8D"
                 }
               }
             },
             "strokeWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             }
@@ -182,12 +201,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a7f4feea0d90691d9ba0",
+        "name": "9941ab91318ceb33e6ac",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DateTable"
+                "Entity": "Timeline Dates"
               }
             },
             "Property": "Date"
@@ -196,7 +215,7 @@
         "type": "Categorical"
       },
       {
-        "name": "39b8de9c8794dae8564c",
+        "name": "eda97dafc1b642adf18d",
         "field": {
           "Measure": {
             "Expression": {
@@ -207,10 +226,11 @@
             "Property": "Sessions Attended (Timeline Tooltip)"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
-        "name": "b19207fc76e0a866d6c7",
+        "name": "3968dce1267811f92964",
         "field": {
           "Measure": {
             "Expression": {
@@ -221,42 +241,50 @@
             "Property": "Sessions Attended (Timeline)"
           }
         },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "6764c8e50b8c21ad51ef",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA TLE"
+              }
+            },
+            "Property": "Event type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a4300c3e0de301bd7f60",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA TLE"
+              }
+            },
+            "Property": "TLE Events (Timeline Tooltip)"
+          }
+        },
         "type": "Advanced"
       },
       {
-        "name": "a13e87aa0fb1fa16e688",
+        "name": "3dba2e2b7d181421b84a",
         "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA Attendance"
-                  }
-                },
-                "Property": "Sessions Attended (Timeline)"
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA TLE"
               }
             },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "CYA Attendance"
-                      }
-                    },
-                    "Property": "Sessions Attended (Timeline)"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
+            "Property": "TLE Events (Timeline)"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       }
     ]
   }

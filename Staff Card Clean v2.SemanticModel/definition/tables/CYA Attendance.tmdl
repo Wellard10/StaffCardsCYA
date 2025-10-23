@@ -40,54 +40,66 @@ table 'CYA Attendance'
 	measure 'Sessions Attended (Timeline)' =
 			
 			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
-			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
-			VAR AttendanceForPerson =
-			    CALCULATETABLE (
-			        ALL ( 'CYA Attendance' ),
-			        'CYA Attendance'[Attendee ID] = SelectedPerson
-			    )
-			VAR MinSessionDate = MINX ( AttendanceForPerson, 'CYA Attendance'[Date] )
-			VAR MaxSessionDate = MAXX ( AttendanceForPerson, 'CYA Attendance'[Date] )
-			VAR SessionCountOnDate =
-			    CALCULATE (
-			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
-			        AttendanceForPerson,
-			        KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
-			    )
 			RETURN
 			    IF (
-			        SelectedPerson = BLANK ()
-			            || ISBLANK ( CurrentDate )
-			            || ISBLANK ( MinSessionDate )
-			            || ISBLANK ( MaxSessionDate ),
+			        SelectedPerson = BLANK (),
 			        BLANK (),
-			        IF (
-			            CurrentDate < MinSessionDate
-			                || CurrentDate > MaxSessionDate,
-			            BLANK (),
-			            SessionCountOnDate
-			        )
+			        VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			        VAR MinSessionDate =
+			            CALCULATE (
+			                MIN ( 'CYA Attendance'[Date] ),
+			                REMOVEFILTERS ( 'Timeline Dates' ),
+			                TREATAS ( ROW ( "Attendee ID", SelectedPerson ), 'CYA Attendance'[Attendee ID] )
+			            )
+			        VAR MaxSessionDate =
+			            CALCULATE (
+			                MAX ( 'CYA Attendance'[Date] ),
+			                REMOVEFILTERS ( 'Timeline Dates' ),
+			                TREATAS ( ROW ( "Attendee ID", SelectedPerson ), 'CYA Attendance'[Attendee ID] )
+			            )
+			        VAR SessionCountOnDate =
+			            CALCULATE (
+			                DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			                TREATAS ( ROW ( "Attendee ID", SelectedPerson ), 'CYA Attendance'[Attendee ID] ),
+			                KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
+			            )
+			        RETURN
+			            IF (
+			                ISBLANK ( CurrentDate )
+			                    || ISBLANK ( MinSessionDate )
+			                    || ISBLANK ( MaxSessionDate ),
+			                BLANK (),
+			                IF (
+			                    CurrentDate < MinSessionDate
+			                        || CurrentDate > MaxSessionDate,
+			                    BLANK (),
+			                    SessionCountOnDate
+			                )
+			            )
 			    )
 		lineageTag: b28a0c56-e743-49f1-a54a-abebf7aa32dc
 
 	measure 'Sessions Attended (Timeline Tooltip)' =
 			
 			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
-			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
-			VAR SessionsOnDate =
-			    CALCULATE (
-			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
-			        ALL ( 'CYA Attendance' ),
-			        'CYA Attendance'[Attendee ID] = SelectedPerson,
-			        KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
-			    )
 			RETURN
 			    IF (
-			        SelectedPerson = BLANK ()
-			            || ISBLANK ( CurrentDate )
-			            || SessionsOnDate = 0,
+			        SelectedPerson = BLANK (),
 			        BLANK (),
-			        SessionsOnDate
+			        VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			        VAR SessionsOnDate =
+			            CALCULATE (
+			                DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			                TREATAS ( ROW ( "Attendee ID", SelectedPerson ), 'CYA Attendance'[Attendee ID] ),
+			                KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
+			            )
+			        RETURN
+			            IF (
+			                ISBLANK ( CurrentDate )
+			                    || SessionsOnDate = 0,
+			                BLANK (),
+			                SessionsOnDate
+			            )
 			    )
 		lineageTag: 17bfadcf-e5fb-46d5-9860-50b5d2c97282
 
