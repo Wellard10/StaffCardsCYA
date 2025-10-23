@@ -39,40 +39,24 @@ table 'CYA Attendance'
 
 	measure 'Sessions Attended (Timeline)' =
 			
-			VAR SelectedPeople =
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			VAR AttendanceForPerson =
 			    CALCULATETABLE (
-			        VALUES ( 'CYA People Report'[Upshot ID] ),
-			        ALL ( DateTable )
-			    )
-			VAR SelectedCount = COUNTROWS ( SelectedPeople )
-			VAR CurrentDate = SELECTEDVALUE ( DateTable[Date] )
-			VAR MinSessionDate =
-			    CALCULATE (
-			        MIN ( 'CYA Attendance'[Date] ),
 			        ALL ( 'CYA Attendance' ),
-			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] )
+			        'CYA Attendance'[Attendee ID] = SelectedPerson
 			    )
-			VAR MaxSessionDate =
-			    CALCULATE (
-			        MAX ( 'CYA Attendance'[Date] ),
-			        ALL ( 'CYA Attendance' ),
-			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] )
-			    )
+			VAR MinSessionDate = MINX ( AttendanceForPerson, 'CYA Attendance'[Date] )
+			VAR MaxSessionDate = MAXX ( AttendanceForPerson, 'CYA Attendance'[Date] )
 			VAR SessionCountOnDate =
 			    CALCULATE (
 			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
-			        ALL ( 'CYA Attendance' ),
-			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] ),
-			        KEEPFILTERS (
-			            FILTER (
-			                ALL ( 'CYA Attendance'[Date] ),
-			                'CYA Attendance'[Date] = CurrentDate
-			            )
-			        )
+			        AttendanceForPerson,
+			        KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
 			    )
 			RETURN
 			    IF (
-			        SelectedCount <> 1
+			        SelectedPerson = BLANK ()
 			            || ISBLANK ( CurrentDate )
 			            || ISBLANK ( MinSessionDate )
 			            || ISBLANK ( MaxSessionDate ),
@@ -88,22 +72,18 @@ table 'CYA Attendance'
 
 	measure 'Sessions Attended (Timeline Tooltip)' =
 			
-			VAR SelectedPeople =
-			    CALCULATETABLE (
-			        VALUES ( 'CYA People Report'[Upshot ID] ),
-			        REMOVEFILTERS ( DateTable )
-			    )
-			VAR SelectedCount = COUNTROWS ( SelectedPeople )
-			VAR CurrentDate = SELECTEDVALUE ( DateTable[Date] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
 			VAR SessionsOnDate =
 			    CALCULATE (
 			        DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
-			        TREATAS ( SelectedPeople, 'CYA Attendance'[Attendee ID] ),
-			        USERELATIONSHIP ( 'CYA Attendance'[Date], DateTable[Date] )
+			        ALL ( 'CYA Attendance' ),
+			        'CYA Attendance'[Attendee ID] = SelectedPerson,
+			        KEEPFILTERS ( 'CYA Attendance'[Date] = CurrentDate )
 			    )
 			RETURN
 			    IF (
-			        SelectedCount <> 1
+			        SelectedPerson = BLANK ()
 			            || ISBLANK ( CurrentDate )
 			            || SessionsOnDate = 0,
 			        BLANK (),

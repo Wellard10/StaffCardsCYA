@@ -189,6 +189,7 @@ relationship a7941c5c-588b-9301-a524-1cb8390fb07c
 	toColumn: DateTable.Date
 
 relationship d506054f-794d-ab71-11cb-9d309a510f27
+	isActive: false
 	fromColumn: 'People Session Link'.Date
 	toColumn: DateTable.Date
 
