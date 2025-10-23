@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "08a29caaad77aa6c1ddd",
   "position": {
     "x": 0,
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'3216647 - MPo'"
+                                "Value": "'2359573 - HIr'"
                               }
                             }
                           ]
@@ -195,6 +195,20 @@
           ]
         },
         "howCreated": "Exclude"
+      },
+      {
+        "name": "0b7e202b777410954195",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Pseudonym"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
