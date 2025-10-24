@@ -10,10 +10,79 @@
     "tabOrder": 8000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "scatterChart",
     "query": {
       "queryState": {
-        "Category": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
+                    }
+                  },
+                  "Property": "Event type"
+                }
+              },
+              "queryRef": "CYA TLE.Event type",
+              "nativeQueryRef": "Event type",
+              "active": true
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
+                    }
+                  },
+                  "Property": "TLE Timeline Size"
+                }
+              },
+              "queryRef": "CYA TLE.TLE Timeline Size",
+              "nativeQueryRef": "TLE Timeline Size"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
+                    }
+                  },
+                  "Property": "TLE Events (Timeline Tooltip)"
+                }
+              },
+              "queryRef": "CYA TLE.TLE Events (Timeline Tooltip)",
+              "nativeQueryRef": "TLE Events (Timeline Tooltip)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
+                    }
+                  },
+                  "Property": "Event value"
+                }
+              },
+              "queryRef": "CYA TLE.Event value",
+              "nativeQueryRef": "Event value"
+            }
+          ]
+        },
+        "X": {
           "projections": [
             {
               "field": {
@@ -34,43 +103,6 @@
           ],
           "showAll": true
         },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CYA TLE"
-                    }
-                  },
-                  "Property": "Event type"
-                }
-              },
-              "queryRef": "CYA TLE.Event type",
-              "nativeQueryRef": "Event type",
-              "active": true
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CYA TLE"
-                    }
-                  },
-                  "Property": "TLE Events (Timeline Tooltip)"
-                }
-              },
-              "queryRef": "CYA TLE.TLE Events (Timeline Tooltip)",
-              "nativeQueryRef": "TLE Events (Timeline Tooltip)"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -81,11 +113,11 @@
                       "Entity": "CYA TLE"
                     }
                   },
-                  "Property": "TLE Events (Timeline)"
+                  "Property": "TLE Timeline Position"
                 }
               },
-              "queryRef": "CYA TLE.TLE Events (Timeline)",
-              "nativeQueryRef": "TLE Events (Timeline)"
+              "queryRef": "CYA TLE.TLE Timeline Position",
+              "nativeQueryRef": "TLE Timeline Position"
             }
           ]
         }
@@ -110,12 +142,7 @@
       }
     },
     "objects": {
-      "dataPoint": [
-        {
-          "properties": {}
-        }
-      ],
-      "categoryAxis": [
+      "xAxis": [
         {
           "properties": {
             "axisType": {
@@ -124,71 +151,30 @@
                   "Value": "'Scalar'"
                 }
               }
-            },
-            "preferredCategoryWidth": {
+            }
+          }
+        }
+      ],
+      "yAxis": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "valueAxis": [
-        {
-          "properties": {}
-        }
-      ],
-      "lineStyles": [
+      "legend": [
         {
           "properties": {
-            "showMarker": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "strokeLineJoin": {
-              "expr": {
-                "Literal": {
-                  "Value": "'bevel'"
-                }
-              }
-            },
-            "lineChartType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'line'"
-                }
-              }
-            },
-            "interpolationStep": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "markerSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "strokeWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
                 }
               }
             }
@@ -199,93 +185,6 @@
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
-    "filters": [
-      {
-        "name": "9941ab91318ceb33e6ac",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Timeline Dates"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "eda97dafc1b642adf18d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Sessions Attended (Timeline Tooltip)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "3968dce1267811f92964",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Sessions Attended (Timeline)"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "6764c8e50b8c21ad51ef",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a4300c3e0de301bd7f60",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Events (Timeline Tooltip)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3dba2e2b7d181421b84a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Events (Timeline)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
+    "filters": []
   }
 }
