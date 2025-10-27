@@ -74,8 +74,31 @@ table 'CYA TLE'
 			        ),
 			        0
 			    )
+			VAR EventType = SELECTEDVALUE ( 'CYA TLE'[Event type] )
+			VAR IsMilestone =
+			    EventType IN {
+			        "Accreditation",
+			        "Enrichment Fund Payment",
+			        "Entered Education",
+			        "Gained Apprenticeship",
+			        "Gained Employment - Full Time",
+			        "Gained Employment - Kickstart",
+			        "Gained Employment - Other",
+			        "Gained Employment - Part Time",
+			        "Gained Volunteering",
+			        "Gained Work Experience / Work Trail / Work Taster",
+			        "ME Tool Score",
+			        "ME Tool Action Plan",
+			        "Offer of Education, Employment or Training",
+			        "Offer of Interview",
+			        "Official decision received - DWP Aligned",
+			        "Participated in Work Trial",
+			        "Received Funding",
+			        "Receiving Driving Lessons",
+			        "Sustained Employment / Education"
+			    }
 			RETURN
-			    IF ( EventCount > 0, 1, BLANK () )
+			    IF ( EventCount > 0, IF ( IsMilestone, 2, 1 ), BLANK () )
 		formatString: 0
 		lineageTag: 5a7c9e8f-1d2b-4c3e-9f1a-2b8d7c6e5f4a
 
@@ -92,8 +115,31 @@ table 'CYA TLE'
 			        ),
 			        0
 			    )
+			VAR EventType = SELECTEDVALUE ( 'CYA TLE'[Event type] )
+			VAR IsMilestone =
+			    EventType IN {
+			        "Accreditation",
+			        "Enrichment Fund Payment",
+			        "Entered Education",
+			        "Gained Apprenticeship",
+			        "Gained Employment - Full Time",
+			        "Gained Employment - Kickstart",
+			        "Gained Employment - Other",
+			        "Gained Employment - Part Time",
+			        "Gained Volunteering",
+			        "Gained Work Experience / Work Trail / Work Taster",
+			        "ME Tool Score",
+			        "ME Tool Action Plan",
+			        "Offer of Education, Employment or Training",
+			        "Offer of Interview",
+			        "Official decision received - DWP Aligned",
+			        "Participated in Work Trial",
+			        "Received Funding",
+			        "Receiving Driving Lessons",
+			        "Sustained Employment / Education"
+			    }
 			RETURN
-			    IF ( EventCount > 0, 10, BLANK () )
+			    IF ( EventCount > 0, IF ( IsMilestone, 50, 10 ), BLANK () )
 		formatString: 0
 		lineageTag: 8b3d4a5c-6e7f-8a9b-0c1d-2e3f4a5b6c7d
 
@@ -302,6 +348,58 @@ table 'CYA TLE'
 		lineageTag: 3af2e25e-142b-4c3d-9c45-e8d762fbbe6a
 		summarizeBy: none
 		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event Category' =
+			SWITCH (
+			    TRUE (),
+			    [Event type] IN {
+			        "Gained Employment - Full Time",
+			        "Gained Employment - Part Time",
+			        "Gained Employment - Kickstart",
+			        "Gained Employment - Other",
+			        "Sustained Employment / Education"
+			    }, "Employment",
+			    [Event type] IN {
+			        "Gained Apprenticeship"
+			    }, "Apprenticeship",
+			    [Event type] IN {
+			        "Entered Education",
+			        "Offer of Education, Employment or Training"
+			    }, "Education",
+			    [Event type] IN {
+			        "Gained Volunteering"
+			    }, "Volunteering",
+			    [Event type] IN {
+			        "Gained Work Experience / Work Trail / Work Taster",
+			        "Participated in Work Trial"
+			    }, "Work Experience",
+			    [Event type] IN {
+			        "Offer of Interview"
+			    }, "Interview",
+			    [Event type] IN {
+			        "ME Tool Score",
+			        "ME Tool Action Plan"
+			    }, "ME Tool",
+			    [Event type] IN {
+			        "Official decision received - DWP Aligned"
+			    }, "DWP Decision",
+			    [Event type] IN {
+			        "Accreditation"
+			    }, "Accreditation",
+			    [Event type] IN {
+			        "Enrichment Fund Payment",
+			        "Received Funding"
+			    }, "Funding",
+			    [Event type] IN {
+			        "Receiving Driving Lessons"
+			    }, "Driving Lessons",
+			    "Other Events"
+			)
+		dataType: string
+		lineageTag: f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
