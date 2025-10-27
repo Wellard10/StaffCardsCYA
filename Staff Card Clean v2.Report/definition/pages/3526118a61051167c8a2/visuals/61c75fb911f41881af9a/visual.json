@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "61c75fb911f41881af9a",
   "position": {
-    "x": 765.947773632828,
-    "y": 360.21652512104134,
+    "x": 789.78723404255322,
+    "y": 359.87841945288756,
     "z": 17000,
-    "height": 65.021033415350431,
-    "width": 217.17025160727042,
+    "height": 65.167173252279639,
+    "width": 217.87234042553192,
     "tabOrder": 10000
   },
   "visual": {
@@ -139,5 +139,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "96ee93b8aeefe4a219f1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA ME Tool"
+                  }
+                },
+                "Property": "Submitted"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -207,3 +207,7 @@ relationship 48ce257f-6b48-4786-a56b-cbbb6acca9e4
 	fromColumn: 'CYA TLE'.'Event date'
 	toColumn: 'Timeline Dates'.Date
 
+relationship tle-to-people-direct
+	fromColumn: 'CYA TLE'.'Upshot ID'
+	toColumn: 'CYA People Report'.'Upshot ID'
+

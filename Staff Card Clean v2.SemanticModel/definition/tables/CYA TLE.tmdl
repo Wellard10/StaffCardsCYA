@@ -60,6 +60,60 @@ table 'CYA TLE'
 			    )
 		lineageTag: 863d1f20-2ad9-4745-97e5-8df5d98a8031
 
+	measure 'TLE Timeline Position' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			VAR EventCount =
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ) && NOT ISBLANK ( CurrentDate ),
+			        CALCULATE (
+			            COUNTROWS ( 'CYA TLE' ),
+			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Event date] = CurrentDate
+			        ),
+			        0
+			    )
+			RETURN
+			    IF ( EventCount > 0, 1, BLANK () )
+		lineageTag: 5a7c9e8f-1d2b-4c3e-9f1a-2b8d7c6e5f4a
+
+	measure 'TLE Timeline Size' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
+			VAR EventCount =
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ) && NOT ISBLANK ( CurrentDate ),
+			        CALCULATE (
+			            COUNTROWS ( 'CYA TLE' ),
+			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Event date] = CurrentDate
+			        ),
+			        0
+			    )
+			RETURN
+			    IF ( EventCount > 0, 10, BLANK () )
+		lineageTag: 8b3d4a5c-6e7f-8a9b-0c1d-2e3f4a5b6c7d
+
+	measure 'TLE Count for Selected Person' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            COUNTROWS ( 'CYA TLE' ),
+			            FILTER ( ALL ( 'CYA TLE' ), 'CYA TLE'[Upshot ID] = SelectedPerson )
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: 9c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f
+
+	measure 'Event End Date' =
+			VAR EventDate = SELECTEDVALUE ( 'CYA TLE'[Event date] )
+			RETURN
+			    IF ( NOT ISBLANK ( EventDate ), EventDate + 1, BLANK () )
+		lineageTag: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
+
 	column 'Upshot ID'
 		dataType: string
 		lineageTag: e429fe16-fef8-4825-a588-84ecf9e71e59
@@ -297,9 +351,10 @@ table 'CYA TLE'
 				        GetTLE("DOTLE"),
 				        GetTLE("BFTLE"),
 				        GetTLE("InfraTLE")
-				    })
+				    }),
+				    #"Sorted Rows" = Table.Sort(Combined,{{"Event date", Order.Ascending}})
 				in
-				    Combined
+				    #"Sorted Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 

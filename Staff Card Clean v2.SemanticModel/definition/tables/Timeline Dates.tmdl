@@ -2,11 +2,18 @@ table 'Timeline Dates'
 	lineageTag: f6f74511-80bf-478f-b056-9a79dcb2f943
 
 	column Date
+		dataType: dateTime
+		isKey
 		lineageTag: 2eac786a-38ef-45d3-a5a3-d2a3b80113a6
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
 
 	partition 'Timeline Dates' = calculated
 		mode: import
 		source = CALENDAR ( DATE ( 2020, 1, 1 ), DATE ( 2025, 12, 31 ) )
+
+	annotation __PBI_TimeIntelligenceEnabled = 1
 
