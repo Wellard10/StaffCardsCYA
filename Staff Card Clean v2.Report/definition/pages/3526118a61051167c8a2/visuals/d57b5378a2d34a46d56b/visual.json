@@ -7,10 +7,10 @@
     "z": 15000,
     "height": 294.71124620060789,
     "width": 490.21276595744683,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
-    "visualType": "GanttChartByMAQSoftware1448688115701",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,59 +20,19 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA TLE"
+                      "Entity": "Timeline Dates"
                     }
                   },
-                  "Property": "Event type"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "CYA TLE.Event type",
-              "nativeQueryRef": "Event type"
+              "queryRef": "Timeline Dates.Date",
+              "nativeQueryRef": "Date",
+              "active": true
             }
           ]
         },
-        "StartDate": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA TLE"
-                        }
-                      },
-                      "Property": "Event date"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(CYA TLE.Event date)",
-              "nativeQueryRef": "Earliest Event date1"
-            }
-          ]
-        },
-        "EndDate": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "CYA TLE"
-                    }
-                  },
-                  "Property": "Event End Date"
-                }
-              },
-              "queryRef": "CYA TLE.Event End Date",
-              "nativeQueryRef": "Event End Date"
-            }
-          ]
-        },
-        "Legend": {
+        "Series": {
           "projections": [
             {
               "field": {
@@ -90,27 +50,8 @@
             }
           ]
         },
-        "Tooltip": {
+        "Tooltips": {
           "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA TLE"
-                        }
-                      },
-                      "Property": "Event value"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(CYA TLE.Event value)",
-              "nativeQueryRef": "First Event value"
-            },
             {
               "field": {
                 "Measure": {
@@ -124,30 +65,44 @@
               },
               "queryRef": "CYA TLE.TLE Events (Timeline Tooltip)",
               "nativeQueryRef": "TLE Events (Timeline Tooltip)"
-            },
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA TLE"
-                        }
-                      },
-                      "Property": "Event date"
+                    "SourceRef": {
+                      "Entity": "CYA TLE"
                     }
                   },
-                  "Function": 3
+                  "Property": "TLE Timeline Position"
                 }
               },
-              "queryRef": "Min(CYA TLE.Event date)",
-              "nativeQueryRef": "Earliest Event date1"
+              "queryRef": "CYA TLE.TLE Timeline Position",
+              "nativeQueryRef": "TLE Timeline Position"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Timeline Dates"
+                  }
+                },
+                "Property": "Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -165,40 +120,33 @@
           }
         }
       ],
-      "categoryColumnsWidth": [
+      "categoryAxis": [
         {
           "properties": {
-            "categoryLength": {
+            "axisType": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "'\"task-column0:15;column0:190;\"'"
+                  "Value": "'Scalar'"
                 }
               }
             }
           }
         }
       ],
-      "caption": [
+      "lineStyles": [
         {
           "properties": {
-            "captionValue": {
+            "strokeWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "'{\"Accommodation status\":\"#E6007E\",\"Accreditation\":\"#F9B233\",\"Null\":\"#E6007E\",\"Application Submitted\":\"#E6007E\",\"Attended Barrier Session Interview\":\"#F9B233\",\"Contact: Email/ Phone/ Text/ Virtual Meeting\":\"#009640\",\"Current Status\":\"#3A3A3B\",\"Gained Employment - Part Time\":\"#A6A6A6\",\"Gained Volunteering\":\"#8AD4EB\",\"Gained Work experience / Work Trail / Work Taster\":\"#FE9666\",\"Identifying Barriers\":\"#A66999\",\"Initial Meeting & Registration\":\"#3599B8\",\"ME Tool Score\":\"#DFBFBF\",\"ME Tool Stage\":\"#4AC5BB\",\"Note\":\"#5F6B6D\",\"Offer of Education, Employment or Training\":\"#FB8281\",\"Offer of Interview\":\"#F4D25A\",\"On Placement Support\":\"#7F898A\",\"One to One Support\":\"#A4DDEE\",\"Referred to\":\"#FDAB89\",\"Signed up to Virtual College\":\"#B687AC\",\"Started a Programme/ Course\":\"#28738A\",\"Two-to-One Support\":\"#A78F8F\",\"Working with External Agency\":\"#168980\"}'"
+                  "Value": "0D"
                 }
               }
             },
-            "captionValueForStatusColorMapping": {
+            "showMarker": {
               "expr": {
                 "Literal": {
-                  "Value": "'{}'"
+                  "Value": "true"
                 }
               }
             }
@@ -211,99 +159,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "cf0c74972e80ac491df4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Timeline Size"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "8ad2b3139ee075b91ce9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Timeline Position"
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      },
-      {
-        "name": "845c1dde1e228334c2d4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event date"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "f7de9c6da96763c13a44",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bee6ec77c87d3e044078",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event End Date"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0012367df9d74f3e1e47",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA TLE"
-                  }
-                },
-                "Property": "Event value"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f6149806933664c93935",
+        "name": "a3c086557a85bd285647",
         "field": {
           "Measure": {
             "Expression": {
@@ -317,23 +173,46 @@
         "type": "Advanced"
       },
       {
-        "name": "c9138263776009d8cf6b",
+        "name": "69ab280c24666c163334",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA TLE"
-                  }
-                },
-                "Property": "Event date"
+              "SourceRef": {
+                "Entity": "CYA TLE"
               }
             },
-            "Function": 3
+            "Property": "TLE Timeline Position"
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "575485c37af8518d8134",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA TLE"
+              }
+            },
+            "Property": "Event type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c3ac6a93fe8a23d281ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Timeline Dates"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

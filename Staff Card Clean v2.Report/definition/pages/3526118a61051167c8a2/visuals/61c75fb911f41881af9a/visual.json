@@ -7,7 +7,7 @@
     "z": 17000,
     "height": 65.167173252279639,
     "width": 217.87234042553192,
-    "tabOrder": 10000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "card",
@@ -139,28 +139,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "96ee93b8aeefe4a219f1",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Submitted"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 65,
     "width": 192.5,
-    "tabOrder": 12000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "slicer",
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'3053851 - CBo'"
+                                "Value": "'2396577 - JPa'"
                               }
                             }
                           ]
@@ -197,7 +197,7 @@
         "howCreated": "Exclude"
       },
       {
-        "name": "0b7e202b777410954195",
+        "name": "25a93b2ea3e0e7415549",
         "field": {
           "Column": {
             "Expression": {

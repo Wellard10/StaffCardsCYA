@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "968a4b0fedf1b367942a",
   "position": {
     "x": 10,
     "y": 10,
     "z": 3000,
     "height": 65.41969831410826,
-    "width": 190.41805044999367
+    "width": 190.41805044999367,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -80,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Isabel Savage'"
+                                "Value": "'Rosie Murdoch'"
                               }
                             }
                           ]

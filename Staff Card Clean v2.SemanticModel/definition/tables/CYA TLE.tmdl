@@ -15,11 +15,12 @@ table 'CYA TLE'
 			        CALCULATE (
 			            COUNTROWS ( 'CYA TLE' ),
 			            ALL ( 'CYA TLE' ),
-			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Attendee ID] = SelectedPerson,
 			            'CYA TLE'[Event type] = SelectedEventType,
 			            'CYA TLE'[Event date] = CurrentDate
 			        )
 			    )
+		formatString: 0
 		lineageTag: 417f156f-7876-47a7-b15f-6155a19a58b8
 
 	measure 'TLE Events (Timeline Tooltip)' =
@@ -39,7 +40,7 @@ table 'CYA TLE'
 			                    'CYA TLE'[Event value]
 			                ),
 			                ALL ( 'CYA TLE' ),
-			                'CYA TLE'[Upshot ID] = SelectedPerson,
+			                'CYA TLE'[Attendee ID] = SelectedPerson,
 			                'CYA TLE'[Event date] = CurrentDate
 			            )
 			        RETURN
@@ -68,13 +69,14 @@ table 'CYA TLE'
 			        NOT ISBLANK ( SelectedPerson ) && NOT ISBLANK ( CurrentDate ),
 			        CALCULATE (
 			            COUNTROWS ( 'CYA TLE' ),
-			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Attendee ID] = SelectedPerson,
 			            'CYA TLE'[Event date] = CurrentDate
 			        ),
 			        0
 			    )
 			RETURN
 			    IF ( EventCount > 0, 1, BLANK () )
+		formatString: 0
 		lineageTag: 5a7c9e8f-1d2b-4c3e-9f1a-2b8d7c6e5f4a
 
 	measure 'TLE Timeline Size' =
@@ -85,13 +87,14 @@ table 'CYA TLE'
 			        NOT ISBLANK ( SelectedPerson ) && NOT ISBLANK ( CurrentDate ),
 			        CALCULATE (
 			            COUNTROWS ( 'CYA TLE' ),
-			            'CYA TLE'[Upshot ID] = SelectedPerson,
+			            'CYA TLE'[Attendee ID] = SelectedPerson,
 			            'CYA TLE'[Event date] = CurrentDate
 			        ),
 			        0
 			    )
 			RETURN
 			    IF ( EventCount > 0, 10, BLANK () )
+		formatString: 0
 		lineageTag: 8b3d4a5c-6e7f-8a9b-0c1d-2e3f4a5b6c7d
 
 	measure 'TLE Count for Selected Person' =
@@ -101,7 +104,7 @@ table 'CYA TLE'
 			        NOT ISBLANK ( SelectedPerson ),
 			        CALCULATE (
 			            COUNTROWS ( 'CYA TLE' ),
-			            FILTER ( ALL ( 'CYA TLE' ), 'CYA TLE'[Upshot ID] = SelectedPerson )
+			            FILTER ( ALL ( 'CYA TLE' ), 'CYA TLE'[Attendee ID] = SelectedPerson )
 			        ),
 			        BLANK ()
 			    )
@@ -113,14 +116,6 @@ table 'CYA TLE'
 			RETURN
 			    IF ( NOT ISBLANK ( EventDate ), EventDate + 1, BLANK () )
 		lineageTag: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
-
-	column 'Upshot ID'
-		dataType: string
-		lineageTag: e429fe16-fef8-4825-a588-84ecf9e71e59
-		summarizeBy: none
-		sourceColumn: Upshot ID
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'First name'
 		dataType: string
@@ -302,6 +297,14 @@ table 'CYA TLE'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: 3af2e25e-142b-4c3d-9c45-e8d762fbbe6a
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CYA TLE' = m
 		mode: import
 		source =
@@ -309,7 +312,7 @@ table 'CYA TLE'
 				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
 				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
 				    TLETypeMap = {
-				        {"Upshot ID", type text},
+				        {"Attendee ID", type text},
 				        {"First name", type text},
 				        {"Last name", type text},
 				        {"Status", type text},
@@ -352,9 +355,11 @@ table 'CYA TLE'
 				        GetTLE("BFTLE"),
 				        GetTLE("InfraTLE")
 				    }),
-				    #"Sorted Rows" = Table.Sort(Combined,{{"Event date", Order.Ascending}})
+				    #"Appended Query" = Table.Combine({Combined, #"TE - Data"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Appended Query",{"Attendee ID", "First name", "Last name", "Status", "Event ID", "Event date", "Expiry date", "Event type", "Event value", "Notes", "Project", "Activity", "Activity Group", "Activity Type", "Recording user first name", "Recording user last name", "Date recorded", "Time recorded"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Event ID"})
 				in
-				    #"Sorted Rows"
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
 
