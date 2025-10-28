@@ -498,5 +498,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0e101a4eb7a81ae93b80",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sessions + Activities"
+              }
+            },
+            "Property": "Activity type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8f74bbb04992e124000b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sessions + Activities"
+              }
+            },
+            "Property": "Unique Session Hours"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

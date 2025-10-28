@@ -36,22 +36,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA Attendance"
-                        }
-                      },
-                      "Property": "Session ID"
+                    "SourceRef": {
+                      "Entity": "CYA Attendance"
                     }
                   },
-                  "Function": 2
+                  "Property": "Selected Person Sessions by Project"
                 }
               },
-              "queryRef": "CountNonNull(CYA Attendance.Session ID)",
-              "nativeQueryRef": "Count of Session ID1"
+              "queryRef": "CYA Attendance.Selected Person Sessions by Project",
+              "nativeQueryRef": "Number of Sessions",
+              "displayName": "Number of Sessions"
             }
           ]
         }
@@ -79,6 +75,21 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sessions by Project'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
@@ -113,6 +124,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "67007fbd7b335f39434f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f88b1872f0b57f8bc399",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Selected Person Sessions by Project"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -16,22 +16,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA TLE"
-                        }
-                      },
-                      "Property": "Event date"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 4
+                  "Property": "Selected Person Latest Event Date"
                 }
               },
-              "queryRef": "Min(CYA TLE.Event date)",
-              "nativeQueryRef": "Latest Event date"
+              "queryRef": "CYA People Report.Selected Person Latest Event Date",
+              "nativeQueryRef": "Latest Event Date",
+              "displayName": "Latest Event Date"
             }
           ]
         }
@@ -155,6 +151,21 @@
               }
             },
             "Function": 4
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "dd013c21caefb562b21e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Latest Event Date"
           }
         },
         "type": "Advanced"

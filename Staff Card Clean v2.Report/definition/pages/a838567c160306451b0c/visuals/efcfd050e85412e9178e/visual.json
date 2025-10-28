@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Latest Status.Latest Status People",
-              "nativeQueryRef": "Latest Status People"
+              "nativeQueryRef": "Latest Status",
+              "displayName": "Latest Status"
             }
           ]
         }

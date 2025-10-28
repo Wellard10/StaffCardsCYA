@@ -16,7 +16,8 @@ table 'Latest Status'
 			
 			VAR SelectedAttendees =
 			    CALCULATETABLE (
-			        DISTINCT ( 'People Session Link'[Attendee ID] )
+			        DISTINCT ( 'People Session Link'[Attendee ID] ),
+			        USERELATIONSHIP ( 'People Session Link'[Date], DateTable[Date] )
 			    )
 			RETURN
 			    CALCULATE (

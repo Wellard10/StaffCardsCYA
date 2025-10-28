@@ -5,5 +5,17 @@
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "9df8b2011e10ecfc92d1",
+      "target": "61c75fb911f41881af9a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9df8b2011e10ecfc92d1",
+      "target": "b660c0eca3d791237505",
+      "type": "NoFilter"
+    }
+  ]
 }

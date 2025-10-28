@@ -17,21 +17,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA People Report"
-                        }
-                      },
-                      "Property": "Gender"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 3
+                  "Property": "Selected Person Gender"
                 }
               },
-              "queryRef": "Min(CYA People Report.Gender)",
+              "queryRef": "CYA People Report.Selected Person Gender",
               "nativeQueryRef": "Gender",
               "displayName": "Gender"
             }
@@ -68,5 +63,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ad57e9c2aa302487ac7a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Gender"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -17,24 +17,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA People Report"
-                        }
-                      },
-                      "Property": "Age"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 1
+                  "Property": "Selected Person Age"
                 }
               },
-              "queryRef": "Sum(CYA People Report.Age)",
-              "nativeQueryRef": "Average of Age",
-              "displayName": "Age",
-              "format": "0"
+              "queryRef": "CYA People Report.Selected Person Age",
+              "nativeQueryRef": "Age",
+              "displayName": "Age"
             }
           ]
         }
@@ -147,5 +141,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f0aa78813ef25277342b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Age"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

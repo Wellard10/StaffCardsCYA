@@ -3,7 +3,7 @@ table 'CYA TLE'
 
 	measure 'TLE Events (Timeline)' =
 			
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			VAR SelectedEventType = SELECTEDVALUE ( 'CYA TLE'[Event type] )
 			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
 			RETURN
@@ -25,7 +25,7 @@ table 'CYA TLE'
 
 	measure 'TLE Events (Timeline Tooltip)' =
 			
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
 			RETURN
 			    IF (
@@ -62,7 +62,7 @@ table 'CYA TLE'
 		lineageTag: 863d1f20-2ad9-4745-97e5-8df5d98a8031
 
 	measure 'TLE Timeline Position' =
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
 			VAR EventCount =
 			    IF (
@@ -89,6 +89,7 @@ table 'CYA TLE'
 			        "Gained Work Experience / Work Trail / Work Taster",
 			        "ME Tool Score",
 			        "ME Tool Action Plan",
+			        "ME Tool Stage",
 			        "Offer of Education, Employment or Training",
 			        "Offer of Interview",
 			        "Official decision received - DWP Aligned",
@@ -103,7 +104,7 @@ table 'CYA TLE'
 		lineageTag: 5a7c9e8f-1d2b-4c3e-9f1a-2b8d7c6e5f4a
 
 	measure 'TLE Timeline Size' =
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			VAR CurrentDate = SELECTEDVALUE ( 'Timeline Dates'[Date] )
 			VAR EventCount =
 			    IF (
@@ -130,6 +131,7 @@ table 'CYA TLE'
 			        "Gained Work Experience / Work Trail / Work Taster",
 			        "ME Tool Score",
 			        "ME Tool Action Plan",
+			        "ME Tool Stage",
 			        "Offer of Education, Employment or Training",
 			        "Offer of Interview",
 			        "Official decision received - DWP Aligned",
@@ -144,7 +146,7 @@ table 'CYA TLE'
 		lineageTag: 8b3d4a5c-6e7f-8a9b-0c1d-2e3f4a5b6c7d
 
 	measure 'TLE Count for Selected Person' =
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			RETURN
 			    IF (
 			        NOT ISBLANK ( SelectedPerson ),
@@ -162,6 +164,42 @@ table 'CYA TLE'
 			RETURN
 			    IF ( NOT ISBLANK ( EventDate ), EventDate + 1, BLANK () )
 		lineageTag: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
+
+	measure 'Milestone Count for Selected Person' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            COUNTROWS ( 'CYA TLE' ),
+			            'CYA TLE'[Attendee ID] = SelectedPerson,
+			            'CYA TLE'[Event type] IN {
+			                "Accreditation",
+			                "Enrichment Fund Payment",
+			                "Entered Education",
+			                "Gained Apprenticeship",
+			                "Gained Employment - Full Time",
+			                "Gained Employment - Kickstart",
+			                "Gained Employment - Other",
+			                "Gained Employment - Part Time",
+			                "Gained Volunteering",
+			                "Gained Work Experience / Work Trail / Work Taster",
+			                "ME Tool Score",
+			                "ME Tool Action Plan",
+			                "ME Tool Stage",
+			                "Offer of Education, Employment or Training",
+			                "Offer of Interview",
+			                "Official decision received - DWP Aligned",
+			                "Participated in Work Trial",
+			                "Received Funding",
+			                "Receiving Driving Lessons",
+			                "Sustained Employment / Education"
+			            }
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e
 
 	column 'First name'
 		dataType: string
@@ -380,7 +418,8 @@ table 'CYA TLE'
 			    }, "Interview",
 			    [Event type] IN {
 			        "ME Tool Score",
-			        "ME Tool Action Plan"
+			        "ME Tool Action Plan",
+			        "ME Tool Stage"
 			    }, "ME Tool",
 			    [Event type] IN {
 			        "Official decision received - DWP Aligned"

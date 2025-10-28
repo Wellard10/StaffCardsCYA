@@ -4,7 +4,7 @@ table 'CYA People Report'
 	measure 'Has Sessions In Context' =
 			
 			VAR SelectedAttendee =
-			    SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			    SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			RETURN
 			    IF (
 			        NOT ISBLANK ( SelectedAttendee )
@@ -28,6 +28,101 @@ table 'CYA People Report'
 			DISTINCTCOUNT('CYA People Report'[Upshot ID])
 		formatString: 0
 		lineageTag: 3f812bd4-c99b-427d-9108-cd1ee82efc85
+
+	measure 'Selected Person Gender' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MIN ( 'CYA People Report'[Gender] ),
+			            'CYA People Report'[Upshot ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		lineageTag: a1a1a1a1-b2b2-c3c3-d4d4-e5e5e5e5e5e5
+
+	measure 'Selected Person Age' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MIN ( 'CYA People Report'[Age] ),
+			            'CYA People Report'[Upshot ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: b2b2b2b2-c3c3-d4d4-e5e5-f6f6f6f6f6f6
+
+	measure 'Selected Person Added to Upshot' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MIN ( 'CYA People Report'[Added to Upshot] ),
+			            'CYA People Report'[Upshot ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: Long Date
+		lineageTag: c3c3c3c3-d4d4-e5e5-f6f6-a7a7a7a7a7a7
+
+	measure 'Selected Person Barriers' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MIN ( 'CYA People Report'[Barriers] ),
+			            'CYA People Report'[Upshot ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		lineageTag: d4d4d4d4-e5e5-f6f6-a7a7-b8b8b8b8b8b8
+
+	measure 'Selected Person Current Status' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MAX ( 'Latest Status'[Current Status] ),
+			            'Latest Status'[Attendee ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		lineageTag: e5e5e5e5-f6f6-a7a7-b8b8-c9c9c9c9c9c9
+
+	measure 'Selected Person Latest Event Date' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            MAX ( 'CYA TLE'[Event date] ),
+			            'CYA TLE'[Attendee ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: Long Date
+		lineageTag: f6f6f6f6-a7a7-b8b8-c9c9-d0d0d0d0d0d0
+
+	measure 'Selected Person Total Sessions' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			            'CYA Attendance'[Attendee ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: a8a8a8a8-b9b9-c0c0-d1d1-e2e2e2e2e2e2
 
 	column 'Upshot ID'
 		dataType: string

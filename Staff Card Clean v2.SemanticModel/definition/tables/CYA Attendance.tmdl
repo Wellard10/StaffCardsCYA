@@ -39,7 +39,7 @@ table 'CYA Attendance'
 
 	measure 'Sessions Attended (Timeline)' =
 			
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			RETURN
 			    IF (
 			        SelectedPerson = BLANK (),
@@ -81,7 +81,7 @@ table 'CYA Attendance'
 
 	measure 'Sessions Attended (Timeline Tooltip)' =
 			
-			VAR SelectedPerson = SELECTEDVALUE ( 'CYA People Report'[Upshot ID] )
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
 			RETURN
 			    IF (
 			        SelectedPerson = BLANK (),
@@ -102,6 +102,37 @@ table 'CYA Attendance'
 			            )
 			    )
 		lineageTag: 17bfadcf-e5fb-46d5-9860-50b5d2c97282
+
+	measure 'Selected Person Hours by Activity Type' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            SUMX (
+			                VALUES ( 'CYA Attendance'[Session ID] ),
+			                CALCULATE ( MAX ( 'CYA Attendance'[Duration (hrs)] ) )
+			            ),
+			            'CYA Attendance'[Attendee ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: c1c1c1c1-d2d2-e3e3-f4f4-a5a5a5a5a5a5
+
+	measure 'Selected Person Sessions by Project' =
+			VAR SelectedPerson = SELECTEDVALUE ( 'New Reg Data'[Attendee ID] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( SelectedPerson ),
+			        CALCULATE (
+			            DISTINCTCOUNT ( 'CYA Attendance'[Session ID] ),
+			            'CYA Attendance'[Attendee ID] = SelectedPerson
+			        ),
+			        BLANK ()
+			    )
+		formatString: 0
+		lineageTag: d2d2d2d2-e3e3-f4f4-a5a5-b6b6b6b6b6b6
 
 	column Project
 		dataType: string

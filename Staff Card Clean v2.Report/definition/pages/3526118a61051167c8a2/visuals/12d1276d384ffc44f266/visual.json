@@ -17,22 +17,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Latest Status"
-                        }
-                      },
-                      "Property": "Current Status"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 4
+                  "Property": "Selected Person Current Status"
                 }
               },
-              "queryRef": "Min(Latest Status.Current Status)",
-              "nativeQueryRef": "Last Current Status",
+              "queryRef": "CYA People Report.Selected Person Current Status",
+              "nativeQueryRef": "Current Status",
               "displayName": "Current Status"
             }
           ]
@@ -197,6 +192,40 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "05d9d809ce724c8e3408",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Latest Status"
+                  }
+                },
+                "Property": "Current Status"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "b690d960d28c4dfc2446",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Current Status"
+          }
+        },
+        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

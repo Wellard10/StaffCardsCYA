@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CYA People Report"
+                      "Entity": "New Reg Data"
                     }
                   },
                   "Property": "Pseudonym"
                 }
               },
-              "queryRef": "CYA People Report.Pseudonym",
+              "queryRef": "New Reg Data.Pseudonym",
               "nativeQueryRef": "Pseudonym",
               "active": true
             }
@@ -50,49 +50,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "c",
-                    "Entity": "CYA People Report",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "c"
-                                }
-                              },
-                              "Property": "Pseudonym"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2359573 - HIr'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "header": [
@@ -156,7 +114,7 @@
           "From": [
             {
               "Name": "c",
-              "Entity": "CYA People Report",
+              "Entity": "New Reg Data",
               "Type": 0
             }
           ],
@@ -202,7 +160,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "CYA People Report"
+                "Entity": "New Reg Data"
               }
             },
             "Property": "Pseudonym"

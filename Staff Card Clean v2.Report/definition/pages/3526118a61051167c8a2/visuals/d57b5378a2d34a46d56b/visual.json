@@ -28,7 +28,8 @@
               },
               "queryRef": "Timeline Dates.Date",
               "nativeQueryRef": "Date",
-              "active": true
+              "active": true,
+              "format": "d"
             }
           ]
         },
@@ -64,7 +65,8 @@
                 }
               },
               "queryRef": "CYA TLE.TLE Events (Timeline Tooltip)",
-              "nativeQueryRef": "TLE Events (Timeline Tooltip)"
+              "nativeQueryRef": "Timeline Events",
+              "displayName": "Timeline Events"
             }
           ]
         },
@@ -127,6 +129,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'Scalar'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -393,7 +409,7 @@
             "markerSize": {
               "expr": {
                 "Literal": {
-                  "Value": "5D"
+                  "Value": "8D"
                 }
               }
             }
@@ -719,6 +735,74 @@
                 }
               }
             ]
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Timeline of Activity'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Canvas'"
+                }
+              }
+            }
           }
         }
       ]

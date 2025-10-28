@@ -17,21 +17,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA People Report"
-                        }
-                      },
-                      "Property": "Added to Upshot"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 3
+                  "Property": "Selected Person Added to Upshot"
                 }
               },
-              "queryRef": "Min(CYA People Report.Added to Upshot)",
+              "queryRef": "CYA People Report.Selected Person Added to Upshot",
               "nativeQueryRef": "Added to Upshot",
               "displayName": "Added to Upshot"
             }
@@ -139,5 +134,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "449bb98befe056860bec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Added to Upshot"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

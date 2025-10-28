@@ -42,11 +42,12 @@
                       "Entity": "CYA Attendance"
                     }
                   },
-                  "Property": "Total Hours (unique sessions)"
+                  "Property": "Selected Person Hours by Activity Type"
                 }
               },
-              "queryRef": "CYA Attendance.Total Hours (unique sessions)",
-              "nativeQueryRef": "Total Hours (unique sessions)"
+              "queryRef": "CYA Attendance.Selected Person Hours by Activity Type",
+              "nativeQueryRef": "Hours by Activity Type",
+              "displayName": "Hours by Activity Type"
             }
           ]
         }
@@ -86,5 +87,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0934e2df11f8775dd723",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Activity type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "72719a739c09656468e7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA Attendance"
+              }
+            },
+            "Property": "Selected Person Hours by Activity Type"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

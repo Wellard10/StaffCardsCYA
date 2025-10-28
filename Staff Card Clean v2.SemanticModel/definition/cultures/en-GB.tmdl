@@ -20,16 +20,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "event category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
 			          "event genre": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -729,16 +719,6 @@ cultureInfo en-GB
 			        },
 			        {
 			          "level": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "position": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2288,9 +2268,6 @@ cultureInfo en-GB
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "session youth worker": {
@@ -9472,16 +9449,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
 			          "setting": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -10025,16 +9992,6 @@ cultureInfo en-GB
 			        },
 			        {
 			          "level": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "position": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -18989,16 +18946,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
 			          "setting": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -19542,16 +19489,6 @@ cultureInfo en-GB
 			        },
 			        {
 			          "level": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "position": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -21417,16 +21354,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.714
 			          }
-			        },
-			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ]
 			    },
@@ -21643,16 +21570,6 @@ cultureInfo en-GB
 			        {
 			          "event type": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "event category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
 			          }
 			        },
 			        {
@@ -24439,16 +24356,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.714
 			          }
-			        },
-			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ]
 			    },
@@ -25557,7 +25464,7 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "position": {
+			          "coordinate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -32097,16 +32004,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.714
 			          }
-			        },
-			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ]
 			    },
@@ -32323,16 +32220,6 @@ cultureInfo en-GB
 			        {
 			          "event type": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "event category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
 			          }
 			        },
 			        {
@@ -34349,16 +34236,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
 			          "setting": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -34902,16 +34779,6 @@ cultureInfo en-GB
 			        },
 			        {
 			          "level": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "position": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -36276,16 +36143,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.714
 			          }
-			        },
-			        {
-			          "position": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ]
 			    },
@@ -37394,7 +37251,7 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "position": {
+			          "coordinate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -46129,11 +45986,3015 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.591
 			          }
+			        },
+			        {
+			          "Latest Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
+			    },
+			    "CYA_people_report.selected_person_gender": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Gender"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person gender": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "person gender": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person sexuality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "person sexuality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "selected person sex": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "person sex": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Gender": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_people_report.selected_person_age": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Age"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person age": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "person age": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person oldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "person oldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "selected person stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "selected person phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "person stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "person phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "selected person era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "selected person epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "person era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "person epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "Age": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_people_report.selected_person_added_to_upshot": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Added to Upshot"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person added to upshot": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "selected creature added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "selected being added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected individual added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected one added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected soul added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected somebody added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected type added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected party added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected human added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "selected self added to upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "Added to Upshot": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "CYA_people_report.selected_person_barriers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Barriers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person barriers": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "barriers": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "person barriers": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person obstacle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected person obstruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "person obstacle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "person obstruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "selected person fence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "selected person walls": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "selected person barricade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "selected person blockade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "selected person block": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "obstacle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_people_report.selected_person_current_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Current Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person current status": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "person current status": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person current category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "selected person current importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "selected person current prestige": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "selected person current prominence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "person current category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "person current importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "person current prestige": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "person current prominence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "selected person current condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "selected person current class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "Current Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_people_report.selected_person_latest_event_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Latest Event Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person latest event date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "latest event date": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "person latest event date": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person latest event moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "person latest event moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "latest event moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "selected person latest event period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "person latest event period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "latest event period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "CYA_people_report.selected_person_total_sessions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA People Report",
+			          "ConceptualProperty": "Selected Person Total Sessions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person total sessions": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sessions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total sessions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "person total sessions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person aggregate session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "selected person overall session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "person aggregate session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "person overall session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall session": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "selected person total assembly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "person total assembly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total assembly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "selected person total meeting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.attendee_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "Attendee ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "attendee ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "attendee": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "attendee identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "attendee identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "attendee identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "attendee credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.event_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "Event Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "event category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "event classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "event class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "event group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "event grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "event kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.TLE_events_timeline": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "TLE Events (Timeline)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TLE events (timeline)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TLE events": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.TLE_events_timeline_tooltip": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "TLE Events (Timeline Tooltip)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TLE events (timeline tooltip)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TLE events": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "Timeline Events": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.TLE_timeline_position": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "TLE Timeline Position"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TLE timeline position": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "position": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "timeline position": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tle timeline location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "tle timeline situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "timeline location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "timeline situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "tle timeline place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "tle timeline site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "tle timeline spot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "tle timeline point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "tle timeline station": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.TLE_timeline_size": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "TLE Timeline Size"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TLE timeline size": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "size": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "timeline size": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tle timeline extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "tle timeline magnitude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "timeline extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "timeline magnitude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "tle timeline scope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "magnitude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "timeline scope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "tle timeline volume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "scope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.TLE_count_for_selected_person": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "TLE Count for Selected Person"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TLE count for selected person": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tle amount for selected person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        }
+			      ]
+			    },
+			    "cya_tle.event_end_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "Event End Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "event end date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "event end moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "event end period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "event culmination date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "event completion date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "event conclusion date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "event expiration date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "event cease date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.597
+			          }
+			        },
+			        {
+			          "event end time": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.597
+			          }
+			        },
+			        {
+			          "event close date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "event finish date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "cya_tle.milestone_count_for_selected_person": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA TLE",
+			          "ConceptualProperty": "Milestone Count for Selected Person"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "milestone count for selected person": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "milestone amount for selected person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "Milestone Count": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_attendance.sessions_attended_timeline": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA Attendance",
+			          "ConceptualProperty": "Sessions Attended (Timeline)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sessions attended (timeline)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sessions attended": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_attendance.sessions_attended_timeline_tooltip": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA Attendance",
+			          "ConceptualProperty": "Sessions Attended (Timeline Tooltip)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sessions attended (timeline tooltip)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sessions attended": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_attendance.selected_person_hours_by_activity_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA Attendance",
+			          "ConceptualProperty": "Selected Person Hours by Activity Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person hours by activity type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Hours by Activity Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "CYA_attendance.selected_person_sessions_by_project": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CYA Attendance",
+			          "ConceptualProperty": "Selected Person Sessions by Project"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected person sessions by project": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sessions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "person sessions": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected person session by assignment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "selected person session by development": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "selected person session by blueprint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by design": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by estimate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by forecast": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by initiative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by plan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person session by task": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "selected person assembly by project": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "Number of Sessions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "timeline_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Timeline Dates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "timeline date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "timeline moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "timeline period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "timeline_date.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Timeline Dates",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
 			    }
 			  },
 			  "Relationships": {
+			    "CYA_attendance_has_sessions_attended_timeline_tooltip": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA Attendance"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_attendance": {
+			          "Target": {
+			            "Entity": "CYA_attendance"
+			          }
+			        },
+			        "CYA_attendance.sessions_attended_timeline_tooltip": {
+			          "Target": {
+			            "Entity": "CYA_attendance.sessions_attended_timeline_tooltip"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_attendance"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.sessions_attended_timeline_tooltip"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_attendances_have_sessions_attended_timeline_tooltip"
+			        }
+			      ]
+			    },
+			    "timeline_date_has_CYA_attendance_sessions_attended_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "Timeline Dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "timeline_date": {
+			          "Target": {
+			            "Entity": "timeline_date"
+			          }
+			        },
+			        "CYA_attendance.sessions_attended_timeline": {
+			          "Target": {
+			            "Entity": "CYA_attendance.sessions_attended_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "timeline_date"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.sessions_attended_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "timeline_dates_have_sessions_attended_timeline"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_attendance_sessions_attended_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_attendance.sessions_attended_timeline": {
+			          "Target": {
+			            "Entity": "CYA_attendance.sessions_attended_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.sessions_attended_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_sessions_attended_timeline"
+			        }
+			      ]
+			    },
+			    "CYA_attendance_has_sessions_attended_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA Attendance"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_attendance": {
+			          "Target": {
+			            "Entity": "CYA_attendance"
+			          }
+			        },
+			        "CYA_attendance.sessions_attended_timeline": {
+			          "Target": {
+			            "Entity": "CYA_attendance.sessions_attended_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_attendance"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.sessions_attended_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_attendances_have_sessions_attended_timeline"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_cya_tle_milestone_count_for_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "cya_tle.milestone_count_for_selected_person": {
+			          "Target": {
+			            "Entity": "cya_tle.milestone_count_for_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.milestone_count_for_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_milestone_count_for_selected_person"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_milestone_count_for_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.milestone_count_for_selected_person": {
+			          "Target": {
+			            "Entity": "cya_tle.milestone_count_for_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.milestone_count_for_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_milestone_count_for_selected_person"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_event_end_date": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.event_end_date": {
+			          "Target": {
+			            "Entity": "cya_tle.event_end_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.event_end_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_event_end_date"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_cya_tle_TLE_count_for_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "cya_tle.TLE_count_for_selected_person": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_count_for_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_count_for_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_TLE_count_for_selected_person"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_TLE_count_for_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.TLE_count_for_selected_person": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_count_for_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_count_for_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_TLE_count_for_selected_person"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_TLE_timeline_size": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.TLE_timeline_size": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_timeline_size"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_timeline_size"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_TLE_timeline_size"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_TLE_timeline_position": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.TLE_timeline_position": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_timeline_position"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_timeline_position"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_TLE_timeline_position"
+			        }
+			      ]
+			    },
+			    "timeline_date_has_cya_tle_TLE_events_timeline_tooltip": {
+			      "Binding": {
+			        "ConceptualEntity": "Timeline Dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "timeline_date": {
+			          "Target": {
+			            "Entity": "timeline_date"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline_tooltip": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline_tooltip"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "timeline_date"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline_tooltip"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "timeline_dates_have_TLE_events_timeline_tooltip"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_cya_tle_TLE_events_timeline_tooltip": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline_tooltip": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline_tooltip"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline_tooltip"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_TLE_events_timeline_tooltip"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_TLE_events_timeline_tooltip": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline_tooltip": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline_tooltip"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline_tooltip"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_TLE_events_timeline_tooltip"
+			        }
+			      ]
+			    },
+			    "timeline_date_has_cya_tle_TLE_events_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "Timeline Dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "timeline_date": {
+			          "Target": {
+			            "Entity": "timeline_date"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "timeline_date"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "timeline_dates_have_TLE_events_timeline"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_cya_tle_TLE_events_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_TLE_events_timeline"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_TLE_events_timeline": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.TLE_events_timeline": {
+			          "Target": {
+			            "Entity": "cya_tle.TLE_events_timeline"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.TLE_events_timeline"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_TLE_events_timeline"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_event_category": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.event_category": {
+			          "Target": {
+			            "Entity": "cya_tle.event_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.event_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_event_categories"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_attendee_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "cya_tle.attendee_ID": {
+			          "Target": {
+			            "Entity": "cya_tle.attendee_ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "cya_tle.attendee_ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_attendee_ID"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_total_sessions": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_total_sessions": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_total_sessions"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_total_sessions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_total_sessions"
+			        }
+			      ]
+			    },
+			    "CYA_attendance_has_CYA_people_report_selected_person_total_sessions": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA Attendance"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_attendance": {
+			          "Target": {
+			            "Entity": "CYA_attendance"
+			          }
+			        },
+			        "CYA_people_report.selected_person_total_sessions": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_total_sessions"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_attendance"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_total_sessions"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_attendances_have_selected_person_total_sessions"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_latest_event_date": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_latest_event_date": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_latest_event_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_latest_event_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_latest_event_date"
+			        }
+			      ]
+			    },
+			    "cya_tle_has_CYA_people_report_selected_person_latest_event_date": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "CYA_people_report.selected_person_latest_event_date": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_latest_event_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cya_tle"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_latest_event_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cya_tles_have_selected_person_latest_event_date"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_current_status": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_current_status": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_current_status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_current_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_current_status"
+			        }
+			      ]
+			    },
+			    "latest_status_has_CYA_people_report_selected_person_current_status": {
+			      "Binding": {
+			        "ConceptualEntity": "Latest Status"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "latest_status": {
+			          "Target": {
+			            "Entity": "latest_status"
+			          }
+			        },
+			        "CYA_people_report.selected_person_current_status": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_current_status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "latest_status"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_current_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "latest_statuses_have_selected_person_current_status"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_barriers": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_barriers": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_barriers"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_barriers"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_barriers"
+			        }
+			      ]
+			    },
+			    "CYA_people_report_has_selected_person_barriers": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA People Report"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_people_report": {
+			          "Target": {
+			            "Entity": "CYA_people_report"
+			          }
+			        },
+			        "CYA_people_report.selected_person_barriers": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_barriers"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_people_report"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_barriers"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_people_reports_have_selected_person_barriers"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_added_to_upshot": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_added_to_upshot": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_added_to_upshot"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_added_to_upshot"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_added_to_upshot"
+			        }
+			      ]
+			    },
+			    "CYA_people_report_has_selected_person_added_to_upshot": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA People Report"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_people_report": {
+			          "Target": {
+			            "Entity": "CYA_people_report"
+			          }
+			        },
+			        "CYA_people_report.selected_person_added_to_upshot": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_added_to_upshot"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_people_report"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_added_to_upshot"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_people_reports_have_selected_person_added_to_upshot"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_age": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_age": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_age"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_age"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Adjectives": [
+			              {
+			                "old": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "young": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "CYA_people_report.selected_person_age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "selected_person_age_indicates_how_old_new_reg_data_are"
+			        }
+			      ]
+			    },
+			    "CYA_people_report_has_selected_person_age": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA People Report"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_people_report": {
+			          "Target": {
+			            "Entity": "CYA_people_report"
+			          }
+			        },
+			        "CYA_people_report.selected_person_age": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_age"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_people_report"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_people_reports_have_selected_person_age"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "CYA_people_report"
+			            },
+			            "Adjectives": [
+			              {
+			                "old": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "young": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "CYA_people_report.selected_person_age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "selected_person_age_indicates_how_old_CYA_people_reports_are"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_people_report_selected_person_gender": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_gender": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_gender"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_gender"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_gender"
+			        }
+			      ]
+			    },
+			    "CYA_people_report_has_selected_person_gender": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA People Report"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_people_report": {
+			          "Target": {
+			            "Entity": "CYA_people_report"
+			          }
+			        },
+			        "CYA_people_report.selected_person_gender": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_gender"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_people_report"
+			            },
+			            "Object": {
+			              "Role": "CYA_people_report.selected_person_gender"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_people_reports_have_selected_person_gender"
+			        }
+			      ]
+			    },
+			    "latest_status_has_latest_status_people": {
+			      "Binding": {
+			        "ConceptualEntity": "Latest Status"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "latest_status": {
+			          "Target": {
+			            "Entity": "latest_status"
+			          }
+			        },
+			        "latest_status.latest_status_people": {
+			          "Target": {
+			            "Entity": "latest_status.latest_status_people"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "latest_status"
+			            },
+			            "Object": {
+			              "Role": "latest_status.latest_status_people"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "latest_statuses_have_latest_status_people"
+			        }
+			      ]
+			    },
+			    "latest_status_has_status_date_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "Latest Status"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "latest_status": {
+			          "Target": {
+			            "Entity": "latest_status"
+			          }
+			        },
+			        "latest_status.status_date_selected_person": {
+			          "Target": {
+			            "Entity": "latest_status.status_date_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "latest_status"
+			            },
+			            "Object": {
+			              "Role": "latest_status.status_date_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "latest_statuses_have_status_date_selected_person"
+			        }
+			      ]
+			    },
+			    "latest_status_has_status_selected_person": {
+			      "Binding": {
+			        "ConceptualEntity": "Latest Status"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "latest_status": {
+			          "Target": {
+			            "Entity": "latest_status"
+			          }
+			        },
+			        "latest_status.status_selected_person": {
+			          "Target": {
+			            "Entity": "latest_status.status_selected_person"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "latest_status"
+			            },
+			            "Object": {
+			              "Role": "latest_status.status_selected_person"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "latest_statuses_have_status_selected_person"
+			        }
+			      ]
+			    },
+			    "latest_status_has_current_status": {
+			      "Binding": {
+			        "ConceptualEntity": "Latest Status"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "latest_status": {
+			          "Target": {
+			            "Entity": "latest_status"
+			          }
+			        },
+			        "latest_status.current_status": {
+			          "Target": {
+			            "Entity": "latest_status.current_status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "latest_status"
+			            },
+			            "Object": {
+			              "Role": "latest_status.current_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "latest_statuses_have_current_statuses"
+			        }
+			      ]
+			    },
 			    "latest_status_has_status_date": {
 			      "Binding": {
 			        "ConceptualEntity": "Latest Status"
@@ -51801,15 +54662,15 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "CYA_people_report_has_has_sessions_in_context": {
+			    "new_reg_data_has_CYA_people_report_has_sessions_in_context": {
 			      "Binding": {
-			        "ConceptualEntity": "CYA People Report"
+			        "ConceptualEntity": "New Reg Data"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "CYA_people_report": {
+			        "new_reg_data": {
 			          "Target": {
-			            "Entity": "CYA_people_report"
+			            "Entity": "new_reg_data"
 			          }
 			        },
 			        "CYA_people_report.has_sessions_in_context": {
@@ -51822,7 +54683,7 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "CYA_people_report"
+			              "Role": "new_reg_data"
 			            },
 			            "Object": {
 			              "Role": "CYA_people_report.has_sessions_in_context"
@@ -51830,7 +54691,7 @@ cultureInfo en-GB
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "CYA_people_reports_have_has_sessions_in_context"
+			          "ID": "new_reg_data_have_has_sessions_in_context"
 			        }
 			      ]
 			    },
@@ -63961,15 +66822,15 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cya_tle_has_TE__data_count_of_event_value_latest_per_attendee": {
+			    "TE__data_has_count_of_event_value_latest_per_attendee": {
 			      "Binding": {
-			        "ConceptualEntity": "CYA TLE"
+			        "ConceptualEntity": "TE - Data"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "cya_tle": {
+			        "TE__data": {
 			          "Target": {
-			            "Entity": "cya_tle"
+			            "Entity": "TE__data"
 			          }
 			        },
 			        "TE__data.count_of_event_value_latest_per_attendee": {
@@ -63982,7 +66843,7 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "cya_tle"
+			              "Role": "TE__data"
 			            },
 			            "Object": {
 			              "Role": "TE__data.count_of_event_value_latest_per_attendee"
@@ -63990,7 +66851,73 @@ cultureInfo en-GB
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "cya_tles_have_count_of_event_value_latest_per_attendee"
+			          "ID": "TE__data_have_count_of_event_value_latest_per_attendee"
+			        }
+			      ]
+			    },
+			    "TE__data_has_session_youth_worker": {
+			      "Binding": {
+			        "ConceptualEntity": "TE - Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "TE__data": {
+			          "Target": {
+			            "Entity": "TE__data"
+			          }
+			        },
+			        "TE__data.session_youth_worker": {
+			          "Target": {
+			            "Entity": "TE__data.session_youth_worker"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "TE__data"
+			            },
+			            "Object": {
+			              "Role": "TE__data.session_youth_worker"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "TE__data_have_session_youth_workers"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "TE__data.session_youth_worker"
+			            },
+			            "Verbs": [
+			              {
+			                "work": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "TE__data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "session_youth_workers_work_TE__data"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "TE__data.session_youth_worker"
+			            },
+			            "Object": {
+			              "Role": "TE__data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "session_youth_workers_have_TE__data"
 			        }
 			      ]
 			    },
@@ -66275,6 +69202,184 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
+			    "new_reg_data_is_selected_on_CYA_people_report_selected_person_latest_event_date": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_latest_event_date": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_latest_event_date"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "CYA_people_report.selected_person_latest_event_date"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "select": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "new_reg_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "new_reg_data_are_selected_on_selected_person_latest_event_date"
+			        }
+			      ]
+			    },
+			    "cya_tle_is_selected_on_CYA_people_report_selected_person_latest_event_date": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA TLE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cya_tle": {
+			          "Target": {
+			            "Entity": "cya_tle"
+			          }
+			        },
+			        "CYA_people_report.selected_person_latest_event_date": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_latest_event_date"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "CYA_people_report.selected_person_latest_event_date"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "select": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "cya_tle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "cya_tles_are_selected_on_selected_person_latest_event_date"
+			        }
+			      ]
+			    },
+			    "new_reg_data_is_selected_on_CYA_people_report_selected_person_added_to_upshot": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_people_report.selected_person_added_to_upshot": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_added_to_upshot"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "CYA_people_report.selected_person_added_to_upshot"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "select": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "add": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "new_reg_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "new_reg_data_are_selected_on_selected_person_added_to_upshot"
+			        }
+			      ]
+			    },
+			    "CYA_people_report_is_selected_on_selected_person_added_to_upshot": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA People Report"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_people_report": {
+			          "Target": {
+			            "Entity": "CYA_people_report"
+			          }
+			        },
+			        "CYA_people_report.selected_person_added_to_upshot": {
+			          "Target": {
+			            "Entity": "CYA_people_report.selected_person_added_to_upshot"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "CYA_people_report.selected_person_added_to_upshot"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "select": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "add": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "CYA_people_report"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "CYA_people_reports_are_selected_on_selected_person_added_to_upshot"
+			        }
+			      ]
+			    },
 			    "latest_status_is_selected_on_status_date_selected_person": {
 			      "Binding": {
 			        "ConceptualEntity": "Latest Status"
@@ -67493,20 +70598,20 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "latest_status_has_current_status": {
+			    "new_reg_data_has_CYA_attendance_sessions_attended_timeline_tooltip": {
 			      "Binding": {
-			        "ConceptualEntity": "Latest Status"
+			        "ConceptualEntity": "New Reg Data"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "latest_status": {
+			        "new_reg_data": {
 			          "Target": {
-			            "Entity": "latest_status"
+			            "Entity": "new_reg_data"
 			          }
 			        },
-			        "latest_status.current_status": {
+			        "CYA_attendance.sessions_attended_timeline_tooltip": {
 			          "Target": {
-			            "Entity": "latest_status.current_status"
+			            "Entity": "CYA_attendance.sessions_attended_timeline_tooltip"
 			          }
 			        }
 			      },
@@ -67514,32 +70619,32 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "latest_status"
+			              "Role": "new_reg_data"
 			            },
 			            "Object": {
-			              "Role": "latest_status.current_status"
+			              "Role": "CYA_attendance.sessions_attended_timeline_tooltip"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "latest_statuses_have_current_statuses"
+			          "ID": "new_reg_data_have_sessions_attended_timeline_tooltip"
 			        }
 			      ]
 			    },
-			    "latest_status_has_status_selected_person": {
+			    "timeline_date_has_CYA_attendance_sessions_attended_timeline_tooltip": {
 			      "Binding": {
-			        "ConceptualEntity": "Latest Status"
+			        "ConceptualEntity": "Timeline Dates"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "latest_status": {
+			        "timeline_date": {
 			          "Target": {
-			            "Entity": "latest_status"
+			            "Entity": "timeline_date"
 			          }
 			        },
-			        "latest_status.status_selected_person": {
+			        "CYA_attendance.sessions_attended_timeline_tooltip": {
 			          "Target": {
-			            "Entity": "latest_status.status_selected_person"
+			            "Entity": "CYA_attendance.sessions_attended_timeline_tooltip"
 			          }
 			        }
 			      },
@@ -67547,32 +70652,32 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "latest_status"
+			              "Role": "timeline_date"
 			            },
 			            "Object": {
-			              "Role": "latest_status.status_selected_person"
+			              "Role": "CYA_attendance.sessions_attended_timeline_tooltip"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "latest_statuses_have_status_selected_person"
+			          "ID": "timeline_dates_have_sessions_attended_timeline_tooltip"
 			        }
 			      ]
 			    },
-			    "latest_status_has_status_date_selected_person": {
+			    "CYA_attendance_has_selected_person_hours_by_activity_type": {
 			      "Binding": {
-			        "ConceptualEntity": "Latest Status"
+			        "ConceptualEntity": "CYA Attendance"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "latest_status": {
+			        "CYA_attendance": {
 			          "Target": {
-			            "Entity": "latest_status"
+			            "Entity": "CYA_attendance"
 			          }
 			        },
-			        "latest_status.status_date_selected_person": {
+			        "CYA_attendance.selected_person_hours_by_activity_type": {
 			          "Target": {
-			            "Entity": "latest_status.status_date_selected_person"
+			            "Entity": "CYA_attendance.selected_person_hours_by_activity_type"
 			          }
 			        }
 			      },
@@ -67580,32 +70685,32 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "latest_status"
+			              "Role": "CYA_attendance"
 			            },
 			            "Object": {
-			              "Role": "latest_status.status_date_selected_person"
+			              "Role": "CYA_attendance.selected_person_hours_by_activity_type"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "latest_statuses_have_status_date_selected_person"
+			          "ID": "CYA_attendances_have_selected_person_hours_by_activity_type"
 			        }
 			      ]
 			    },
-			    "latest_status_has_latest_status_people": {
+			    "new_reg_data_has_CYA_attendance_selected_person_hours_by_activity_type": {
 			      "Binding": {
-			        "ConceptualEntity": "Latest Status"
+			        "ConceptualEntity": "New Reg Data"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "latest_status": {
+			        "new_reg_data": {
 			          "Target": {
-			            "Entity": "latest_status"
+			            "Entity": "new_reg_data"
 			          }
 			        },
-			        "latest_status.latest_status_people": {
+			        "CYA_attendance.selected_person_hours_by_activity_type": {
 			          "Target": {
-			            "Entity": "latest_status.latest_status_people"
+			            "Entity": "CYA_attendance.selected_person_hours_by_activity_type"
 			          }
 			        }
 			      },
@@ -67613,15 +70718,114 @@ cultureInfo en-GB
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "latest_status"
+			              "Role": "new_reg_data"
 			            },
 			            "Object": {
-			              "Role": "latest_status.latest_status_people"
+			              "Role": "CYA_attendance.selected_person_hours_by_activity_type"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "latest_statuses_have_latest_status_people"
+			          "ID": "new_reg_data_have_selected_person_hours_by_activity_type"
+			        }
+			      ]
+			    },
+			    "CYA_attendance_has_selected_person_sessions_by_project": {
+			      "Binding": {
+			        "ConceptualEntity": "CYA Attendance"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CYA_attendance": {
+			          "Target": {
+			            "Entity": "CYA_attendance"
+			          }
+			        },
+			        "CYA_attendance.selected_person_sessions_by_project": {
+			          "Target": {
+			            "Entity": "CYA_attendance.selected_person_sessions_by_project"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CYA_attendance"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.selected_person_sessions_by_project"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CYA_attendances_have_selected_person_sessions_by_project"
+			        }
+			      ]
+			    },
+			    "new_reg_data_has_CYA_attendance_selected_person_sessions_by_project": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "CYA_attendance.selected_person_sessions_by_project": {
+			          "Target": {
+			            "Entity": "CYA_attendance.selected_person_sessions_by_project"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "CYA_attendance.selected_person_sessions_by_project"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_selected_person_sessions_by_project"
+			        }
+			      ]
+			    },
+			    "timeline_date_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Timeline Dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "timeline_date": {
+			          "Target": {
+			            "Entity": "timeline_date"
+			          }
+			        },
+			        "timeline_date.date": {
+			          "Target": {
+			            "Entity": "timeline_date.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "timeline_date"
+			            },
+			            "Object": {
+			              "Role": "timeline_date.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "timeline_dates_have_dates"
 			        }
 			      ]
 			    },
@@ -67830,6 +71034,69 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
+			    "new_reg_data_has_staff_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "New Reg Data"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "new_reg_data": {
+			          "Target": {
+			            "Entity": "new_reg_data"
+			          }
+			        },
+			        "staff_ID": {
+			          "Target": {
+			            "Entity": "staff_ID"
+			          },
+			          "Nouns": [
+			            {
+			              "session youth worker": {
+			                "State": "Generated"
+			              }
+			            },
+			            {
+			              "worker": {
+			                "State": "Generated"
+			              }
+			            },
+			            {
+			              "youth worker": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "new_reg_data"
+			            },
+			            "Object": {
+			              "Role": "staff_ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "new_reg_data_have_staff_ID"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "staff_ID"
+			            },
+			            "Object": {
+			              "Role": "new_reg_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "staff_ID_have_new_reg_data"
+			        }
+			      ]
+			    },
 			    "project_has_new_reg_data": {
 			      "Binding": {
 			        "ConceptualEntity": "Project"
@@ -67867,52 +71134,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "projects_have_new_reg_data"
-			        }
-			      ]
-			    },
-			    "sessions_3_has_date_table": {
-			      "Binding": {
-			        "ConceptualEntity": "Sessions (3)"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "sessions_3": {
-			          "Target": {
-			            "Entity": "sessions_3"
-			          }
-			        },
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "sessions_3"
-			            },
-			            "Object": {
-			              "Role": "date_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "sessions_3_have_date_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "sessions_3"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_sessions_3"
 			        }
 			      ]
 			    },
@@ -67959,6 +71180,52 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "staff_ID_have_sessions_3"
+			        }
+			      ]
+			    },
+			    "sessions_3_has_date_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Sessions (3)"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sessions_3": {
+			          "Target": {
+			            "Entity": "sessions_3"
+			          }
+			        },
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sessions_3"
+			            },
+			            "Object": {
+			              "Role": "date_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sessions_3_have_date_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "sessions_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_sessions_3"
 			        }
 			      ]
 			    },
@@ -68214,7 +71481,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cya_tle_has_new_reg_data": {
+			    "cya_tle_has_timeline_date": {
 			      "Binding": {
 			        "ConceptualEntity": "CYA TLE"
 			      },
@@ -68225,17 +71492,10 @@ cultureInfo en-GB
 			            "Entity": "cya_tle"
 			          }
 			        },
-			        "new_reg_data": {
+			        "timeline_date": {
 			          "Target": {
-			            "Entity": "new_reg_data"
-			          },
-			          "Nouns": [
-			            {
-			              "upshot": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
+			            "Entity": "timeline_date"
+			          }
 			        }
 			      },
 			      "Phrasings": [
@@ -68245,12 +71505,25 @@ cultureInfo en-GB
 			              "Role": "cya_tle"
 			            },
 			            "Object": {
-			              "Role": "new_reg_data"
+			              "Role": "timeline_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "cya_tles_have_new_reg_data"
+			          "ID": "cya_tles_have_timeline_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "timeline_date"
+			            },
+			            "Object": {
+			              "Role": "cya_tle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "timeline_dates_have_cya_tles"
 			        }
 			      ]
 			    },
@@ -68350,52 +71623,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "CYA_people_reports_have_people_session_links"
-			        }
-			      ]
-			    },
-			    "people_session_link_has_date_table": {
-			      "Binding": {
-			        "ConceptualEntity": "People Session Link"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "people_session_link": {
-			          "Target": {
-			            "Entity": "people_session_link"
-			          }
-			        },
-			        "date_table": {
-			          "Target": {
-			            "Entity": "date_table"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "people_session_link"
-			            },
-			            "Object": {
-			              "Role": "date_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "people_session_links_have_date_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "date_table"
-			            },
-			            "Object": {
-			              "Role": "people_session_link"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_tables_have_people_session_links"
 			        }
 			      ]
 			    },

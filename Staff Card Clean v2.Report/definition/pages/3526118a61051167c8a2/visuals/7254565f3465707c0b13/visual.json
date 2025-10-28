@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7254565f3465707c0b13",
   "position": {
-    "x": 456.17021276595744,
+    "x": 440.48175011306722,
     "y": 0,
     "z": 16000,
-    "height": 73.9209726443769,
-    "width": 620.54711246200611,
+    "height": 75.47195095395233,
+    "width": 621.61443240255289,
     "tabOrder": 8000
   },
   "visual": {
@@ -17,22 +17,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "CYA People Report"
-                        }
-                      },
-                      "Property": "Barriers"
+                    "SourceRef": {
+                      "Entity": "CYA People Report"
                     }
                   },
-                  "Function": 3
+                  "Property": "Selected Person Barriers"
                 }
               },
-              "queryRef": "Min(CYA People Report.Barriers)",
-              "nativeQueryRef": "First Barriers"
+              "queryRef": "CYA People Report.Selected Person Barriers",
+              "nativeQueryRef": "Barriers",
+              "displayName": "Barriers"
             }
           ]
         }
@@ -93,8 +89,59 @@
             }
           }
         }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0a135229c173817737bb",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CYA People Report"
+                  }
+                },
+                "Property": "Barriers"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "80510925eed745e1c36c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Selected Person Barriers"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
