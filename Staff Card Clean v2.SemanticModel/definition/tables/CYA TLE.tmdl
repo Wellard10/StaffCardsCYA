@@ -442,6 +442,86 @@ table 'CYA TLE'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Recording User Full name'
+		dataType: string
+		lineageTag: f4314a24-3354-4ede-99b5-061ea5090849
+		summarizeBy: none
+		sourceColumn: Recording User Full name
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyDate
+		dataType: string
+		lineageTag: 191935ed-c928-4829-b6f5-9de4ac06542f
+		summarizeBy: none
+		sourceColumn: _KeyDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyAct
+		dataType: string
+		lineageTag: 8c916316-983c-41bc-a18b-6da0e84cecca
+		summarizeBy: none
+		sourceColumn: _KeyAct
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyNotes
+		dataType: string
+		lineageTag: c17d244b-b093-4e39-bc49-34c3e1e31ab7
+		summarizeBy: none
+		sourceColumn: _KeyNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyProj
+		dataType: string
+		lineageTag: 5984537d-880b-4c97-9a90-15780ab62a74
+		summarizeBy: none
+		sourceColumn: _KeyProj
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFull
+		dataType: string
+		lineageTag: b9046e0e-034f-4512-af0d-e6e2fa177566
+		summarizeBy: none
+		sourceColumn: _AttendeeFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFullN
+		dataType: string
+		lineageTag: 7effe46b-5897-43ab-8851-65a7a4ccd6a3
+		summarizeBy: none
+		sourceColumn: _AttendeeFullN
+
+		annotation SummarizationSetBy = Automatic
+
+	column _IsStaffAttendee
+		dataType: string
+		lineageTag: 55c02924-5316-41cf-9ada-59bd60dd9a8b
+		summarizeBy: none
+		sourceColumn: _IsStaffAttendee
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SessionKey
+		dataType: string
+		lineageTag: d59e392a-d9aa-48a1-9a29-e717c68befc7
+		summarizeBy: none
+		sourceColumn: _SessionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Youth Worker'
+		dataType: string
+		lineageTag: 92e76974-95c7-4727-82a0-c341a07017de
+		summarizeBy: none
+		sourceColumn: Session Youth Worker
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CYA TLE' = m
 		mode: import
 		source =
@@ -492,9 +572,9 @@ table 'CYA TLE'
 				        GetTLE("BFTLE"),
 				        GetTLE("InfraTLE")
 				    }),
-				    #"Appended Query" = Table.Combine({Combined, #"TE - Data"}),
-				    #"Removed Other Columns" = Table.SelectColumns(#"Appended Query",{"Attendee ID", "First name", "Last name", "Status", "Event ID", "Event date", "Expiry date", "Event type", "Event value", "Notes", "Project", "Activity", "Activity Group", "Activity Type", "Recording user first name", "Recording user last name", "Date recorded", "Time recorded"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Event ID"})
+				    #"Renamed Columns" = Table.RenameColumns(Combined,{{"Session Youth Workers", "Session Youth Worker"}}),
+				    #"Appended Query" = Table.Combine({#"Renamed Columns", #"TE - Data"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Appended Query", {"Event ID"})
 				in
 				    #"Removed Duplicates"
 

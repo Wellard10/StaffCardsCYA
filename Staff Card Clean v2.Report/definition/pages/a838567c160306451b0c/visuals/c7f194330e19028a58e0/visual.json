@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "c7f194330e19028a58e0",
   "position": {
     "x": 483.63848396501459,
@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 304.90252249968313,
     "width": 419.38699454937256,
-    "tabOrder": 8000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "donutChart",
@@ -498,37 +498,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0e101a4eb7a81ae93b80",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sessions + Activities"
-              }
-            },
-            "Property": "Activity type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8f74bbb04992e124000b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sessions + Activities"
-              }
-            },
-            "Property": "Unique Session Hours"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

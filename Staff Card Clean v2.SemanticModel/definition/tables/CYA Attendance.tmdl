@@ -261,40 +261,6 @@ table 'CYA Attendance'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Created on'
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 644f09f6-5ab3-44e8-826c-7ce155f53715
-		summarizeBy: none
-		sourceColumn: Created on
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Created by'
-		dataType: string
-		lineageTag: 01075067-ec60-4ca8-818c-c1d9dcddcafd
-		summarizeBy: none
-		sourceColumn: Created by
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Edited on'
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 13969068-bdda-4fe2-800b-6c100175705e
-		summarizeBy: none
-		sourceColumn: Edited on
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Edited by'
-		dataType: string
-		lineageTag: 3fb0508e-bbf5-47cc-9a2a-33bd61838496
-		summarizeBy: none
-		sourceColumn: Edited by
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Session ID'
 		dataType: string
 		lineageTag: a5ec102e-1de5-44f8-8c1c-91e7816ca8c0
@@ -351,20 +317,43 @@ table 'CYA Attendance'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Attendee status'
+	column 'Unique session registrar'
 		dataType: string
-		lineageTag: ab97bc94-4805-480c-a751-d0f76d417669
+		lineageTag: dde1f75c-ea70-4603-8547-76b64a19bcfe
 		summarizeBy: none
-		sourceColumn: Attendee status
+		sourceColumn: Unique session registrar
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Archived on'
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 1d65315a-64ab-4488-bb2d-e78e8bd9dcb9
+	column 'Unique session time'
+		dataType: string
+		lineageTag: 449695fc-08ab-404a-8eed-6db2bf9b7fdf
 		summarizeBy: none
-		sourceColumn: Archived on
+		sourceColumn: Unique session time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: 12b5fbf1-9f20-4484-8d2c-790db35c8086
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Leader'
+		dataType: string
+		lineageTag: e47d358f-2f99-4328-aee5-9f54f61fc23c
+		summarizeBy: none
+		sourceColumn: Session Leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Registrar & Session Leader'
+		dataType: string
+		lineageTag: 6c15307a-08f8-481b-8334-c82f6b5d0f8c
+		summarizeBy: none
+		sourceColumn: Registrar & Session Leader
 
 		annotation SummarizationSetBy = Automatic
 
@@ -390,19 +379,13 @@ table 'CYA Attendance'
 				        {"Session registrar", type text},
 				        {"Tags", type any},
 				        {"Status", type text},
-				        {"Created on", type datetime},
-				        {"Created by", type text},
-				        {"Edited on", type datetime},
-				        {"Edited by", type text},
 				        {"Session ID", type text},
 				        {"Session notes", type any},
 				        {"Attendee type", type text},
 				        {"First name", type text},
 				        {"Last name", type text},
 				        {"Nickname", type any},
-				        {"Attendee ID", type text},
-				        {"Attendee status", type text},
-				        {"Archived on", type datetime}
+				        {"Attendee ID", type text}
 				    },
 				    GetAttendance = (item as text) as table =>
 				        let
@@ -426,9 +409,10 @@ table 'CYA Attendance'
 				    Combined = Table.Combine({
 				        GetAttendance("DOAttendance"),
 				        GetAttendance("BFAttendance"),
-				        GetAttendance("InfraAttendance")
+				        GetAttendance("InfraAttendance"),
+				        GetAttendance("NRD")
 				    }),
-				    #"Removed Duplicates" = Table.Distinct(Combined, {"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Status", "Created on", "Created by", "Edited on", "Edited by", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID", "Attendee status", "Archived on"})
+				    #"Removed Duplicates" = Table.Distinct(Combined, {"Project", "Activity type", "Activity group", "Activity group ID", "Activity ID", "Activity", "Title", "Location", "Location ID", "Date", "Start time", "Duration (hrs)", "Session registrar", "Status", "Session ID", "Session notes", "Attendee type", "First name", "Last name", "Nickname", "Attendee ID"})
 				in
 				    #"Removed Duplicates"
 

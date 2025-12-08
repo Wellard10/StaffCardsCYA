@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "9fb7578bf44e21d15d02",
   "position": {
-    "x": 192.34042553191489,
+    "x": 192,
     "y": 0,
     "z": 7000,
-    "height": 64.680851063829792,
-    "width": 146.38297872340425,
-    "tabOrder": 16000
+    "height": 80,
+    "width": 144,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "card",
@@ -57,29 +57,53 @@
                   "Value": "10D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Gender of Young Person'"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ad57e9c2aa302487ac7a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Selected Person Gender"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

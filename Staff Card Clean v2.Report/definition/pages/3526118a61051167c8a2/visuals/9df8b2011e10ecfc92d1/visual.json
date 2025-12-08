@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "9df8b2011e10ecfc92d1",
   "position": {
-    "x": 724.62006079027356,
-    "y": 74.8936170212766,
+    "x": 576,
+    "y": 128,
     "z": 3000,
-    "height": 284.98480243161094,
-    "width": 555.37993920972644,
-    "tabOrder": 12000
+    "height": 272,
+    "width": 704,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineChart",
@@ -396,7 +396,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'ME Tool Results'"
+                  "Value": "'Progress Over Time (ME Tool Results)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -405,246 +418,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e13f22d960b2f23a1ad5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA ME Tool"
-              }
-            },
-            "Property": "Submitted"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d036941495e0224363b5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA ME Tool"
-              }
-            },
-            "Property": "ME Tool order"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "909921bfcf48ce3f240d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q1. Relationships:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fe518b44166734baa681",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q2. Employability:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b3bbf07d8819cc1136a6",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q3. Key Skills:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "684ad9721326136d675d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q4. Aspiration and Motivation:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0bf843da6fc34ab23f9e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q5. Social Involvement:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5637d05995c76c2a48de",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q6. A Healthy Lifestyle:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "418c1b46fb0437115074",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q7. Emotional Wellbeing:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "13324ce6c9a231aa5dda",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q8. Home and Stability:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "73bb4733d9f94d725120",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q9. Communication:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a6c8ad85beb95fff3635",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Q10. Identity:"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7a1e6934e8012b232349",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "CYA ME Tool"
-                  }
-                },
-                "Property": "Total"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

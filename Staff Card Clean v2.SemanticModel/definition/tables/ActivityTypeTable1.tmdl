@@ -1,6 +1,10 @@
 table ActivityTypeTable1
 	lineageTag: 4d2870ec-d54d-431c-a38e-36e563f85d08
 
+	measure 'KPI target FF' = 150
+		formatString: 0
+		lineageTag: bc38ad08-9e3b-4abc-89a3-5c3f8f50ee38
+
 	column 'Session ID'
 		dataType: string
 		lineageTag: d89abb14-d187-4279-8547-bd0336621e3c

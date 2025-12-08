@@ -1,0 +1,120 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "b0216a910943306aa98c",
+  "position": {
+    "x": 656,
+    "y": 384,
+    "z": 7000,
+    "height": 336,
+    "width": 624,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "lineStackedColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BH Feedback"
+                    }
+                  },
+                  "Property": "Question"
+                }
+              },
+              "queryRef": "BH Feedback.Attribute",
+              "nativeQueryRef": "Question",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BH Feedback"
+                    }
+                  },
+                  "Property": "Score"
+                }
+              },
+              "queryRef": "BH Feedback.Score",
+              "nativeQueryRef": "Value"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BH Feedback"
+                        }
+                      },
+                      "Property": "Score"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(BH Feedback.Score)",
+              "nativeQueryRef": "Count of Score"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BH Feedback"
+                        }
+                      },
+                      "Property": "Score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(BH Feedback.Score)",
+              "nativeQueryRef": "Sum of Score"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BH Feedback"
+                  }
+                },
+                "Property": "Question"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -973,6 +973,14 @@ table 'CYA People Report'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Column1
+		dataType: string
+		lineageTag: 5529b6cf-93ae-4cba-9103-e8c871bbd344
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CYA People Report' = m
 		mode: import
 		source =

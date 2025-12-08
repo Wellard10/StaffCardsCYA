@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "6e773cd820b7d057d96e",
   "position": {
     "x": 0,
     "y": 568.28383205016269,
     "z": 8000,
     "height": 152.14921819192,
-    "width": 139.1450115088499
+    "width": 139.1450115088499,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -204,14 +205,14 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'gary frazer'"
+                              "Value": "'jamie harrison'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'jamie harrison'"
+                              "Value": "'michelle brunskill'"
                             }
                           }
                         ],

@@ -842,6 +842,14 @@ table 'Young People'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Column1
+		dataType: string
+		lineageTag: b884167f-fcf7-4b21-b47c-0a529cd7383c
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Young People' = m
 		mode: import
 		source =

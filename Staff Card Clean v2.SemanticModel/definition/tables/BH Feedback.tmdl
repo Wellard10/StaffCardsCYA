@@ -1,0 +1,79 @@
+table 'BH Feedback'
+	lineageTag: 09155802-ce4a-486b-a8c3-3904a12012b5
+
+	column 'Sent ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: bf7a397f-6185-4c17-9312-a5cd2377fc04
+		summarizeBy: count
+		sourceColumn: Sent ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sent name'
+		dataType: string
+		lineageTag: 7af8234c-70b3-4428-bf27-49d7138e4664
+		summarizeBy: none
+		sourceColumn: Sent name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Participant name'
+		dataType: string
+		lineageTag: 8548f982-fa10-4a3e-9c14-5c230ae304e5
+		summarizeBy: none
+		sourceColumn: Participant name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Participant ID'
+		dataType: string
+		lineageTag: 350ef03e-9814-4556-bf35-8c136147d6b6
+		summarizeBy: none
+		sourceColumn: Participant ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Submitted
+		dataType: int64
+		formatString: 0
+		lineageTag: 64961d71-7ee8-4897-acc3-1aa557d2c46a
+		summarizeBy: sum
+		sourceColumn: Submitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Question
+		dataType: string
+		lineageTag: 41ba80bf-f641-496d-a7ce-c096b1078c07
+		summarizeBy: none
+		sourceColumn: Question
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score
+		dataType: int64
+		formatString: 0
+		lineageTag: b9b5cf21-d1b4-4632-a3ba-79f3b5e1d3aa
+		summarizeBy: sum
+		sourceColumn: Score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BH Feedback' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
+				    BHFeedback_Table = Source{[Item="BHFeedback",Kind="Table"]}[Data],
+				    #"Renamed Columns1" = Table.RenameColumns(BHFeedback_Table,{{"Q1. I found the session really interesting. ", "Q01. I found the session really interesting."}, {"Q2. I liked the subject.", "Q02. I liked the subject."}, {"Q3. I learnt something about the ""session topic"" today.", "Q03. I learnt something about the ""session topic"" today."}, {"Q4. I liked the practical challenge it was fun", "Q04. I liked the practical challenge it was fun"}, {"Q5. The doodle sheets are a good way of putting down what I think.", "Q05. The doodle sheets are a good way of putting down what I think."}, {"Q6. The session has caused me to think about what matters in life", "Q06. The session has caused me to think about what matters in life"}, {"Q7. The session has helped me to understand what gaps i need to cross over and how i will do it.", "Q07. The session has helped me to understand what gaps i need to cross over and how i will do it."}, {"Q8. The session has made me understand more about my chosen job.", "Q08. The session has made me understand more about my chosen job."}, {"Q9. I like the journal and will use it between the sessions as it helps me to write my thoughts down.", "Q09. I like the journal and will use it between the sessions as it helps me to write my thoughts down."}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Sent ID", Int64.Type}, {"Submitted", Int64.Type}, {"Q01. I found the session really interesting.", Int64.Type}, {"Q02. I liked the subject.", Int64.Type}, {"Q03. I learnt something about the ""session topic"" today.", Int64.Type}, {"Q04. I liked the practical challenge it was fun", Int64.Type}, {"Q05. The doodle sheets are a good way of putting down what I think.", Int64.Type}, {"Q06. The session has caused me to think about what matters in life", Int64.Type}, {"Q07. The session has helped me to understand what gaps i need to cross over and how i will do it.", Int64.Type}, {"Q08. The session has made me understand more about my chosen job.", Int64.Type}, {"Q09. I like the journal and will use it between the sessions as it helps me to write my thoughts down.", Int64.Type}, {"Q10. I am looking forward to the next session.", Int64.Type}, {"Q11. I am not sure this programme is for me.", Int64.Type}, {"Q12. I found the session hard to participate in ", Int64.Type}, {"Q13. I have suggestions to make it more appealing to me.", Int64.Type}}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Changed Type1", {"Sent ID", "Sent name", "Participant name", "Participant ID", "Submitted"}, "Attribute", "Value"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "Question"}, {"Value", "Score"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

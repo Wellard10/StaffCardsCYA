@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "f180ffccb72ca890ce8b",
   "position": {
     "x": 483.52815937547524,
@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 414.61955695240027,
     "width": 419.29132660820193,
-    "tabOrder": 11000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -686,42 +686,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f0bb7a042f048d9362cb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Calendar"
-              }
-            },
-            "Property": "Categories"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a66c6990f5e13cff5b59",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendar"
-                  }
-                },
-                "Property": "Time Calcuation AL"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

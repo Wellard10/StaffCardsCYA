@@ -1,0 +1,356 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "27f1b998da5fc1768303",
+  "position": {
+    "x": 176,
+    "y": 0,
+    "z": 3000,
+    "height": 128,
+    "width": 480,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CYA People Report"
+                        }
+                      },
+                      "Property": "Upshot ID"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(CYA People Report.Upshot ID)",
+              "nativeQueryRef": "Count of Upshot ID"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "CYA People Report"
+                      }
+                    },
+                    "Property": "Upshot ID"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Number of young people who identified the barrier \"Looked after young person / care experience, Adopted young person, Cared for by extended family\"'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ac3bb5973d0980da8839",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CYA People Report"
+              }
+            },
+            "Property": "Barriers"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "CYA People Report",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Barriers"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barrier not listed, Looked after young person / care experience, Negative family influence, Cared for by extended family, Living in supported housing, Long-term physical illness/condition (Please state below), Mental health issues (Please state below), Low Skills (Below Level 1), Homeless or affected by housing exclusion, Transport (Please state below), Confidence, Low job application experience, Prior Trauma, Struggles in classroom/groupwork setting, Negative relationship with teachers, Neurodiverse, Bereavement'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Cared for by extended family, Mental health issues (Please state below), No or limited work experience, Affordability of public transport, Confidence, Low Interview Skills, No CV or Cover letter, Low job application experience, Low Social Skills, COVID Legacy (Please state below)'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Cared for by extended family, No CV or Cover letter, Low job application experience, Neurodiverse'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, Cared for by extended family, Mental health issues (Please state below), Low Skills (Below Level 1), Confidence, No Work Commitment, Prior Trauma'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, Negative family influence, Cared for by extended family, Living in supported housing, Criminal Convictions, Mental health issues (Please state below), From Employment Deprived Areas, Affordability of public transport, Finance, No CV or Cover letter, Safeguarding Concerns (Please state below), Prior Trauma, Negative relationship with teachers, Lack of positive role model, No Full Drivers Licence'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Cared for by extended family, Mental health issues (Please state below), At risk of becoming NEET, Living in a jobless household without dependent children'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Cared for by extended family, Mental health issues (Please state below), At risk of becoming NEET, Transport (Please state below), Confidence, Finance, Low Interview Skills, Bereavement'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Cared for by extended family, Mental health issues (Please state below), No or limited work experience, Transport (Please state below), No CV or Cover letter, Low job application experience, COVID Legacy (Please state below)'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Adopted young person, Cared for by extended family, Mental health issues (Please state below), Low Skills (Below Level 1), Confidence, Low Interview Skills, No CV or Cover letter, Low job application experience, 2 STAFF MEMBERS!, Violent or Showing Violent tendencies, Prior Trauma, Has EHCP/C.I.N (Please state below), Neurodiverse, COVID Legacy (Please state below), No Full Drivers Licence'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Cared for by extended family, Low Skills (Below Level 1), No or limited work experience, Transport (Please state below), Finance, Low Interview Skills, No CV or Cover letter, Prior Trauma, Neurodiverse, COVID Legacy (Please state below), Bereavement'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Negative family influence, Cared for by extended family, Mental health issues (Please state below), At risk of becoming NEET, Long-term unemployed (Aged up to 24 with a continuous JSA/UC claim of 6 month or more, Living in a single adult household with dependent children, From Employment Deprived Areas, Low Interview Skills, Prior Trauma, Struggles in classroom/groupwork setting, Victim of bullying, Neurodiverse, COVID Legacy (Please state below), Bereavement, Lack of positive role model'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, Adopted young person, Negative family influence, Long-term physical illness/condition (Please state below), Mental health issues (Please state below), Confidence, Finance, Low Interview Skills, No CV or Cover letter, Lacking motivation to work, Safeguarding Concerns (Please state below), Prior Trauma, Low Social Skills, Struggles in classroom/groupwork setting, Victim of bullying, Negative relationship with teachers, Neurodiverse, Bereavement, Lack of positive role model'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, Criminal Convictions, Mental health issues (Please state below), Low Skills (Below Level 1), Living in a single adult household with dependent children, No or limited work experience, Transport (Please state below), Confidence, Low Interview Skills, No CV or Cover letter, Prior Trauma, Has EHCP/C.I.N (Please state below), Negative peer group influence, Neurodiverse, Lack of positive role model, Challenging Behaviour'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, Mental health issues (Please state below), Low Skills (Below Level 1), Living in a jobless household without dependent children, Transport (Please state below), Confidence, Low Interview Skills, No CV or Cover letter, Low job application experience, Negative relationship with teachers, COVID Legacy (Please state below), No Full Drivers Licence'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Looked after young person / care experience, No or limited work experience, No CV or Cover letter, Prior Trauma, COVID Legacy (Please state below), No Full Drivers Licence'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Living in supported housing, Mental health issues (Please state below), At risk of becoming NEET, No or limited work experience, Transport (Please state below), Finance, Low Interview Skills, No Work Commitment, Lacking motivation to work, Low job application experience, Neurodiverse, Lack of positive role model'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Long-term physical illness/condition (Please state below), Mental health issues (Please state below), Substance related conditions, At risk of becoming NEET, From Employment Deprived Areas, Confidence, Low Interview Skills, Prior Trauma, Neurodiverse'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Low Skills (Below Level 1), Homeless or affected by housing exclusion, No or limited work experience, Transport (Please state below), Confidence, Finance, Low Interview Skills, No CV or Cover letter, Lacking motivation to work'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Negative family influence, Criminal Convictions, Mental health issues (Please state below), Homeless or affected by housing exclusion, Finance, Personal Hygiene Concerns, Safeguarding Concerns (Please state below), Prior Trauma'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Negative family influence, Long-term physical illness/condition (Please state below), Mental health issues (Please state below), Substance related conditions, No CV or Cover letter'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Negative family influence, Low Skills (Below Level 1), At risk of becoming NEET, Long-term unemployed (Aged up to 24 with a continuous JSA/UC claim of 6 month or more, No or limited work experience, Transport (Please state below), Confidence, Low Interview Skills, No CV or Cover letter, Low job application experience'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Negative family influence, Low Skills (Below Level 1), At risk of becoming NEET, No or limited work experience, Transport (Please state below), Low Interview Skills, No CV or Cover letter'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Looked after young person / care experience, Negative family influence, Mental health issues (Please state below), Long-term unemployed (Aged up to 24 with a continuous JSA/UC claim of 6 month or more, Violent or Showing Violent tendencies, Neurodiverse'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Primary carer of older person/adult, Looked after young person / care experience, Negative family influence, Homeless or affected by housing exclusion, No CV or Cover letter, Lack of positive role model'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Barriers in later session, Adopted young person, Negative family influence, Mental health issues (Please state below), At risk of becoming NEET, Long-term unemployed (Aged up to 24 with a continuous JSA/UC claim of 6 month or more, Living in a single adult household with dependent children, Finance, Childcare, Low Interview Skills, Prior Trauma, Has EHCP/C.I.N (Please state below), Victim of bullying, Negative relationship with teachers, Neurodiverse, Side effects of medication/medical procedure (Please state below)'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Migrant, people with a foreign background, minorities (inc marginalised communities such as Roma), Asylum Seeker (Please state below), ESL (English is Additional  language), Looked after young person / care experience, Homeless or affected by housing exclusion, Low Interview Skills, No CV or Cover letter, Prior Trauma, Lack of positive role model'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Primary carer of older person/adult, Primary carer of a child/children under 18, Cared for by extended family, No or limited work experience, Transport (Please state below), Affordability of public transport, Finance, Low Interview Skills, No CV or Cover letter, No Full Drivers Licence'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

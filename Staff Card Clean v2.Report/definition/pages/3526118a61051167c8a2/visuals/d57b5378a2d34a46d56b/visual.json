@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d57b5378a2d34a46d56b",
   "position": {
-    "x": 789.78723404255322,
-    "y": 425.04559270516717,
+    "x": 784,
+    "y": 400,
     "z": 15000,
-    "height": 294.71124620060789,
-    "width": 490.21276595744683,
-    "tabOrder": 7000
+    "height": 320,
+    "width": 496,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -736,6 +736,43 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "markerSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "CYA TLE"
+                          }
+                        },
+                        "Property": "Event type"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Enrichment Fund Payment'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "valueAxis": [
@@ -766,7 +803,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Timeline of Activity'"
+                  "Value": "'Young Person Engagement Timeline'"
                 }
               }
             }
@@ -805,68 +842,21 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a3c086557a85bd285647",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Events (Timeline Tooltip)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "69ab280c24666c163334",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "TLE Timeline Position"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c3ac6a93fe8a23d281ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Timeline Dates"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d2c645f3d9b7e2b70acd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

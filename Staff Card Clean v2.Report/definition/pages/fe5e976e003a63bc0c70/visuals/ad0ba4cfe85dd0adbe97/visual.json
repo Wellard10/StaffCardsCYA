@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ad0ba4cfe85dd0adbe97",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 0,
     "height": 65.4047751812237,
     "width": 327.02387590611852,
-    "tabOrder": 1000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -97,13 +97,6 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'Gary Frazer'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
                               "Value": "'Claire Sands'"
                             }
                           }
@@ -133,6 +126,13 @@
                           {
                             "Literal": {
                               "Value": "'Jamie Harrison'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Michelle Brunskill'"
                             }
                           }
                         ]

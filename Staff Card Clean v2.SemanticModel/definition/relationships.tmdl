@@ -102,11 +102,6 @@ relationship ac802fcd-b474-753b-5bdf-b3bd9e50bd6e
 	fromColumn: 'New Reg Data'.'Attendee ID'
 	toColumn: 'CYA Attendance'.'Attendee ID'
 
-relationship 24cb3711-5d9c-76f2-2a7c-10a9bceb7959
-	toCardinality: many
-	fromColumn: 'CYA Event Types'.'Upshot ID'
-	toColumn: 'New Reg Data'.'Attendee ID'
-
 relationship 4b7df31a-cdbd-a6a6-6f6a-1781fef8328a
 	fromColumn: 'KPI Test'.ProjectID
 	toColumn: 'Project ID'.Project

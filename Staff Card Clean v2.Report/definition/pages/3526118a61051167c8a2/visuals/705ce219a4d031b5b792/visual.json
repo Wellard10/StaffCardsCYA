@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "705ce219a4d031b5b792",
   "position": {
-    "x": 456.44765457576,
-    "y": 384.92451781887451,
+    "x": 448,
+    "y": 400,
     "z": 13000,
-    "height": 335.50853242320818,
-    "width": 332.90769108659418,
-    "tabOrder": 5000
+    "height": 320,
+    "width": 336,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -83,7 +83,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sessions by Project'"
+                  "Value": "'Sessions Attended by Project'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -124,34 +137,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "67007fbd7b335f39434f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f88b1872f0b57f8bc399",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Selected Person Sessions by Project"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

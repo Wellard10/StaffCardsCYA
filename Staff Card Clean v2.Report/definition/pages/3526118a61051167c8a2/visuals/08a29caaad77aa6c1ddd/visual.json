@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "08a29caaad77aa6c1ddd",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1000,
-    "height": 65,
-    "width": 192.5,
-    "tabOrder": 11000
+    "z": 0,
+    "height": 80,
+    "width": 192,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -100,6 +100,19 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -153,20 +166,6 @@
           ]
         },
         "howCreated": "Exclude"
-      },
-      {
-        "name": "25a93b2ea3e0e7415549",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "New Reg Data"
-              }
-            },
-            "Property": "Pseudonym"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -171,7 +171,7 @@ table 'CYA ME Tool'
 
 	partition 'CYA ME Tool' = m
 		mode: import
-		source =
+		source = ```
 				let
 				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
 				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
@@ -192,29 +192,72 @@ table 'CYA ME Tool'
 				        {"Q9. Communication:", Int64.Type},
 				        {"Q10. Identity:", Int64.Type}
 				    },
+				    
+				    // Define ALL possible columns across all tables
+				    AllColumns = {"Sent ID", "Sent name", "Participant name", "Upshot ID", "Submitted", 
+				                  "Q1. Relationships:", "Q2. Employability:", "Q3. Key Skills:", 
+				                  "Q4. Aspiration and Motivation:", "Q5. Social Involvement:", 
+				                  "Q6. A Healthy Lifestyle:", "Q7. Emotional Wellbeing:", 
+				                  "Q8. Home and Stability:", "Q9. Communication:", "Q10. Identity:"},
+				    
 				    GetMETool = (item as text) as table =>
 				        let
 				            Raw = Source{[Item = item, Kind = "Table"]}[Data],
-				            #"Removed Other Columns" = Table.SelectColumns(Raw, {"Sent ID", "Sent name", "Participant name", "Upshot ID", "Submitted", "Q1. Relationships:", "Q2. Employability:", "Q3. Key Skills:", "Q4. Aspiration and Motivation:", "Q5. Social Involvement:", "Q6. A Healthy Lifestyle:", "Q7. Emotional Wellbeing:", "Q8. Home and Stability:", "Q9. Communication:", "Q10. Identity:"}),
-				            Typed = Table.TransformColumnTypes(#"Removed Other Columns", METoolTypeMap, "en-GB")
+				            // Select only columns that exist in this table
+				            ExistingColumns = List.Intersect({Table.ColumnNames(Raw), AllColumns}),
+				            #"Selected Columns" = Table.SelectColumns(Raw, ExistingColumns),
+				            
+				            // Add missing columns with null values
+				            MissingColumns = List.Difference(AllColumns, ExistingColumns),
+				            #"Added Missing" = List.Accumulate(
+				                MissingColumns,
+				                #"Selected Columns",
+				                (state, current) => Table.AddColumn(state, current, each null)
+				            ),
+				            
+				            // Reorder columns to match AllColumns order
+				            #"Reordered" = Table.SelectColumns(#"Added Missing", AllColumns),
+				            
+				            // Apply type transformations only to columns that should have them
+				            Typed = Table.TransformColumnTypes(#"Reordered", METoolTypeMap, "en-GB")
 				        in
 				            Typed,
+				    
 				    Combined = Table.Combine({
 				        GetMETool("DOMETool"),
-				        GetMETool("BFMETool")
+				        GetMETool("BFMETool"),
+				        GetMETool("CTSAMETool"),
+				        GetMETool("BHMETool"),
+				        GetMETool("EFMETool")
 				    }),
 				    #"Sorted Rows" = Table.Sort(Combined,{{"Upshot ID", Order.Ascending}, {"Submitted", Order.Ascending}}),
 				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "GlobalIndex", 1, 1, Int64.Type),
-				    #"Added Custom" = Table.AddColumn(#"Added Index", "ME Tool order", each let
-				    currID = [Upshot ID]
-				in
-				    [GlobalIndex]
-				    - List.Min( Table.SelectRows(#"Added Index", each [Upshot ID] = currID)[GlobalIndex] )
-				    + 1),
-				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Total", each [#"Q1. Relationships:"]+[#"Q2. Employability:"]+[#"Q3. Key Skills:"]+[#"Q4. Aspiration and Motivation:"]+[#"Q5. Social Involvement:"]+[#"Q6. A Healthy Lifestyle:"]+[#"Q7. Emotional Wellbeing:"]+[#"Q8. Home and Stability:"]+[#"Q9. Communication:"]+[#"Q10. Identity:"]),
+				    #"Added Custom" = Table.AddColumn(#"Added Index", "ME Tool order", each 
+				        let
+				            currID = [Upshot ID]
+				        in
+				            [GlobalIndex]
+				            - List.Min( Table.SelectRows(#"Added Index", each [Upshot ID] = currID)[GlobalIndex] )
+				            + 1
+				    ),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Total", each 
+				    List.Sum({
+				        [#"Q1. Relationships:"],
+				        [#"Q2. Employability:"],
+				        [#"Q3. Key Skills:"],
+				        [#"Q4. Aspiration and Motivation:"],
+				        [#"Q5. Social Involvement:"],
+				        [#"Q6. A Healthy Lifestyle:"],
+				        [#"Q7. Emotional Wellbeing:"],
+				        [#"Q8. Home and Stability:"],
+				        [#"Q9. Communication:"],
+				        [#"Q10. Identity:"]
+				    })
+				),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"ME Tool order", Int64.Type},{"Total", Int64.Type}})
 				in
 				    #"Changed Type"
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 

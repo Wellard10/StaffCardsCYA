@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "5144dd2f28c1f30ce661",
   "position": {
     "x": 190.41805044999367,
     "y": 0,
     "z": 0,
     "height": 65.41969831410826,
-    "width": 293.22043351502094
+    "width": 293.22043351502094,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -161,7 +162,21 @@
                     [
                       {
                         "Literal": {
+                          "Value": "'October'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
                           "Value": "'September'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'November'"
                         }
                       }
                     ]

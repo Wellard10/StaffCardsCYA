@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "8afae175a6df4638a1a9",
   "position": {
-    "x": 338.72340425531911,
+    "x": 336,
     "y": 0,
     "z": 6000,
-    "height": 73.191489361702125,
-    "width": 117.44680851063829,
-    "tabOrder": 15000
+    "height": 80,
+    "width": 128,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",
@@ -87,6 +87,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -100,6 +107,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Age of Young Person'"
                 }
               }
             }
@@ -135,29 +156,18 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f0aa78813ef25277342b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Selected Person Age"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

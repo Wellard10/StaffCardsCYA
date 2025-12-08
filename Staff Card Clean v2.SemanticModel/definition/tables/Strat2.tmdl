@@ -68,15 +68,6 @@ table Strat2
 
 		annotation SummarizationSetBy = Automatic
 
-	column Transgender
-		dataType: int64
-		formatString: 0
-		lineageTag: 43d25d3a-8dbf-4519-b106-e0ce879f34a4
-		summarizeBy: sum
-		sourceColumn: Transgender
-
-		annotation SummarizationSetBy = Automatic
-
 	column Intersex
 		dataType: int64
 		formatString: 0
@@ -263,15 +254,6 @@ table Strat2
 		lineageTag: a5b474b1-b459-4f95-b088-474dbcca35c7
 		summarizeBy: sum
 		sourceColumn: 50-59
-
-		annotation SummarizationSetBy = Automatic
-
-	column 60
-		dataType: int64
-		formatString: 0
-		lineageTag: 45bf67de-50bf-4024-ba0b-c15ba3649efa
-		summarizeBy: sum
-		sourceColumn: 60
 
 		annotation SummarizationSetBy = Automatic
 
@@ -766,15 +748,23 @@ table Strat2
 
 		annotation SummarizationSetBy = Automatic
 
+	column 60+
+		dataType: int64
+		formatString: 0
+		lineageTag: 176bb524-d988-4018-ba42-8569f9bd8670
+		summarizeBy: sum
+		sourceColumn: 60+
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Strat2 = m
 		mode: import
 		source =
 				let
 				    Source = Excel.Workbook(Web.Contents("https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx"), null, true),
 				    Strat2_Sheet = Source{[Item="Strat2",Kind="Sheet"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(Strat2_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}, {"Column27", type any}, {"Column28", type any}, {"Column29", type any}, {"Column30", type any}, {"Column31", Int64.Type}, {"Column32", type any}, {"Column33", type any}, {"Column34", type any}, {"Column35", type any}, {"Column36", type any}, {"Column37", type any}, {"Column38", type any}, {"Column39", type any}, {"Column40", type any}, {"Column41", type any}, {"Column42", type any}, {"Column43", type any}, {"Column44", type any}, {"Column45", type any}, {"Column46", type any}, {"Column47", type any}, {"Column48", type any}, {"Column49", type any}, {"Column50", type any}, {"Column51", type any}, {"Column52", type any}, {"Column53", type any}, {"Column54", type any}, {"Column55", type any}, {"Column56", type any}, {"Column57", type any}, {"Column58", type any}, {"Column59", type any}, {"Column60", type any}, {"Column61", type any}, {"Column62", type any}, {"Column63", type any}, {"Column64", type any}, {"Column65", type any}, {"Column66", type any}, {"Column67", type any}, {"Column68", type any}, {"Column69", type any}, {"Column70", type any}, {"Column71", type any}, {"Column72", type any}, {"Column73", type any}, {"Column74", type any}, {"Column75", type any}, {"Column76", type any}, {"Column77", type any}, {"Column78", type any}, {"Column79", type any}, {"Column80", type any}, {"Column81", type any}, {"Column82", type any}, {"Column83", type any}}),
-				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Strat ", type text}, {"Outcome", type text}, {"Activity", type text}, {"Activity type", type text}, {"Project", type text}, {"Unique attendees", Int64.Type}, {"Male", Int64.Type}, {"Female", Int64.Type}, {"Transgender", Int64.Type}, {"Intersex", Int64.Type}, {"Non-binary", Int64.Type}, {"Agender", Int64.Type}, {"Gender fluid", Int64.Type}, {"Gender neutral", Int64.Type}, {"Genderqueer", Int64.Type}, {"Neutrois", Int64.Type}, {"Questioning", Int64.Type}, {"Other", Int64.Type}, {"Prefer to self describe", Int64.Type}, {"Prefer not to say", Int64.Type}, {"Not provided", Int64.Type}, {"0-5", Int64.Type}, {"6-10", Int64.Type}, {"11-15", Int64.Type}, {"16-20", Int64.Type}, {"21-25", Int64.Type}, {"26-29", Int64.Type}, {"30-39", Int64.Type}, {"40-49", Int64.Type}, {"50-59", Int64.Type}, {"60", Int64.Type}, {"No data available", Int64.Type}, {"White English", Int64.Type}, {"White Northern Irish", Int64.Type}, {"White Scottish", Int64.Type}, {"White Welsh", Int64.Type}, {"White British", Int64.Type}, {"White Irish", Int64.Type}, {"White Eastern European", Int64.Type}, {"Other White background", Int64.Type}, {"White and Black Caribbean", Int64.Type}, {"White and Black African", Int64.Type}, {"White and Black British", Int64.Type}, {"White and Asian", Int64.Type}, {"Other Mixed background", Int64.Type}, {"Indian", Int64.Type}, {"Pakistani", Int64.Type}, {"Bangladeshi", Int64.Type}, {"Chinese", Int64.Type}, {"Other Asian background", Int64.Type}, {"Black Caribbean", Int64.Type}, {"Black African", Int64.Type}, {"Black British", Int64.Type}, {"Other Black background", Int64.Type}, {"Arab", Int64.Type}, {"Gypsy/Romany/Irish Traveller", Int64.Type}, {"Other ethnic group", Int64.Type}, {"Prefer not to say_1", Int64.Type}, {"Not provided_2", Int64.Type}, {"No data available_3", Int64.Type}, {"0-10", Int64.Type}, {"10-20", Int64.Type}, {"20-30", Int64.Type}, {"30-40", Int64.Type}, {"40-50", Int64.Type}, {"50-60", Int64.Type}, {"60-70", Int64.Type}, {"70-80", Int64.Type}, {"80-90", Int64.Type}, {"90-100", Int64.Type}, {"No data available_4", Int64.Type}, {"Attendances - Total", Int64.Type}, {"Attendances - Registers", Int64.Type}, {"Attendances - Headcount", Int64.Type}, {"Sessions delivered - Total", Int64.Type}, {"Sessions delivered - Registers", Int64.Type}, {"Sessions delivered - Headcount", Int64.Type}, {"Session hours - Total", type number}, {"Session hours - Registers", type number}, {"Sessions hours - Headcount", Int64.Type}, {"Contact hours", type number}, {"Contact hours - Registers", type number}, {"Contact hours - Headcount", Int64.Type}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(Strat2_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Strat ", type text}, {"Outcome", type text}, {"Activity", type text}, {"Activity type", type text}, {"Project", type text}, {"Unique attendees", Int64.Type}, {"Male", Int64.Type}, {"Female", Int64.Type}, {"Intersex", Int64.Type}, {"Non-binary", Int64.Type}, {"Agender", Int64.Type}, {"Gender fluid", Int64.Type}, {"Gender neutral", Int64.Type}, {"Genderqueer", Int64.Type}, {"Neutrois", Int64.Type}, {"Questioning", Int64.Type}, {"Other", Int64.Type}, {"Prefer to self describe", Int64.Type}, {"Prefer not to say", Int64.Type}, {"Not provided", Int64.Type}, {"0-5", Int64.Type}, {"6-10", Int64.Type}, {"11-15", Int64.Type}, {"16-20", Int64.Type}, {"21-25", Int64.Type}, {"26-29", Int64.Type}, {"30-39", Int64.Type}, {"40-49", Int64.Type}, {"50-59", Int64.Type}, {"60+", Int64.Type}, {"No data available", Int64.Type}, {"White English", Int64.Type}, {"White Northern Irish", Int64.Type}, {"White Scottish", Int64.Type}, {"White Welsh", Int64.Type}, {"White British", Int64.Type}, {"White Irish", Int64.Type}, {"White Eastern European", Int64.Type}, {"Other White background", Int64.Type}, {"White and Black Caribbean", Int64.Type}, {"White and Black African", Int64.Type}, {"White and Black British", Int64.Type}, {"White and Asian", Int64.Type}, {"Other Mixed background", Int64.Type}, {"Indian", Int64.Type}, {"Pakistani", Int64.Type}, {"Bangladeshi", Int64.Type}, {"Chinese", Int64.Type}, {"Other Asian background", Int64.Type}, {"Black Caribbean", Int64.Type}, {"Black African", Int64.Type}, {"Black British", Int64.Type}, {"Other Black background", Int64.Type}, {"Arab", Int64.Type}, {"Gypsy/Romany/Irish Traveller", Int64.Type}, {"Other ethnic group", Int64.Type}, {"Prefer not to say_1", Int64.Type}, {"Not provided_2", Int64.Type}, {"No data available_3", Int64.Type}, {"0-10", Int64.Type}, {"10-20", Int64.Type}, {"20-30", Int64.Type}, {"30-40", Int64.Type}, {"40-50", Int64.Type}, {"50-60", Int64.Type}, {"60-70", Int64.Type}, {"70-80", Int64.Type}, {"80-90", Int64.Type}, {"90-100", Int64.Type}, {"No data available_4", Int64.Type}, {"Attendances - Total", Int64.Type}, {"Attendances - Registers", Int64.Type}, {"Attendances - Headcount", Int64.Type}, {"Sessions delivered - Total", Int64.Type}, {"Sessions delivered - Registers", Int64.Type}, {"Sessions delivered - Headcount", Int64.Type}, {"Session hours - Total", type number}, {"Session hours - Registers", type number}, {"Sessions hours - Headcount", Int64.Type}, {"Contact hours", type number}, {"Contact hours - Registers", type number}, {"Contact hours - Headcount", Int64.Type}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Outcome", "Global Outcome"}}),
 				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns", "Global Outcome", "Global Outcome - Copy"),
 				    #"Split Column by Delimiter" = Table.SplitColumn(#"Duplicated Column", "Global Outcome - Copy", Splitter.SplitTextByDelimiter(". ", QuoteStyle.Csv), {"Global Outcome - Copy.1", "Global Outcome - Copy.2"}),

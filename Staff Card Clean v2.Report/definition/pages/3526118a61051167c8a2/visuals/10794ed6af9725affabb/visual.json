@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "10794ed6af9725affabb",
   "position": {
-    "x": 182.24058816073014,
-    "y": 73.59716060337179,
+    "x": 176,
+    "y": 80,
     "z": 12000,
-    "height": 309.575358093548,
-    "width": 398.35923437698062,
-    "tabOrder": 4000
+    "height": 320,
+    "width": 400,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "donutChart",
@@ -78,7 +78,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Hours of Support by Delivery Type'"
+                  "Value": "'Types of Support Received'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -87,37 +100,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0934e2df11f8775dd723",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Activity type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "72719a739c09656468e7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA Attendance"
-              }
-            },
-            "Property": "Selected Person Hours by Activity Type"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "2cab7ffd22f773e793b0",
   "position": {
     "x": 0,
-    "y": 221.25,
+    "y": 240,
     "z": 11000,
-    "height": 83.75,
-    "width": 182.5,
-    "tabOrder": 3000
+    "height": 80,
+    "width": 176,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "card",
@@ -67,6 +67,18 @@
                   "Value": "16D"
                 }
               }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -78,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -93,6 +112,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Sessions Attended'"
                 }
               }
             }
@@ -128,29 +161,18 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "052415234ee5d9e93ed0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Selected Person Total Sessions"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

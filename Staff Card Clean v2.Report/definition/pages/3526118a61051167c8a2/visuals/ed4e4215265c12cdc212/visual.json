@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ed4e4215265c12cdc212",
   "position": {
     "x": 0,
-    "y": 383.22188449848028,
+    "y": 400,
     "z": 10000,
-    "height": 336.53495440729483,
-    "width": 447.41641337386022,
-    "tabOrder": 2000
+    "height": 320,
+    "width": 448,
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -126,7 +126,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Milestones by Category'"
+                  "Value": "'Milestones Achieved'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -135,37 +148,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2d655f931f6d803bdc73",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Event Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "859b28b22f8d2af6b67c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA TLE"
-              }
-            },
-            "Property": "Milestone Count for Selected Person"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

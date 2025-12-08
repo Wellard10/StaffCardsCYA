@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "e94b840eda771be6cae3",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 65.41969831410826,
     "width": 190.41805044999367,
-    "tabOrder": 3000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "slicer",
@@ -112,13 +112,6 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'Gary Frazer'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
                               "Value": "'Claire Sands'"
                             }
                           }
@@ -150,6 +143,13 @@
                               "Value": "'Jamie Harrison'"
                             }
                           }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Michelle Brunskill'"
+                            }
+                          }
                         ]
                       ]
                     }
@@ -160,20 +160,6 @@
           ]
         },
         "howCreated": "Exclude"
-      },
-      {
-        "name": "872c31500bdb90b3877f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Staff ID"
-              }
-            },
-            "Property": "Staff Name"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

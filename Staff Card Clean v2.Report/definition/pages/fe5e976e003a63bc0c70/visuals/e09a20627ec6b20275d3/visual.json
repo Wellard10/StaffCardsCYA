@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "e09a20627ec6b20275d3",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 720,
     "width": 1281.1111111111111,
-    "tabOrder": 2000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "decompositionTreeVisual",
@@ -78,7 +78,7 @@
               },
               "queryRef": "Global Outcomes.Global Outcomes",
               "nativeQueryRef": "Global Outcomes",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -93,7 +93,7 @@
               },
               "queryRef": "Strategic Outcomes.Strategic Outcomes",
               "nativeQueryRef": "Strategic Outcomes",
-              "active": false
+              "active": true
             }
           ]
         }
@@ -211,11 +211,35 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'One to One'"
+                    "Value": "'Employability skill session'"
                   }
                 }
               ],
-              "isToggled": true
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Mock Employment Process Session (Groupwork)'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'Improved quality of life'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

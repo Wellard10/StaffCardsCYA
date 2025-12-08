@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "12d1276d384ffc44f266",
   "position": {
-    "x": 1067.5,
+    "x": 1056,
     "y": 0,
     "z": 4000,
-    "height": 73.75,
-    "width": 212.5,
-    "tabOrder": 13000
+    "height": 80,
+    "width": 224,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -60,6 +60,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -73,6 +80,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Young Person Status'"
                 }
               }
             }
@@ -106,6 +127,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -212,20 +240,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "b690d960d28c4dfc2446",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Selected Person Current Status"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "7254565f3465707c0b13",
   "position": {
-    "x": 440.48175011306722,
+    "x": 464,
     "y": 0,
     "z": 16000,
-    "height": 75.47195095395233,
-    "width": 621.61443240255289,
-    "tabOrder": 8000
+    "height": 80,
+    "width": 592,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -76,7 +76,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Barriers'"
+                  "Value": "'Barriers to Young Person'"
                 }
               }
             },
@@ -91,6 +91,19 @@
         }
       ],
       "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
         {
           "properties": {
             "show": {
@@ -127,20 +140,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "80510925eed745e1c36c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "CYA People Report"
-              }
-            },
-            "Property": "Selected Person Barriers"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

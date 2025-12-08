@@ -1,14 +1,6 @@
 table 'CYA Event Types'
 	lineageTag: 5c6de195-b417-4c9d-8a3b-6b4528ce63c4
 
-	column 'Upshot ID'
-		dataType: string
-		lineageTag: e4d1552c-9396-4645-a5a4-15435c1d5f55
-		summarizeBy: none
-		sourceColumn: Upshot ID
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'First name'
 		dataType: string
 		lineageTag: 17528b5c-db86-4281-a1e3-04596756583d
@@ -154,6 +146,94 @@ table 'CYA Event Types'
 
 		annotation UnderlyingDateTimeDataType = Time
 
+	column 'Attendee ID'
+		dataType: string
+		lineageTag: c874e6d9-2b18-4603-98c2-571923caae75
+		summarizeBy: none
+		sourceColumn: Attendee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recording User Full name'
+		dataType: string
+		lineageTag: b3908bc3-c0e5-4824-9efa-3747d56327cc
+		summarizeBy: none
+		sourceColumn: Recording User Full name
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyDate
+		dataType: string
+		lineageTag: 42dfaa99-6e6c-4261-9603-e34ddf997177
+		summarizeBy: none
+		sourceColumn: _KeyDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyAct
+		dataType: string
+		lineageTag: 3b26b993-1ab5-48b1-93af-2c19e58eadf5
+		summarizeBy: none
+		sourceColumn: _KeyAct
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyNotes
+		dataType: string
+		lineageTag: 63092434-c500-40c8-9ade-be2b8fb887b5
+		summarizeBy: none
+		sourceColumn: _KeyNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column _KeyProj
+		dataType: string
+		lineageTag: cb50d1d2-3bd5-4988-98b0-0f04183447f7
+		summarizeBy: none
+		sourceColumn: _KeyProj
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFull
+		dataType: string
+		lineageTag: c40a2d1e-be46-4e26-a085-54bf3fd122b3
+		summarizeBy: none
+		sourceColumn: _AttendeeFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column _AttendeeFullN
+		dataType: string
+		lineageTag: ea9492e8-9f8e-4cfa-a44e-16dec5d2f41f
+		summarizeBy: none
+		sourceColumn: _AttendeeFullN
+
+		annotation SummarizationSetBy = Automatic
+
+	column _IsStaffAttendee
+		dataType: string
+		lineageTag: 31c28c0e-9faa-4d79-a9b6-d6afef0bc4e2
+		summarizeBy: none
+		sourceColumn: _IsStaffAttendee
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SessionKey
+		dataType: string
+		lineageTag: f59ffb88-8992-45b2-b904-cdc9c5bc1c4a
+		summarizeBy: none
+		sourceColumn: _SessionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session Youth Workers'
+		dataType: string
+		lineageTag: 4079ca2e-7e27-4b62-8ca8-e3bb0e63e29d
+		summarizeBy: none
+		sourceColumn: Session Youth Workers
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'CYA Event Types' = m
 		mode: import
 		source =
@@ -161,7 +241,7 @@ table 'CYA Event Types'
 				    WorkbookUrl = "https://cyacumbria.sharepoint.com/sites/CYAAllStaff/Shared%20Documents/General/Data%20Team/Staff%20Cards/CYA%20Staff%20Card%20POW%20BI%20V2.xlsx",
 				    Source = Excel.Workbook(Web.Contents(WorkbookUrl), null, true),
 				    TLETypeMap = {
-				        {"Upshot ID", type text},
+				        {"Attendee ID", type text},
 				        {"First name", type text},
 				        {"Last name", type text},
 				        {"Status", type text},
@@ -204,7 +284,7 @@ table 'CYA Event Types'
 				        GetTLE("BFTLE"),
 				        GetTLE("InfraTLE")
 				    }),
-				    #"Removed Duplicates" = Table.Distinct(Combined, {"Upshot ID", "Event date", "Event type"})
+				    #"Removed Duplicates" = Table.Distinct(Combined, {"Attendee ID", "Event date", "Event type"})
 				in
 				    #"Removed Duplicates"
 
